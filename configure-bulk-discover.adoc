@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: configure-bulk-discover.html 
+keywords: bulk discover, storage inventory, export paths, data scan, migration planning 
+summary: NetApp Data Migratorで一括検出を設定して、データの移行を開始する前に既存のストレージ容量全体の概要を生成します。 
+---
+= Bulk Discoverを使用したNetApp Data Migratorでのデータ移行の計画
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migratorで一括検出を設定して、データの移行を開始する前に、既存のストレージ容量全体の概要をすばやく生成します。保存されているファイルとシステム構造を明確に理解しておくことは、データ移行プロセスを効率化するのに役立ちます。
+
+.手順
+. NetApp Data Migratorにログインします。
+. *Storage Servers* > *File Servers*を選択すると、使用可能なファイルサーバーのリストが表示されます。
+. 一括検出を実行するサーバーの名前を選択し、次に *一括検出* を選択します。
+. *Job Schedule*を選択し、次のいずれかのオプションを選択します。
++
+** 検出をすぐに開始する場合は、*今すぐ開始*をクリックします。
+** 検出プロセスをスケジュールする場合は、*スケジュール日時（UTC）*を入力してください。ジョブを開始する日時を入力してください。
+
+
+. *Scan Alternate Data Streams* については、以下のオプションからいずれかを選択してください：
++
+** ファイルに関連付けられている代替データストリーム（ADS）をNetApp Data Migratorで検出する場合は、*はい*を選択してください。
+** ファイルに関連付けられているADSをNetApp Data Migratorで検出したくない場合は、*いいえ*を選択してください。
+
+
+. *除外するパスパターン*テキストボックスに、検出プロセスから除外するパスを入力します。各パスは新しい行に入力してください。
+. *検索バー*を使用して、検出プロセスに含めたい特定のエクスポートパス（一覧表示されているパス内）を検索し、*エクスポートパス*の横にあるチェックボックスを選択します。
++
+アクセスできなくなったエクスポート パスは無効になり、検出プロセスでは使用できません。たとえば、削除された、またはNFSの `showmount -e`の出力に表示されなくなったエクスポート パス、またはSMB共有の列挙中に返されないパスは無効になります。
+
+. *Submit*を選択すると、*Bulk Discover Job*が作成されたことを確認する通知メッセージが表示されます。このメッセージ内の*View Job Listing*リンクを選択すると、*Job Config List*ページが表示されます。このページでは、新しく作成したジョブが*Job Listings*テーブルに表示されます。
+

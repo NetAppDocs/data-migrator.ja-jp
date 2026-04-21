@@ -1,0 +1,33 @@
+---
+indexpage:
+  title: NetApp Data Migrator のドキュメント
+  summary: NetApp Data Migratorは、エンタープライズグレードのマルチクラウド対応データ移行ソフトウェア アプリケーションで、オンプレミスまたはサードパーティのストレージシステムからNetAppを基盤とするパブリッククラウドストレージサービスへの非構造化ファイルデータの移行を簡素化します。NetApp
+    Data Migratorは、ユーザーが管理する仮想マシン上で動作する独立したアプリケーションであり、複雑なカスタムスクリプトやばらばらのツールを必要としません。
+  keywords: netapp, data, migrator, documentation
+  lead: NetApp Data Migratorは、エンタープライズグレードのマルチクラウド対応データ移行ソフトウェア アプリケーションで、オンプレミスまたはサードパーティのストレージシステムからNetAppを基盤とするパブリッククラウドストレージサービスへの非構造化ファイルデータの移行を簡素化します。NetApp
+    Data Migratorは、ユーザーが管理する仮想マシン上で動作する独立したアプリケーションであり、複雑なカスタムスクリプトやばらばらのツールを必要としません。
+  tiles:
+  - title: はじめに
+    links:
+    - title: リリース ノート
+      url: "/whats-new.html"
+    - title: NetApp Data Migratorについて学ぶ
+      url: "/learn-about-data-migrator.html"
+    - title: クイック スタート
+      url: "/quick-start.html"
+  - title: NetApp Data Migratorのインストールと使用
+    links:
+    - title: NetApp Data Migrator をインストール
+      url: "/learn-about-install.html"
+    - title: コントロールプレーンとワーカーをアップグレードする
+      url: "/upgrade.html"
+    - title: プロジェクトの作成と管理
+      url: "/manage-projects.html"
+    - title: NetApp Data Migrator を使用
+      url: "/manage-users.html"
+  - title: その他のリソース
+    links:
+    - title: ヘルプを表示
+      url: "/register-for-support.html"
+    - title: FAQ
+      url: "/faq.html"

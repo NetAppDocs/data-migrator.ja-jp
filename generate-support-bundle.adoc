@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: generate-support-bundle.html 
+keywords: support bundle, diagnostics, troubleshooting, log files, download report 
+summary: NetApp Data Migrator サポートバンドルを生成してダウンロードします。このバンドルには、トラブルシューティング用の診断ログ、エラーレポート、および構成データが含まれています。 
+---
+= NetApp Data Migrator サポートバンドルを生成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migratorを使用すると、発生した問題のトラブルシューティングに役立つサポートバンドルを生成できます。このバンドルには、ログファイル、エラーレポート、構成データなどの診断情報が含まれています。
+
+.手順
+. NetApp Data Migratorにログインします。
+. ナビゲーション バーで * ヘルプ * を選択し、次にサポート バンドル オプションを選択します。
+. *Date*を選択します。サポートバンドルに含める日付範囲を入力します。
+. *Other Metrics*を選択します。サポートバンドルに含める他のメトリックを入力します。
+. *Generate Support Bundle* を選択します。バンドルの準備ができたら、 *Download Report* がアクティブになります。
+. *Download Report* を選択します。
+

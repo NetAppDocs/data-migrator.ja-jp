@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: configure-notifications.html 
+keywords: notifications, smtp, email alerts, real-time alerts, project status 
+summary: NetApp Data Migratorを設定して、SMTPメールサーバーを設定することで、プロジェクトのステータス変更に関するリアルタイムメールアラートを送信します。 
+---
+= NetApp Data Migratorのリアルタイム通知を設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migratorを設定して、プロジェクトのステータス変更に関するリアルタイムアラートをメールで受信できます。
+
+.開始する前に
+*App Admin* ユーザーとしてログインしていることを確認してください。SMTP Eメールサーバーの詳細を設定するには、このユーザーレベルが必要です。
+
+.手順
+. ナビゲーションバーで*設定*を選択します。
+. *SMTP*タブを選択し、次の表に示すフィールドに入力します。
+
+
+[cols="1,2a"]
+|===
+| フィールド | 概要 
+
+
+| IP アドレス  a| 
+SMTPサーバアドレス
+
+
+
+| ポート  a| 
+SMTP ポート
+
+
+
+| ユーザ名  a| 
+サーバー認証ユーザー名
+
+
+
+| パスワード  a| 
+サーバー認証パスワード
+
+
+
+| メールから  a| 
+すべての通知の送信元アドレス
+
+
+
+| メールで送信  a| 
+アラートの受信者アドレス
+
+|===
+
+NOTE: SMTPを設定した後、SMTP設定を編集する際には、ユーザーはパスワードを再入力する必要があります。

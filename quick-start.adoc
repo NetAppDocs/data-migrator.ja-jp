@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: quick-start.html 
+keywords: quick start, installation, first project, control plane 
+summary: NetApp Data Migratorを使い始めるには、AWS、Azure、Google Cloud、またはOpen Virtual Appliance（OVA）テンプレートのいずれかを使用して、コントロールプレーンVMとワーカーVMを設定する必要があります。 
+---
+= NetApp Data Migrator のクイックスタート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migrator の使用を開始するには、いくつかの手順があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]NetApp Data Migratorについて学ぶ
+[role="quick-margin-para"]
+NetApp Data MigratorはNFSおよびSMBファイル転送プロトコルをサポートしています。NetApp Data Migratorがお客様のデータ移行ニーズをサポートしていることを確認し、お客様の環境に適した導入オプションを選択してください：
+
+[role="quick-margin-list"]
+* AWS
+* Azure
+* Google Cloud サービス
+* Open Virtual Appliance（OVA）テンプレート
+
+
+[role="quick-margin-para"]
+link:decide-to-use-data-migrator.html["NetApp Data Migrator を使用するかどうかを決定する"]とlink:networking-requirements.html["ネットワーク要件"]を確認します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]インストールとセットアップ
+[role="quick-margin-para"]
+NetApp Data Migratorは、コントロールプレーンとワーカーノードを使用します。まず、移行のニーズに基づいて、コントロールプレーンVMとワーカーVMをデプロイします。NFSの場合はLinuxワーカーをデプロイし、SMBの場合はWindowsワーカーをデプロイします。NFSまたはSMB、あるいは両方のプロトコルを使用できます。デプロイ後、コントロールプレーンVMとワーカーVMを作成し、NetApp Data Migrator UIにアクセスします。
+
+[role="quick-margin-para"]
+link:learn-about-install.html["NetApp Data Migrator のインストールについて学ぶ"]
+
+[role="quick-margin-para"]
+以下の方法を学びましょう：
+
+[role="quick-margin-list"]
+. link:deploy-control-plane-and-linux-workers.html["コントロールプレーンVMとLinuxワーカーVMを導入する"]
+. link:create-control-plane-and-worker-vms.html["コントロールプレーンVMとワーカーVMを作成します"]
+. link:access-data-migrator-ui.html["NetApp Data Migrator UI にアクセスします"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]設定と管理
+[role="quick-margin-para"]
+まず、デフォルトの認証情報を使用して管理者としてログインし、ユーザー名とパスワードを更新してください。次に、最初のプロジェクトを作成し、ファイルサーバーを追加して移行ワークフローを開始できます。
+
+[role="quick-margin-para"]
+以下の方法を学びましょう：
+
+[role="quick-margin-list"]
+. link:configure-data-migrator.html["NetApp Data Migratorを設定"]
+. link:manage-projects.html["NetApp Data Migratorでのプロジェクトの作成と管理"]
+

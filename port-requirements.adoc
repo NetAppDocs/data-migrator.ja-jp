@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: port-requirements.html 
+keywords: port requirements, TCP, UDP, control plane, worker, communication 
+summary: NetApp Data Migrator のポート要件（コントロールプレーンとワーカー間の通信に必要な TCP ポートと UDP ポートを含む）。 
+---
+= NetApp Data Migrator のポート要件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migratorで、コントロールプレーン仮想マシン（VM）とワーカーVM間の通信を可能にするために、特定のTCPポートが開いていることを確認する必要があります。
+
+
+
+== コントロールプレーンポート
+
+[cols="1,1,1,1a"]
+|===
+| サービス | TCP ポート | から | 宛先 
+
+
+| Temporal Server | 7233または7234 | ワーカーとクライアント  a| 
+コントロールプレーン
+
+
+
+| Temporal UI | 8080 | デフォルトポート（有効になっている場合）  a| 
+コントロールプレーン
+
+
+
+| PostgreSQL（Temporal database） | 5432 | Temporalサービス（コントロールプレーンから）  a| 
+コントロールプレーン
+
+
+
+| Redis | 6379 | ワーカーまたはコントロールプレーンサービス  a| 
+コントロールプレーン
+
+
+
+| APIまたはUIイングレス（アプリケーション） | 80または443 | ブラウザまたは外部クライアント  a| 
+コントロールプレーン
+
+
+
+| Grafana | 3000 | ブラウザ  a| 
+コントロールプレーン
+
+|===
+
+
+== ワーカーポート
+
+[cols="1,1,1,1a"]
+|===
+| サービス | TCP ポート | から | 宛先 
+
+
+| コントロールプレーンへのアウトバウンド | 7233 | コントロールプレーン内のサービス  a| 
+Temporalフロントエンド
+
+
+
+| コントロールプレーンへのアウトバウンド | 6379 | コントロールプレーン内のサービス  a| 
+Redis
+
+
+
+| コントロールプレーンへのアウトバウンド | 80または443 | ブラウザ  a| 
+APIまたはUI（呼び出す場合）
+
+
+
+| ストレージへのアウトバウンド | 2049 | ワーカー  a| 
+NFSサーバ
+
+*注*：リモートプロシージャコール用のポートマッパーサービスが必要な場合は、TCPまたはUDPポート111を含めてください。
+
+
+
+| ストレージへのアウトバウンド | 445 | ワーカー  a| 
+SMBサーバ
+
+|===

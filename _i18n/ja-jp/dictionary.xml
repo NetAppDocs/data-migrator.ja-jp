@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="4821361904f08ed800ae73ad92927d3d" category="summary">NetApp Data Migratorは、ロールベースアクセス制御（RBAC）を使用してユーザー権限を管理し、App Adminユーザーが他のユーザーにロールを割り当てることができます。</block>
+  <block id="f02b2be434e8a727287102f6a252e24c" category="doc">NetApp Data Migrator のアクセス制御を管理する</block>
+  <block id="d7c622d175e7320d211daad224463513" category="paragraph">NetApp Data Migratorは、ロールベースアクセス制御（RBAC）を使用してユーザー権限を管理します。RBACを使用すると、App Adminユーザー（管理者）は、他のユーザーに以下の3つのロールのいずれかを割り当てることができ、安全なアクセス制御と効率的な運用が保証されます。App Adminユーザーは、それぞれの責任とアクセス要件に基づいて、他のユーザーに権限を付与します。</block>
+  <block id="918f97579e4443ee0226f731ca1b2454" category="list-text">*App Admin*：このアクセス レベルでは、ユーザーがシステム全体の設定、ユーザーのロール、およびアクセス権限を管理できます。</block>
+  <block id="0ffac7595c5d5ad698326101c205f97d" category="list-text">*Project Admin*: このアクセス レベルでは、ユーザーはジョブの設定や実行を含む、特定の移行プロジェクトを管理できます。</block>
+  <block id="9bec1a049bf6b183e7f01837d1d0b38b" category="list-text">*Project Viewer*：このアクセス レベルでは、ユーザーに移行の進捗状況、ログ、レポートを監視するための読み取り専用アクセス権限が提供されます。このロールは、データ移行プロジェクトの進捗状況を監視・観察する必要があるものの、プロジェクトを変更したり妨害したりする可能性のある操作を実行する必要のないユーザーを対象としています。</block>
+  <block id="cbd7227ec8822f2a9c681211cd2b2e47" category="paragraph">次の表に、アクションとユーザ ロール権限の概要を示します。</block>
+  <block id="004bf6c9a40003140292e97330236c53" category="cell">アクション</block>
+  <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">概要</block>
+  <block id="bc99e1a834c7a116f4e5a1926fec7a4b" category="cell">アプリ管理者</block>
+  <block id="4a77ffaf07c1c0b1e953880f4462ccf9" category="cell">プロジェクト管理者</block>
+  <block id="60c9a7fbaded19745dee96e2591b5dd5" category="cell">プロジェクト ビューアー</block>
+  <block id="1bc2957f5ad93e6de5200e68a0926979" category="cell">エージェントの導入</block>
+  <block id="b91a46c270503cceee464d9cc98301be" category="cell">ユーザーは*ワーカー設定手順の表示*にアクセスできます。</block>
+  <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">はい</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
+  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="paragraph">いいえ</block>
+  <block id="5fed933898706fd78ac043eef2dcc541" category="cell">ユーザを作成</block>
+  <block id="b65eb58d7c9b34d0dd8eaf85b51dc84a" category="cell">ユーザーは新しいユーザーアカウントを作成できます</block>
+  <block id="f923f903857a5387d3db70494e074632" category="cell">ユーザーのリスト</block>
+  <block id="6cc4f9db0272e87efc4f7aef344f47da" category="cell">ユーザーはユーザー一覧を表示できます</block>
+  <block id="5d7d916557fc1d11c4ac2409e17441dd" category="cell">設定の管理</block>
+  <block id="f180e689374b19f7086f777798b94512" category="cell">ユーザーは構成設定を管理できます</block>
+  <block id="f616e8b19078a6728addbab5c26541d1" category="cell">ジョブを管理する</block>
+  <block id="fe05f8b474a5c2ed2d4a69e491757560" category="cell">ユーザーは移行ジョブを管理できます</block>
+  <block id="c91c7b93c28cd18741b71f727ee81ee3" category="cell">レポート</block>
+  <block id="1f9a56de57c8e8b5ae1500f6842190b8" category="cell">ユーザーはレポートをダウンロードするためのオプションにアクセスできます</block>
+  <block id="ba623d3bcb3f92061c623e7ba585a677" category="cell">プロジェクトの更新</block>
+  <block id="4a20713ddddd493d7a982089f2d8e7ac" category="cell">ユーザーはプロジェクトを編集できます</block>
+  <block id="f9ff25aac7d17c14e19d286ae0a043e2" category="cell">プロジェクトを表示</block>
+  <block id="dc7a98ce3350dab03f5e08beee2be9cf" category="cell">ユーザーはプロジェクト一覧ページにアクセスできます</block>
+  <block id="be86ca474df5e14056bc0f20d2cdb767" category="cell">プロジェクトを作成する</block>
+  <block id="2d490fff311df40dd93e29f99112f7b5" category="cell">ユーザーはプロジェクトを作成できます</block>
+  <block id="04e2fa8a65517a2edb23d527f3b18b8d" category="cell">SMTPを保存</block>
+  <block id="2d538349110055d188b1b161a4f6f4d1" category="cell">ユーザは SMTP の詳細を追加または編集できます</block>
+  <block id="4131a47b90245e698ff17260f9aa8fa2" category="summary">展開後にNetApp Data Migrator UIにアクセスし、コントロールプレーンにサインインして、展開済みのLinuxおよびWindowsワーカーに接続します。</block>
+  <block id="bba519d0273fc545ec8a0eda7178c85c" category="doc">NetApp Data Migrator UI にアクセスします</block>
+  <block id="251eddead9eeff785f849aa0655b368f" category="paragraph">コントロールプレーン VM をデプロイし、サービスとポッドが正常に実行されていることを確認したら、NetApp Data Migrator UI にアクセスして、コントロールプレーン、Linux ワーカー、および Windows ワーカーに接続します。</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">開始する前に</block>
+  <block id="133ea86f1607a2d480c47f6e7726ddec" category="inline-link-macro">コントロールプレーンVMを導入しました</block>
+  <block id="ef36a05239a3ef82b65b5fc75b47cd9a" category="paragraph">コントロールプレーン VM のプライベート IP アドレスを確認してください。これは、<block ref="b713e00d541e82e4f58ea133e9b1520d" category="inline-link-macro-rx"></block>時に取得したものです。コントロールプレーン VM のプライベート IP アドレスを使用して UI にアクセスします。</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
+  <block id="451af897e2ad83a812621e959105663f" category="list-text">Web ブラウザを使用してコントロールプレーンに移動します：</block>
+  <block id="2e1fbfc868f4121471d4fee2563be03a" category="paragraph"><block ref="41ac7b764f12237e8a19ee966045da1f" prefix="" category="inline-code"></block></block>
+  <block id="3b9b583d53710398a6b9516f89e216ce" category="list-text">デフォルトのユーザー名とパスワードを使用してログインします。</block>
+  <block id="334e64be38c81fde8ba773e178c909f4" category="list-text">移行の種類に応じて、以下のタブからいずれかを選択してください：</block>
+  <block id="6eb7a962c965cb0f7c579d6b275f7c73" category="paragraph">*NFS*：このオプションはNFS移行（Linuxワーカー）用です。</block>
+  <block id="f6b034ffb89dcbedb3e9122b0fec0090" category="paragraph">*SMB*：このオプションは、SMB移行（Windowsワーカー）用です。</block>
+  <block id="53382efc8d30cb7b67f54a38e7a73f7e" category="list-text">画面の指示に従って、コントロールプレーンを使用してデプロイ済みのワーカー VM に接続してください。</block>
+  <block id="c68c3837aaf840cec302cd98e4de25e6" category="paragraph">ホームページで、*View Instruction to Setup Worker* を選択します。</block>
+  <block id="cbc86ed7a1779fea6df3ea3b0e24c65b" category="list-text">*Workers* セクションでステータスを確認し、ワーカーが正常に接続されていることを確認してください。</block>
+  <block id="4e33e6ed8061b5502ae7957b4f0debc0" category="paragraph">ワーカーが正常に接続されたら、NetApp Data Migrator 環境を構築し、移行ジョブを実行します。</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">次の手順</block>
+  <block id="9a4c92be3cfd0d8c4e5f2cc68d66bdf0" category="inline-link-macro">NetApp Data Migrator を設定</block>
+  <block id="5a28d0f81430b8b9faa8e3faf94a8949" category="paragraph">NetApp Data Migrator UIへのアクセス方法について学習したら、<block ref="eb61382f2bad59bb62f83c02035f2305" category="inline-link-macro-rx"></block>できます。</block>
+  <block id="51b99ea2354394ff1092c103509ccc36" category="summary">NetApp Data Migratorで一括カットオーバーを使用して、ソースシステムと宛先システム間の最終的なデータ同期を実行します。</block>
+  <block id="7fed1ba6a385026467b1c86f9fd1d712" category="doc">NetApp Data Migrator での一括カットオーバーの設定</block>
+  <block id="51be7e6ef751cd9ff13cb2267fd7150b" category="paragraph">NetApp Data Migratorで一括カットオーバーを使用して、ソースシステムと宛先システム間の最終同期を実行します。ベースライン移行が完了し、増分同期が実行されている場合は、複数のパスを1つのカットオーバージョブに統合できます。</block>
+  <block id="df4a7c4be419a6027452e739e9d7a7e9" category="section-title">カットオーバー ジョブを開始する</block>
+  <block id="4a19765a52cb7b078e0c60fef3d01f09" category="paragraph">切り替え作業を開始するには、以下の手順に従ってください。</block>
+  <block id="9b4589cb01c1cffb60da40d95406e28b" category="list-text">NetApp Data Migratorにログインします。</block>
+  <block id="80e42802b345b31373483c9e5b712463" category="list-text">*Storage Servers* &gt; *File Servers* を選択します。</block>
+  <block id="68a3336bf8fe230a94c34c82b0b74a50" category="list-text">カットオーバージョブを作成するファイルサーバーの名前を選択してください。</block>
+  <block id="11eb060703c5fe76f1af75c126d310a5" category="list-text">*一括切り替え*を選択します。</block>
+  <block id="e562cfd62f1801784f2f3cf6c3c569af" category="list-text">*Select Path* ページで、 *Source Path* の横にあるチェックボックスを選択します。</block>
+  <block id="57f2cecc0eef0d3f0ae462c30ffeb996" category="list-text">ソースパスの横にあるチェックボックスを選択します（カットオーバージョブを確定します）。</block>
+  <block id="b74bf2ecb25f4010a9250d808366fd9c" category="list-text">*続行*を選択します。</block>
+  <block id="7d2bca1fc64db9e7d167f7045e6068b0" category="list-text">ジョブ名の横にあるチェックボックスを選択して、*一括切り替え*ジョブを開始することを確認してください。</block>
+  <block id="48793918c3cac256347c6f47502a6324" category="admonition">バルク移行ジョブが並行して実行されている場合、ジョブを選択できます。</block>
+  <block id="1a80a47ef2f6882ed8173f7652fb3fc7" category="list-text">一括切り替え作業を開始するには、*Submit*を選択してください。</block>
+  <block id="280d6c51f63c8390a817118a5cc7ddd3" category="paragraph">*カットオーバージョブが作成されました*という確認メッセージが表示されます。</block>
+  <block id="c6dabc1f813ae186e36d5c5d23e5fd36" category="list-text">このメッセージの横にある*ジョブリストの表示*リンクを選択すると、新しいジョブが表示されているジョブ設定リストページが開きます。</block>
+  <block id="dc43384221aadf441fb56925cde36520" category="section-title">一括切り替えジョブを承認する</block>
+  <block id="f7fb517f490b23ee9f475f28618c2417" category="paragraph">切り替え作業を承認するには、以下の手順に従ってください。</block>
+  <block id="1beaf51f3950838b267bb0f11b927748" category="list-text">*Jobs*ページで、*Job Run List*タブを選択します。</block>
+  <block id="5b3b7f3cd0d32f906fcbbf8fb1d705de" category="list-text">カットオーバージョブの横にあるアクションメニューを選択します。</block>
+  <block id="b99a9a5879442c5ad3ae30c94964ccb3" category="list-text">*Review* を選択します。</block>
+  <block id="531330f2326fb3283c827799b9c4dec0" category="paragraph">*Cutover Confirmation* ポップアップボックスが表示されます。</block>
+  <block id="ffc9534ab431605bc11f516d99c43ba5" category="list-text">*Download CoC Report* リンクを選択します。</block>
+  <block id="cc5fcd3fba3014c23240ac1c1497d8b7" category="paragraph">レポートを確認し、切り替えが成功したかどうか、またすべてのデータがソースから宛先へ正常に移行されたかどうかを確認してください。</block>
+  <block id="67116d320a2bb4f66b0bb10629a28264" category="list-text">*I have reviewed and verified the COC document and all other essential information* の横にあるチェックボックスを選択します。</block>
+  <block id="228159fcd8ad29c01efe569a236253d2" category="list-text">COCレポートの情報に問題がなければ、*確認*を選択して*一括切り替え*を承認してください。</block>
+  <block id="e15884a19074f86e7c09ab35a649f46a" category="paragraph">ステータスが*完了*に変更されます。</block>
+  <block id="c7c7190135e9f9b9ece90813a338db20" category="summary">NetApp Data Migratorで一括検出を設定して、データの移行を開始する前に既存のストレージ容量全体の概要を生成します。</block>
+  <block id="237c9334ef000476a7394e5432d15caa" category="doc">Bulk Discoverを使用したNetApp Data Migratorでのデータ移行の計画</block>
+  <block id="5fe4d49f2bb62d43bc8130b371624a60" category="paragraph">NetApp Data Migratorで一括検出を設定して、データの移行を開始する前に、既存のストレージ容量全体の概要をすばやく生成します。保存されているファイルとシステム構造を明確に理解しておくことは、データ移行プロセスを効率化するのに役立ちます。</block>
+  <block id="996e73c7461d886afe19727bc21490cf" category="list-text">*Storage Servers* &gt; *File Servers*を選択すると、使用可能なファイルサーバーのリストが表示されます。</block>
+  <block id="8eef17af229d9974a423c51577657da9" category="list-text">一括検出を実行するサーバーの名前を選択し、次に *一括検出* を選択します。</block>
+  <block id="4ad61ed3eebd122efb6373bdff80b6d8" category="list-text">*Job Schedule*を選択し、次のいずれかのオプションを選択します。</block>
+  <block id="90d449d963866835f03aebec004adec6" category="list-text">検出をすぐに開始する場合は、*今すぐ開始*をクリックします。</block>
+  <block id="776d91f489c41dc480313599429022d8" category="list-text">検出プロセスをスケジュールする場合は、*スケジュール日時（UTC）*を入力してください。ジョブを開始する日時を入力してください。</block>
+  <block id="ec612ce3f200b4c2ad7488256be9be02" category="list-text">*Scan Alternate Data Streams* については、以下のオプションからいずれかを選択してください：</block>
+  <block id="26f67c023990c39890e2fc88083d1acb" category="list-text">ファイルに関連付けられている代替データストリーム（ADS）をNetApp Data Migratorで検出する場合は、*はい*を選択してください。</block>
+  <block id="9db88ff5db96c9cd9c9c254a6a10d998" category="list-text">ファイルに関連付けられているADSをNetApp Data Migratorで検出したくない場合は、*いいえ*を選択してください。</block>
+  <block id="23aa07a919b422e82048c83eaa11fdee" category="list-text">*除外するパスパターン*テキストボックスに、検出プロセスから除外するパスを入力します。各パスは新しい行に入力してください。</block>
+  <block id="0b1a6aba743e5817c0e2fde514af1c01" category="list-text">*検索バー*を使用して、検出プロセスに含めたい特定のエクスポートパス（一覧表示されているパス内）を検索し、*エクスポートパス*の横にあるチェックボックスを選択します。</block>
+  <block id="f5f9bbbb5b9949b693fcb9afc02c0bf1" category="paragraph">アクセスできなくなったエクスポート パスは無効になり、検出プロセスでは使用できません。たとえば、削除された、またはNFSの<block ref="55fb64f15dd3d0c53de3a4d095218569" prefix=" " category="inline-code"></block>の出力に表示されなくなったエクスポート パス、またはSMB共有の列挙中に返されないパスは無効になります。</block>
+  <block id="d9ef6c926d575b1081ad9bd10cfb8a20" category="list-text">*Submit*を選択すると、*Bulk Discover Job*が作成されたことを確認する通知メッセージが表示されます。このメッセージ内の*View Job Listing*リンクを選択すると、*Job Config List*ページが表示されます。このページでは、新しく作成したジョブが*Job Listings*テーブルに表示されます。</block>
+  <block id="52651e9e259665a27e120a368f26f728" category="summary">NetApp Data Migrator で一括移行を使用して、大量のデータをソースから宛先の場所に転送します。</block>
+  <block id="82a11be88932c60c6c29c06b4c233449" category="doc">NetApp Data Migratorを使用してデータ移行を実行</block>
+  <block id="505619737019b89dd9d4c16b706d8f62" category="paragraph">NetApp Data Migratorの一括移行機能を使用して、大量のデータをソースから宛先へ転送します。</block>
+  <block id="a2d8cf659766e21d3e11e4f9a79d56c0" category="section-title">ステップ 1：NetApp Data Migrator で一括移行を設定する</block>
+  <block id="b2e1f3e6312c7b8aad6ed527c694618d" category="paragraph">一括移行機能を使用するには、事前に一括移行対象のサーバーを定義する必要があります。</block>
+  <block id="219fce68df0e060529d041bc226f8111" category="list-text">ジョブを作成する *File Server Name* を選択します。</block>
+  <block id="699fcc2d622cb7cc67663305534ed067" category="list-text">*一括移行*を選択します。</block>
+  <block id="4dbe34dcfaf21a426bc5f1d0a9947fc0" category="section-title">ステップ2：ソースと宛先のマッピングを追加する</block>
+  <block id="87834d34f8d8989b4c54caedbea8b7d4" category="paragraph">移行のソースエクスポートパスと宛先エクスポートパスを指定するには、ソースマッピングと宛先マッピングを追加します。</block>
+  <block id="a270c874dd3f23eef6fb2f8c7a227252" category="list-text">移行するソース内のエクスポートパスを選択します。</block>
+  <block id="1ada8f7056024f536b0017b8a818a648" category="list-text">必要に応じて、ディレクトリレベルの移行を実行する場合は、*Add Source Directory*を選択してください。</block>
+  <block id="5657e4af05fc77ede4d05249c45b45e9" category="paragraph">*Add Source Directory*を選択すると、ディレクトリエクスプローラービューが表示されます。このビューには、ルートレベルのディレクトリのリストが表示されます。必要なディレクトリに移動するか、必要なディレクトリのパスをエクスプローラーウィンドウの検索バーに直接コピー＆ペーストして、そのフォルダに移動できます。</block>
+  <block id="96a001e4dedac46d583f146f571969b2" category="list-text">ソースディレクトリを選択したら、宛先ファイルサーバと宛先エクスポートパスを選択します。</block>
+  <block id="72f51b9743f5e36c1ea9f0ecd58e0f52" category="list-text">必要に応じて、エクスポート先のパスでディレクトリを選択します。</block>
+  <block id="eefcae75419b78d75bfc79496b19979e" category="paragraph">移行先のエクスポートパスでディレクトリを選択しない場合、移行は選択したエクスポートパスのルートレベルで行われます。</block>
+  <block id="8831a2a9218d9ad9780279eb56459895" category="list-text">ソースパスと宛先パスを選択したら、*マッピングの追加*を選択して、選択したマッピングを追加します。異なるエクスポートパスやディレクトリに対して、複数のマッピングを作成できます。</block>
+  <block id="2b030877d1f1c8f607d5ca91b0a78034" category="paragraph">NetApp Data Migratorでは、既存のマッピングと親または子関係にあるマッピングを選択することはできません。これにより、移行中の衝突を回避できます。</block>
+  <block id="d753c570fa3cb330988352990ab9d256" category="list-text">必要に応じて、*編集*または*削除*オプションを選択して、マッピングを削除または編集します。</block>
+  <block id="59c71fe0ee9891f4b357478a9f0b05ea" category="list-text">マッピングを追加したら、*続行*を選択します。</block>
+  <block id="6e7276e697785c1151ded5bdc2b7e6c2" category="section-title">ステップ3：一括移行ジョブをカスタマイズする</block>
+  <block id="cdffa971bc37c6ea429061f382706f1b" category="paragraph">*オプション*ページからさまざまな設定を選択することで、ニーズに合わせて一括移行ジョブをカスタマイズできます。</block>
+  <block id="054b4f3ea543c990f6b125f41af6ebf7" category="cell">オプション</block>
+  <block id="53de9558db4284118c92c948fe5d5062" category="cell">除外されたパスパターン</block>
+  <block id="fd6a2d100c8f79156ebf6d0acc1560fd" category="paragraph">処理対象から除外する特定のファイルパスまたはディレクトリを定義します。これは、不要なファイルをスキップすることで、ストレージとパフォーマンスを最適化するのに役立ちます。</block>
+  <block id="b2d7b0df61dab0c76bd9c566bd24ff53" category="list-text">複数のパスパターンを入力できます。1行に1つずつ入力してください。</block>
+  <block id="65eb767384fc37283189756aec69a4c0" category="list-text">ワイルドカード<block ref="3389dae361af79b04c9c8e7057f60cc6" prefix="(" category="inline-code"></block>を入力して、複数のファイルまたはフォルダを照合できます。</block>
+  <block id="f3eda43d0e3be869eeee59cc434c9697" category="list-text">除外の例：</block>
+  <block id="345d8aa7375b5de168baa2d72106f334" category="list-text"><block ref="f54b2b60498c09ff44ebf22381d6373c" prefix="" category="inline-code"></block>：すべてのスナップショットディレクトリ内のすべてのファイルとフォルダを除外します</block>
+  <block id="82bac5ef0147b5d60483f8d501227c3f" category="list-text"><block ref="3f763766aef1e7f764f69bfa8ce878f7" prefix="" category="inline-code"></block>：ログファイルを除外します</block>
+  <block id="2985ff2a0d24cdc2355a4ccfa9d1d9d9" category="list-text"><block ref="cbf258df55b17a18bba2ba23cef66778" prefix="" category="inline-code"></block>：一時ファイルは除外します</block>
+  <block id="722fe1f6d22c0695404492fa4518d9f2" category="cell">増分同期スケジュール</block>
+  <block id="e835f3861a378dd665368b313251f1a5" category="paragraph">データの増分同期の頻度を設定します。これにより、前回の同期以降の変更点のみが更新されるため、移行効率が向上し、処理時間が短縮されます。</block>
+  <block id="0b1132f19cad793f2687f25662d2c8e6" category="list-text">増分同期を無効にするには、*オフ*を選択します。</block>
+  <block id="ba7982c8b14e51913792d3ae2df46cbc" category="list-text">*Set Schedule* を選択して、同期スケジュールを指定します。データの同期は、1時間ごと、1日ごと、または1週間ごとに選択できます。</block>
+  <block id="73a42fe909ffc5e15a75cd0977894b32" category="list-text">上級ユーザーで、cron式を使用してカスタム同期スケジュールを定義し、同期タイミングをより細かく制御する場合は、*Cron式*を選択してください。</block>
+  <block id="6dfd407960448084b5a0f7c341f29515" category="cell">ファイルの移行</block>
+  <block id="e011c45ef18e58a0f53e9fc9c6901ae7" category="paragraph">最終更新日時に基づいて、移行するファイルを選択します。</block>
+  <block id="dc8948b915144964bce1f670fe4ace9d" category="list-text">*すべて*を選択すると、更新日時に関係なくすべてのファイルが移行されます。</block>
+  <block id="26e40508e41d8e4ced00ebe03695a193" category="list-text">*Exclude file older than (UTC)*を選択して、指定した日付より古いファイルを除外します。</block>
+  <block id="b94727e59c0fedfed37fa08bc69a519c" category="cell">a-time（アクセス時間）を保存する</block>
+  <block id="1a1f5a07ace08898f81128e362e8e27d" category="paragraph">移行時刻に更新するのではなく、元のファイルアクセスタイムスタンプを保持します。</block>
+  <block id="15c487a98f4213c0d55f465020b0226d" category="cell">権限を保持する</block>
+  <block id="eb64b891f63d6ffabf6217004cd05ca9" category="paragraph">デスティネーションで元のソースファイルおよびディレクトリのアクセス許可を保持します。</block>
+  <block id="94dd63ab1c4b4342bd84fded4655c951" category="list-text">*Enabled* を選択すると、送信元から送信先への元のアクセス許可（所有者、グループ、アクセス権（SMB の場合はアクセス制御リスト、NFS の場合はモードビット）など）が保持されます。</block>
+  <block id="2ad8c16e554562f9312bc992dcca9a5e" category="list-text">権限の保存をスキップするには、*無効*を選択してください。NetApp Data Migratorは、デフォルトの移行先アクセス権限でファイルを移行します。これは、互換性のないファイルシステム間で移行する場合に便利です。</block>
+  <block id="7db97d9c235c5e7fc35da92664b80209" category="cell">最後に変更されたファイルをスキップ</block>
+  <block id="89480adc629ca4e121b5621567f92571" category="paragraph">移行対象から除外するファイルを、指定した期間（分、時間、日単位）内に指定します。これは、編集中のファイルが更新の途中で転送されないようにすることで、データの不整合を防ぐのに役立ちます。</block>
+  <block id="44c7a5e141aad3b574f30358d34467c0" category="cell">GID / UID マッピングをアップロード</block>
+  <block id="561bec026aadc20d54b4b375338895e0" category="paragraph">移行中に正しいファイル所有権を維持するために、グループID（GID）またはユーザーID（UID）のマッピングファイルをアップロードします。アップロードするファイルは、提供されたテンプレートで指定された形式に従う必要があります。</block>
+  <block id="a99220b4486d225ce4c9f923226635e7" category="list-text">*Download Template* を選択して、サンプルファイル形式をダウンロードします。</block>
+  <block id="ac0df8cfc38c9f9ac956f30d62de5456" category="list-text">*ファイルを選択*を選択して、ローカルシステムからマッピングファイルを選択します。</block>
+  <block id="4c068d58547c6e11bbd4dba098739bee" category="list-text">マッピングを適用するには、* Upload *を選択します。</block>
+  <block id="c2f492f3c50be90aa564aed90e0fc304" category="cell">SIDマッピングをアップロード</block>
+  <block id="7a190e8decdc07a49c3cf8a1f327c646" category="paragraph">セキュリティ識別子（SID）マッピングファイルをアップロードします。SIDマッピングにより、システム間でファイルを移行または同期する際に、ユーザーおよびグループの権限が正確に保持されることが保証されます。アップロードするファイルは、ダウンロード用に提供されているテンプレートに指定されている形式に従ってください。</block>
+  <block id="2319db93ba7524fc1d897cb3ec220082" category="paragraph">オプションを選択したら、*続行*を選択して*確認と送信*ページを開きます。</block>
+  <block id="f16f4869607de3851167be91bdf17cf4" category="section-title">ステップ4：確認して送信する</block>
+  <block id="11c09fc0c5afb12435057761dfaf1043" category="paragraph">設定を確認してから、一括移行ジョブを実行してください。</block>
+  <block id="8a9fa295f8f3c420e542fbdb2be67f26" category="list-text">ジョブの*事前チェック状況*を確認してください。ソースパスに正しいデータが含まれていることを確認し、宛先パスに十分なストレージとアクセス権限があることを確認してください。</block>
+  <block id="3a5d4f769154afbab4499cd26cd677c2" category="list-text">新しい移行ジョブを作成するには、*Submit*を選択してください。</block>
+  <block id="c0320bc343dcb3dfc953df326f85a1f1" category="paragraph">*一括移行ジョブが作成されました*という確認メッセージが表示されます。</block>
+  <block id="61fcf75e406c2f8580d9cfe1134092cd" category="list-text">通知メッセージの横にある*View Job Listing*リンクを選択すると、新しいジョブが表示される*Job Config List*ページが開きます。</block>
+  <block id="4ea5d203fbdeb59d3aba88b36b0fb49b" category="summary">デフォルトの認証情報を使用してApp Admin（管理者）としてログインし、ユーザー名とパスワードを更新してください。</block>
+  <block id="b9eb0db38a633459a1a4f1573806598c" category="doc">NetApp Data Migratorを設定</block>
+  <block id="a60613f02f079190f3f23ed86b85a746" category="paragraph">NetApp Data Migratorをインストールした後、デフォルトのユーザー名とパスワードを使用して、アプリ管理者（管理者）としてログインする必要があります。</block>
+  <block id="4e4712cd21c2a03063a755ec11a55d4b" category="section-title">NetApp Data Migratorにログインします</block>
+  <block id="79ead709a7d2a7a52f8890bc2ccbd4de" category="paragraph">NetApp Data Migratorにログインし、ログイン認証情報を変更して最初のプロジェクトを作成します。</block>
+  <block id="3fc11e04b07d8e866f2add31278093d2" category="list-text">ウェブブラウザを開いて、次の場所にアクセスしてください。NetApp Data Migrator：</block>
+  <block id="3fdcf5257adfc8dc72531d88d87c137f" category="paragraph"><block ref="8424895e08f1a08bf32a5ebd95eb9b25" prefix="" category="inline-code"></block></block>
+  <block id="6d5531ea9180071396710683fda13899" category="list-text">*Welcome* ページで、 *Username/Email* にデフォルトのユーザー名を入力します。</block>
+  <block id="329c0bba0a702627545256b34f866dae" category="list-text">*Password* にデフォルトのパスワードを入力します。</block>
+  <block id="c73579d39b5f5df8c4a2d6a8604926e6" category="list-text">*ログイン*を選択します。</block>
+  <block id="1faff00a18996a3019ce89a226bc5839" category="paragraph">*Reset Password* ページが開きます。</block>
+  <block id="4bca89a1f516cc233ef01f0d0beba886" category="list-text">以下のセキュリティ要件を満たす新しいパスワードを入力してください：</block>
+  <block id="9c5d553ad697089d0c2996bbc3a55765" category="list-text">8文字以上を含む</block>
+  <block id="ee7df51a7f3a94f61fc6c94b6fe82f66" category="list-text">少なくとも1つの大文字が含まれています</block>
+  <block id="4033d9d6a973cbb2eeee793c2526040f" category="list-text">少なくとも1つの小文字が含まれています</block>
+  <block id="74374e5ff978c98b8089211e9d1e2b05" category="list-text">少なくとも1つの数字が含まれています</block>
+  <block id="c29be0b7ea49d6d9d0b6bcccb58eaf76" category="list-text">少なくとも1つの特殊文字が含まれています</block>
+  <block id="a6e4856c624ae244e6c8abd1550d7872" category="list-text">*Reset Password*を選択します。*Your Details*ページが開きます。</block>
+  <block id="65440c4a393217bbcbac2a08da44ada3" category="list-text">*名*、*姓*、*メールアドレス*を入力してください。</block>
+  <block id="8ae3a65ab5dbbaec436dff36af47c72f" category="list-text">*続行*を選択します。*Create a New Project*ページが開きます。</block>
+  <block id="a7769139ddefa30ec753d34c7dcf1530" category="list-text">*Create Project*を選択し、次の詳細を入力します：</block>
+  <block id="e588eec0749c107e3a35a2239ab97ab6" category="list-text">*Project Name*：プロジェクトを説明する名前を入力してください。</block>
+  <block id="5bd649e944ca70a8104746e5471b5344" category="list-text">*Project Description（任意）*：プロジェクトに関する詳細情報を追加で提供できます。</block>
+  <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">*Create*を選択します。</block>
+  <block id="7925494af01d80aae3e2f3b865e89284" category="paragraph">新しいプロジェクトは、NetApp Data Migrator コントロールプレーンの上部の通知バーに表示されます。</block>
+  <block id="2a7d5edd6c91ee2c533266ad7edd9e99" category="section-title">NetApp Data Migrator からログアウトします</block>
+  <block id="703289ac8a82d2e93f145b9913fe5960" category="paragraph">NetApp Data Migratorからログアウトした後、次回ログイン時には新しく作成した認証情報（メールアドレスとパスワード）を使用する必要があります。</block>
+  <block id="2b63a14e00dfaa13460d382f1dae6d76" category="list-text">*User*アイコン（*Settings*の横）を選択します。</block>
+  <block id="6d01d818bda218e1f5383a41fcaef8a4" category="list-text">*ログアウト*を選択します。*ようこそ*ページが開きます。</block>
+  <block id="5a02a55144e98574da051358293abae7" category="inline-xref">ログイン済み</block>
+  <block id="69bae6def768dd89f908c38a763d6a2a" category="list-text">*Email*と*Password*には、<block ref="936cc0ab9f7b6af145da805d7de86517" category="inline-xref-macro-rx"></block>時に登録したメールアドレスとパスワードを入力します。</block>
+  <block id="87857f52bd96407fa85a6f1ba301966d" category="inline-link-macro">NetApp Data Migratorを使用</block>
+  <block id="dd30e7d75cc22a941a3c49fb80cec333" category="paragraph">NetApp Data Migrator の設定について学習したら、<block ref="ab29639a271409fa761d8431a246879d" category="inline-link-macro-rx"></block>できます。</block>
+  <block id="e174dd43d02d3758479a35ae78156ebf" category="summary">NetApp Data Migratorを設定して、SMTPメールサーバーを設定することで、プロジェクトのステータス変更に関するリアルタイムメールアラートを送信します。</block>
+  <block id="1a031c746d9668df5197eb3a49217dc3" category="doc">NetApp Data Migratorのリアルタイム通知を設定</block>
+  <block id="fa6b8e03caf292beef06bd1e70db654b" category="paragraph">NetApp Data Migratorを設定して、プロジェクトのステータス変更に関するリアルタイムアラートをメールで受信できます。</block>
+  <block id="3a5d711b26ecaceded81d81f5f55bdf6" category="paragraph">*App Admin* ユーザーとしてログインしていることを確認してください。SMTP Eメールサーバーの詳細を設定するには、このユーザーレベルが必要です。</block>
+  <block id="a9a616da981db88decc636038dffd789" category="list-text">ナビゲーションバーで*設定*を選択します。</block>
+  <block id="0d3e50236390c45edcb134d1e70495fc" category="list-text">*SMTP*タブを選択し、次の表に示すフィールドに入力します。</block>
+  <block id="6f16a5f8ff5d75ab84c018adacdfcbb7" category="cell">フィールド</block>
+  <block id="5b8c99dad1893a85076709b2d3c2d2d0" category="cell">IP アドレス</block>
+  <block id="c6bc689d6f8659853400bfdf8bb5815e" category="paragraph">SMTPサーバアドレス</block>
+  <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">ポート</block>
+  <block id="824c1fa95c0a8bdccaa8d674c9297a46" category="paragraph">SMTP ポート</block>
+  <block id="f6039d44b29456b20f8f373155ae4973" category="cell">ユーザ名</block>
+  <block id="bd5dd02af0fecf457250c2306554fd75" category="paragraph">サーバー認証ユーザー名</block>
+  <block id="dc647eb65e6711e155375218212b3964" category="cell">パスワード</block>
+  <block id="1f11c34b0cb70fd75dd51cf580c1d760" category="paragraph">サーバー認証パスワード</block>
+  <block id="4ca679a383343ab3d4ca1cd7c91b43f7" category="cell">メールから</block>
+  <block id="e3ff2cd6c1009c2f5c182b8f7d0a879f" category="paragraph">すべての通知の送信元アドレス</block>
+  <block id="879de5fd02e10c3b90201a2d9c9d8a63" category="cell">メールで送信</block>
+  <block id="fa54b1fb674193fb45e642021bea6eea" category="paragraph">アラートの受信者アドレス</block>
+  <block id="8d42a83580debfe7ef1513ad0211c385" category="admonition">SMTPを設定した後、SMTP設定を編集する際には、ユーザーはパスワードを再入力する必要があります。</block>
+  <block id="f0d42477027388df0e6f14bb5386d338" category="summary">コントロールプレーン仮想マシン（VM）と、NetApp Data MigratorにアクセスするためのLinuxおよびWindowsワーカーVMを作成します。</block>
+  <block id="bfe4a94c6fb8394475bdc0c5cf518a5b" category="doc">コントロールプレーンとワーカーVMを作成してNetApp Data Migratorにアクセスします</block>
+  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link-macro">NetAppサポート サイト</block>
+  <block id="4a01e4c225ea2f8676dc37b3e618f358" category="paragraph">SMB移行のみの場合、Windows Worker Installerを<block ref="79a5efacdd8155d1c0d2f7284cc3f087" category="inline-link-macro-rx"></block>からダウンロードしてください。</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">タスク概要</block>
+  <block id="c657e93e7fbad14bf1d06ea3c4bd51b0" category="paragraph">AWS、Azure、またはGoogle Cloudサービス、あるいはOVAテンプレートを使用してデプロイしたイメージを使用して、コントロールプレーンVMとLinuxワーカーVMを作成します。WindowsワーカーVMは、Windows Worker Installerを使用して作成します。LinuxワーカーVMはNFS移行をサポートし、WindowsワーカーVMはSMB移行をサポートします。必要に応じて、複数のワーカーVMを作成できます。</block>
+  <block id="3d0b39987fd5c9b4656db2fcddd0787d" category="list-text">デプロイ済みのコントロールプレーンイメージを使用して、以下の推奨構成でコントロールプレーンVMを作成します：</block>
+  <block id="c65ddce3c65e864dcd4a5e3efc91388c" category="cell">推奨設定</block>
+  <block id="17126aef3e415713552604218f448967" category="cell">VM 構成</block>
+  <block id="2abe83fe30f387e731f1d55a40079fc7" category="list-text">画像：コントロールプレーン用のカスタムインポート画像</block>
+  <block id="429358998441afe97c4c69febb718229" category="list-text">ネットワークインターフェースカードの種類：gVNIC</block>
+  <block id="ca2a317a8a02e6eb7778a69821932f85" category="list-text">サイズ：8 vCPU、64 GB RAM</block>
+  <block id="dc5a62a67a863dd167b6eb6968f84d86" category="list-text">ストレージ：200 GiB</block>
+  <block id="d3bb1b691a86953ed189d1934971df50" category="paragraph">ストレージ計画においては、100万ファイルあたり約1.1GBのディスク容量を割り当てるべきです。必要なディスク容量の合計は、予想されるファイル数（百万単位）に1.1を掛けることで概算できます。例えば、約500万個のファイルがあると想定した場合、ファイルメタデータに必要なディスク容量は5 × 1.1 GB = 5.5 GBと推定されます。</block>
+  <block id="8f92f4faf9313e148d5e94928e5b4284" category="paragraph">さらに、以下のストレージを割り当てる必要があります：</block>
+  <block id="76d1cafd7382e933616ec9fd2d168972" category="list-text">Docker イメージ、オペレーティングシステムのストレージ、その他のシステムレベルのコンポーネント用にさらに 50 GB</block>
+  <block id="839e84f24852431ceb092e5f0057cfe0" category="list-text">将来の成長と運用上のオーバーヘッドに対応するための追加のバッファスペースをプロビジョニングする</block>
+  <block id="c1b47471a575ac0bf20392ca17ecd880" category="cell">ハイパースケーラー</block>
+  <block id="23d16bb5d0d5d99dd45983a3744fd24c" category="list-text">AWS：r7i.2xlargeインスタンス</block>
+  <block id="8a2ba98c67a5ef87934221f46c888255" category="list-text">Azure VM サイズ：Standard_E8ds_v5</block>
+  <block id="b8ffe263f5c16cad1d5fd16a4a7e096a" category="list-text">Google Cloud マシンタイプ：c3-highmem-8</block>
+  <block id="cc15b875f2d3d23a7f90fcb82955dc49" category="list-text">デプロイ済みのLinuxワーカーイメージを使用して、NFS移行をサポートするLinuxワーカーVMを作成し、以下の推奨構成を適用します：</block>
+  <block id="4e907780db7852be1cafea81d4bca8f5" category="list-text">画像：Linuxワーカー用にカスタムインポートされた画像</block>
+  <block id="76c11c127079bbc1923f9933dd32f80f" category="list-text">サイズ：4 vCPU、16 GB RAM</block>
+  <block id="0bf601825979e6cf394e4e7181583c6f" category="list-text">ストレージ：100 GB</block>
+  <block id="ba6d738a46786dd99e8ec9273c11a205" category="list-text">AWS：r7i.2xlarge</block>
+  <block id="4b5539261d79a205a59aed581fc4867a" category="list-text">Windows Worker Installerを使用して、SMB移行をサポートするWindowsワーカーVMを作成します：</block>
+  <block id="0c039100d1f05dc36d6a229715b6e704" category="list-text">以下の推奨構成設定でWindows VMを作成します。</block>
+  <block id="63a695f43c2a6265182deb016291c2bc" category="list-text">イメージ: Windows Server 2022 Base</block>
+  <block id="73fb4065cbd0c9f51b1d2d5691a1b978" category="list-text">アーキテクチャ：64ビット</block>
+  <block id="d925543b6d03e10596af4b2fd60d6f08" category="list-text">サイズ：16 vCPU、64 GB RAM</block>
+  <block id="614ede1f3e88dda36a8c2a9116ac030c" category="list-text">リモートデスクトッププロトコル（RDP）（3389）が開いていることを確認してください</block>
+  <block id="51becc6ceebabbe8d6c1294b0dee6fa7" category="list-text">RDPを使用してリモート作業セッションを作成します。</block>
+  <block id="3de40160643c4264dfdb435901f88134" category="inline-link-macro">RDP 接続</block>
+  <block id="04e35b02091c127ce30a041090d5ae10" category="paragraph"><block ref="413636dc63fc70d1de2995e50bbc28db" category="inline-link-macro-rx"></block>について学びます。</block>
+  <block id="c8ec5de526848edba89b4cd247a7c82f" category="list-text">コントロールプレーンVM上でWindows Worker Installerをコピーして実行します。</block>
+  <block id="a9058b2b8149aa6459c22839b8f48e7d" category="paragraph">コントロールプレーンとワーカーVMの作成方法を学んだ後、以下のいずれかのオプションを選択できます：</block>
+  <block id="a729f07fe3c69abdf2c50ebfa113d507" category="inline-link-macro">コントロールプレーンVMを検証する</block>
+  <block id="15f42688d57360bf1f9db0b9f31ac5cb" category="list-text">必要に応じて、<block ref="38876e4285448dda0ef37899ea72b3f7" category="inline-link-macro-rx"></block></block>
+  <block id="359f010480b6cb0e4541e04bb0fcc16b" category="inline-link-macro">NetApp Data Migrator UI へのアクセスとコントロールプレーンおよびワーカーへの接続</block>
+  <block id="ca6ab599cc2e4b0485c935f29da44c3b" category="list-text"><block ref="ca6ab599cc2e4b0485c935f29da44c3b" category="inline-link-macro-rx"></block></block>
+  <block id="a70f927e90b92e5863f95f3d77a75c40" category="summary">この決定マトリックスを使用して、データ移行シナリオにNetApp Data MigratorまたはSnapMirrorのどちらを使用するかを判断します。</block>
+  <block id="8e92e15e5d350cd28fb679db44bc77d8" category="doc">NetApp Data Migrator を使用するかどうかを決定する</block>
+  <block id="37b72dc4b7827b60200f9714aa7bfaf9" category="paragraph">意思決定マトリックスを使用して、ONTAP オンプレミスストレージシステムからの NFS および SMB データ移行操作にNetApp Data Migrator またはSnapMirrorのどちらを使用するかを判断します。たとえば、ONTAP 9.12.1 を実行している ONTAP オンプレミスソースから Google Cloud NetApp Volumes Flex サービスの宛先に NFS および SMB ファイルを移行する場合は、NetApp Data Migrator を使用する必要があります。</block>
+  <block id="c14c876ded3fe2163d3a5d0d31bc0acd" category="cell">オンプレミスまたはサードパーティのストレージシステムソース</block>
+  <block id="4d82a1ec1af02725042c8c785564ee7a" category="cell">Amazon FSx for NetApp ONTAP</block>
+  <block id="ec5be37dca378e7be66d606e491d27e5" category="cell">Azure NetApp Files ハードウェア</block>
+  <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="cell">Cloud Volumes ONTAP</block>
+  <block id="eaae701c3efffbff7da15565f5a664f0" category="cell">Google Cloud NetApp Volumes ハードウェア</block>
+  <block id="13b13feeb79c410e7ea4bc459d2d8402" category="cell">Google Cloud NetApp Volumes Flex</block>
+  <block id="bc8ed816d898a820d24a579fced737a5" category="cell">Google Cloud NetApp Volumes Flex（VSAベース）</block>
+  <block id="22f833d182b55e822d49c4653379f9fd" category="cell">ONTAP オンプレミス ONTAP 9.10.1 以降</block>
+  <block id="794cb725c5631ad99b5b7c000307f0df" category="cell">SnapMirror</block>
+  <block id="69d3f0557e159c698c32cd983f1ca43e" category="cell">NetApp Data Migrator</block>
+  <block id="4e1d49925714fc3fcf8ddb989185740d" category="cell">ONTAP 9.9.1 以前のオンプレミス ONTAP の場合</block>
+  <block id="06930da74633647dc9ffd97e66c59fdf" category="cell">非NetAppストレージシステムとアレイ</block>
+  <block id="c6eda4849238a13e10ad30b61ba38e0c" category="cell">Cloud Volumes ONTAP ONTAP 9.10.1以降</block>
+  <block id="1e9e2d61cf256f6b3c097649a62e0fba" category="cell">Cloud Volumes ONTAP ONTAP 9.9.1以前の場合</block>
+  <block id="e681a3b45989b468533c4b90ee960bf9" category="cell">該当なし</block>
+  <block id="54feccc54fd794221a8e7c7fc4ed0916" category="cell">権限なしでデータを移行する</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="paragraph-title">関連情報</block>
+  <block id="d384359ca03c8d46191c719c57744679" category="inline-link-macro">SnapMirrorボリューム レプリケーション</block>
+  <block id="0e974cc21b70af7eb7830a9dc59aa564" category="paragraph"><block ref="26620ccf6b7fdf51f477f8c8c903c95c" category="inline-link-macro-rx"></block>について学ぶ</block>
+  <block id="bb22576f9b122fdf9d78825d5814f73f" category="summary">NetApp Data MigratorのコントロールプレーンとワーカーVMのインストールについて説明します。</block>
+  <block id="021d971a688b59f55f1e01248ea81da6" category="doc">NetApp Data MigratorのコントロールプレーンとLinuxワーカーVMをデプロイします</block>
+  <block id="9866e84bbeb7aaf31c785c41e852e87f" category="paragraph">AWS、Azure、Google Cloud サービス、または Open Virtual Appliance（OVA）テンプレートを使用して、NetApp Data Migrator のコントロールプレーン仮想マシン（VM）と Linux ワーカー VM をデプロイします。Linux ワーカーは NFS データ移行をサポートしています。</block>
+  <block id="9c093f14319e8253b8c9b37290597239" category="inline-link-macro">NetAppサポートサイト</block>
+  <block id="5ff33b6501cd191d29481875867dc11b" category="paragraph"><block ref="a806f88fd14897065f93f1191bd5b7da" category="inline-link-macro-rx"></block>からNetApp Data Migratorイメージをダウンロードします：</block>
+  <block id="9b1b30bfc99bb38f9a91517b1b946684" category="list-text">*NetApp Data Migrator* を選択します。</block>
+  <block id="310e86f89904e335507c6ff6e454da6c" category="list-text">NetApp Data Migrator のダウンロードページの指示に従って、NetApp Data Migrator イメージにアクセスします。</block>
+  <block id="6820fbb635251b795c3ca1ae5b5a14ba" category="paragraph">デプロイオプションに応じて、AWS、Azure、Google Cloud、またはOVAタブを選択します。</block>
+  <block id="4847e034bb0a55fcbc8a3380d6a3ab80" category="open-title">AWS</block>
+  <block id="f05dd74ad3da01a9f48b2d86f4af7eb5" category="paragraph">コントロールプレーンと Linux ワーカーの Amazon Machine Images（AMIs）について、以下の手順を繰り返します。</block>
+  <block id="8a7c82213ea8664f9ac9e76f2d387dad" category="list-text">提供されたAMI IDを使用して、AWSアカウントの*EC2* &gt; *AMIs* &gt; *Private images*にあるAMIを探してください。</block>
+  <block id="4a59adb91b8cbd1ec196267ece562b92" category="list-text">AMI をアカウントにコピーします。</block>
+  <block id="77b81ba333662cf81c9cffca4a89b540" category="list-text">AMI を選択し、次に *Actions* &gt; *Copy AMI* を選択します。</block>
+  <block id="5524123b1f421314e42f44a3e9355071" category="list-text">ターゲットリージョンを選択します（必要な場合）。</block>
+  <block id="df85c361bc998759474a38526dc6cbed" category="list-text">暗号化を有効にし、独自のKMSキーを選択してください。</block>
+  <block id="38afc902108550083704c07a10fbf3c4" category="list-text">AMI ステータスが *Available* と表示されるまで待ちます。</block>
+  <block id="3a580f142203677f1f0bc30898f63f53" category="open-title">Azure</block>
+  <block id="bef67488f76ed50fa89b0374cc4bbe98" category="paragraph">コントロールプレーンと Linux ワーカーの VHD について、以下の手順を繰り返します。</block>
+  <block id="b5a8ceaee1ddcc3af956fdb72e6625ee" category="list-text">VHD ファイルを Azure Blob Storage にコピーします：</block>
+  <block id="27ed0419ae22a65be6278fa30e3f3efa" category="list-text">コピーした VHD ファイルから新しい Azure イメージを作成します：</block>
+  <block id="56ef2682280ac110060b881925a87b80" category="open-title">Google Cloud</block>
+  <block id="b0cd7667098b2a3439c52ba1f9334faa" category="inline-link-macro">Google Cloud ドキュメント</block>
+  <block id="ad4b43323f8ef856a64cd26d51392bb5" category="list-text">イメージのインポート、コントロールプレーンおよびワーカーVMのデプロイに必要なGoogle Cloud APIが有効になっていることを確認してください。詳細については、<block ref="bfa780cd02afd09e0ae67653ce85251d" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="30707131dbf59729287b7e529822cd05" category="list-text">Google Cloud Storage のバケットが存在しない場合は、作成してください。このバケットは、インポート操作中にイメージアーカイブ（.tar.gz）を保存するために使用されます。</block>
+  <block id="d4eb04c604e1ccd8dbab299acccd9e05" category="inline-link-macro">Google Cloud Storage バケットを作成する</block>
+  <block id="7b17753aef730d74210418828eb10056" category="paragraph"><block ref="f7495b27f797bd79dd14cf7bcb9d8554" category="inline-link-macro-rx"></block>方法をご確認ください。</block>
+  <block id="a37144001748f9dc94b0fb22e656531d" category="list-text">IAMの役割と権限を設定します。これにより、VM移行APIが必要なアクセス権限を持ち、VM移行サービスがGoogle Cloud Storageバケットにアクセスしてイメージを作成できることが保証されます。</block>
+  <block id="e068d5e55435058d8d80b438cbfedc6e" category="list-text">サービスアカウントobjectViewerに、宛先のCloud Storageバケットへのアクセス権を割り当てます：</block>
+  <block id="c813aaa1c28525e28180006c1c7b9550" category="paragraph">サービスアカウントには、移行プロセス中に Cloud Storage バケットから VM イメージファイルを読み取るための roles/storage.objectViewer 権限が必要です。</block>
+  <block id="dc36632e376a444fbc3f974928f6c693" category="paragraph">VM Migration APIが有効になっている場合、Google Cloudは次の形式でサービスアカウントを自動的にプロビジョニングします：</block>
+  <block id="1e043504778da0aa7bcf3436ddeef0e1" category="paragraph"><block ref="5df0b69b601a351abdf7499d42281325" prefix="" category="inline-code"></block></block>
+  <block id="68dbee6ed219fb61e0a1f2d7c0052a2b" category="list-text"><block ref="0a9fe612dd3aeeb522b085a5dc743836" prefix="" category="inline-code"></block>は Google Cloud サービスアカウントです</block>
+  <block id="c286a0934a11b3f2ec2cf08dd231cf8e" category="list-text"><block ref="3e3a9b04a7e76246f14a93ea417e1a4b" prefix="" category="inline-code"></block> は VM 移行サービス識別子です</block>
+  <block id="03a45e0dc9af4eead77f83ecbd640307" category="list-text"><block ref="79c170c716ea5fca869039d6a032f2a5" prefix="" category="inline-code"></block> は Google Cloud サービスアカウントの標準ドメインです</block>
+  <block id="f67b849d8be2722918b033f359ddf17d" category="list-text"><block ref="3e3a9b04a7e76246f14a93ea417e1a4b" prefix=" " category="inline-code"></block>サービスで管理者ユーザーになります：</block>
+  <block id="e2e1100dd49a5c31e3fd0e5fd00eba78" category="paragraph">これにより、プロジェクトレベルでVM移行に関する管理権限が付与されます。</block>
+  <block id="89ef81b9ebe20a41b8624f6ea1d76320" category="list-text">画像ファイルを取得してアップロードします。</block>
+  <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link-macro">NetApp サポート サイト</block>
+  <block id="e1389ed07e342a8ff8ddcbc4f7ffe46e" category="list-text">コントロールプレーン<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>イメージファイルとLinuxワーカー<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>イメージファイルを<block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>からダウンロードします。</block>
+  <block id="8ba0f284cbf3541ca311f101e602751d" category="list-text"><block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>ファイルをGoogle Cloud Storageバケットにアップロードします。</block>
+  <block id="b582743a436eee96f743d05a2fa25f16" category="list-text">イメージアーカイブを Google Cloud Storage にアップロードした後、VM Migration Service を使用して、各イメージ（コントロールプレーンと Linux ワーカー）に対して次のコマンドを実行して VM イメージを作成します。</block>
+  <block id="d2b78890db7dd247ce5f92bfd2ec15ae" category="paragraph">このコマンドは、指定されたリージョンに、指定されたアーカイブから新しい Google Cloud Platform VM イメージを作成します。</block>
+  <block id="b3ab2f208f13f715b7d869c9a6ac16c7" category="list-text">画像インポート操作の一覧を表示し、完了を確認します：</block>
+  <block id="586ba478b7ebec665f3df120799b6c2e" category="open-title">OVA</block>
+  <block id="48c7c41b72e1d678923ce3571aa65b2d" category="paragraph-title">手順</block>
+  <block id="58402979642aceba3c4d2702ee126f81" category="paragraph">コントロールプレーン<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block>イメージファイルとLinuxワーカー<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block>イメージファイルを<block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>からダウンロードします。</block>
+  <block id="7c1d6f695f65dc9c5c8094228402786f" category="inline-link-macro">コントロールプレーンとワーカーVMを作成する</block>
+  <block id="9145b83b060f34d93aca59652a91a807" category="paragraph">コントロールプレーンVMとLinuxワーカーVMのデプロイについて学んだ後は、<block ref="47786182e0e58028f57398173f17bd15" category="inline-link-macro-rx"></block>。</block>
+  <block id="bcb2ecbda52b8430d09e5b500c31ebaf" category="summary">NetApp Data Migratorに関する接続エラー、認証失敗、プロトコル問題、権限エラーについてのよくある質問への回答を見つけることができます。</block>
+  <block id="e5ed113c1ded1caf2a576bed0e9ba546" category="doc">NetApp Data Migrator に関するよくある質問</block>
+  <block id="f2b5ba066982e7109b5388b3ff7eb1a4" category="paragraph">NetApp Data Migratorの使用中に問題が発生した場合は、他のユーザーから寄せられたよくある質問（FAQ）を確認することで、問題を迅速に解決できる可能性があります。</block>
+  <block id="de9260bac8b4a0876297b14616b686fc" category="paragraph-title">NT_STATUS_IO_TIMEOUT / NT_STATUS_ACCESS_DENIED / NT_STATUS_HOST_UNREACHABLE / NT_STATUS_UNSUCCESSFUL エラーの原因は何ですか？</block>
+  <block id="e9d95e80289abf082e671d4fa2fb5f2d" category="paragraph">ホスト情報を誤って入力した場合、このエラーが発生する可能性があります。サーバーのホスト名またはIPアドレスが正しいこと、およびサーバーにアクセスできることを確認してください。ネットワーク接続を確認し、必要に応じてDNSが解決できることを確認してください。</block>
+  <block id="e88e5ad7a31e0b44558421733b15b562" category="paragraph-title">「認証情報が間違っています - NT_STATUS_LOGON_FAILURE」エラーが発生する原因は何ですか？</block>
+  <block id="507074f3caa0748776e1f1724a4bd703" category="paragraph">ユーザー名またはパスワードの入力ミスは、認証およびログインの失敗の原因となります。正しいログイン情報を入力したことを確認してください。</block>
+  <block id="dcbd40a236212d4b7c40f2ebd29accf4" category="paragraph-title">NFSまたはSMBのサポートされていないプロトコルバージョンとはどういう意味ですか？</block>
+  <block id="5f9db7e47823b993e74e350b503bc0a7" category="paragraph">これは、ファイル サーバーで使用されているプロトコル バージョンがサポートされていないことを意味します。プロトコル バージョンの互換性を確認し、必要に応じてファイル サーバーをアップグレードまたは設定してください。</block>
+  <block id="04c0fe8373d936550342e615841a94f2" category="paragraph-title">「無効なエクスポートパス」エラーの原因は何ですか？</block>
+  <block id="660c71ce45b8d06eb462fda8e6b726da" category="paragraph">エクスポートパスが正しく入力され、サーバー上に存在することを確認してください。</block>
+  <block id="2d3cf36868e8ecba40d8329def6db3b3" category="paragraph-title">「無効な作業ディレクトリ」エラーの原因は何ですか？</block>
+  <block id="cbb858a114f3445ffa109f7630f3128c" category="paragraph">選択したエクスポートパスに正しい作業ディレクトリを入力したことを確認してください。</block>
+  <block id="d3795f5dcf68afb12396dfb622c6c2f9" category="paragraph-title">作業ディレクトリで「書き込み権限」エラーが発生するのはなぜですか？</block>
+  <block id="d80ce1c87712e8ebb10558acf165c002" category="paragraph">このエラーは、正しいエクスポートパスと作業ディレクトリが指定されているにもかかわらず、必要な書き込み権限が付与されていない場合に発生します。適切な書き込み権限がない場合、ファイルサーバーの事前チェックが失敗し、ユーザーはジョブを実行できなくなります。エラーが発生しているユーザーに、必要な書き込み権限があることを確認してください。</block>
+  <block id="e5f0109a3dde59ac6cf199ab61c19ca6" category="summary">NetApp Data Migrator サポートバンドルを生成してダウンロードします。このバンドルには、トラブルシューティング用の診断ログ、エラーレポート、および構成データが含まれています。</block>
+  <block id="8f1ffc521357732dac238b9425def2a4" category="doc">NetApp Data Migrator サポートバンドルを生成する</block>
+  <block id="0a42ec79a244c6ee75a271fa0c580a0e" category="paragraph">NetApp Data Migratorを使用すると、発生した問題のトラブルシューティングに役立つサポートバンドルを生成できます。このバンドルには、ログファイル、エラーレポート、構成データなどの診断情報が含まれています。</block>
+  <block id="524e19d4432374f072a17171bd0ca65a" category="list-text">ナビゲーション バーで * ヘルプ * を選択し、次にサポート バンドル オプションを選択します。</block>
+  <block id="03a6f1336ad934049840287e05f10276" category="list-text">*Date*を選択します。サポートバンドルに含める日付範囲を入力します。</block>
+  <block id="33948633d6071c4d0484f351943a6270" category="list-text">*Other Metrics*を選択します。サポートバンドルに含める他のメトリックを入力します。</block>
+  <block id="3bed06e0ce3fbaf775b37b3da5d9e2e9" category="list-text">*Generate Support Bundle* を選択します。バンドルの準備ができたら、 *Download Report* がアクティブになります。</block>
+  <block id="469a7bf2f3568f3b68a254686e5b6814" category="list-text">*Download Report* を選択します。</block>
+  <block id="f62d71a1ded699b7fb0c38f8ce0af42c" category="summary">NetApp Data Migrator の既知の問題と回避策を確認してください。</block>
+  <block id="62916486516b8dbc26f0bb701ab57521" category="doc">NetApp Data Migrator の既知の問題</block>
+  <block id="c1503592c3e849fb2d907f73e4d1afab" category="paragraph">既知の問題では、この製品のリリース版を正常に使用できない可能性がある問題点を指摘しています。これらの既知の問題点をよく読んでください。</block>
+  <block id="254f642527b45bc260048e30704edb39" category="section-title">構成</block>
+  <block id="4b37e73c31564685029fce3f1a4738be" category="section-title">SID マッピング使用時のアクセス権限の不一致</block>
+  <block id="6c70e3a7104c035a65c1599364b71d51" category="paragraph">NetApp Data Migratorは、SIDマッピングの使用時に<block ref="eb58858952016d39ec11469eac8673b5" prefix=" " category="inline-code"></block>エラーを報告する場合があります。このエラーは、ルートレベルでSIDマッピングが実行されなかったため、ソースシステムとターゲットシステム間でアクセス権限の不一致が発生したことを示しています。</block>
+  <block id="7aebfa1e2291377e040de92d7f7f335f" category="paragraph-title">回避策</block>
+  <block id="c7986c712421d8df849726dce73cd527" category="paragraph">次の2つのシナリオに示すように、SIDソースとターゲットのCSVマッピングを提供してください：</block>
+  <block id="d42e8fbcf79f7de1303918aafa7d9fa7" category="open-title">シナリオ1</block>
+  <block id="c897209a556eb1f19c2b5b80b1c05813" category="paragraph">次の例に示すように、ソース Active Directory から削除されたユーザーまたはグループの SID を CSV マッピング シートに入力します：</block>
+  <block id="dc653ba9bdc8b868470860cba81bbaee" category="cell">sid_source</block>
+  <block id="f7a4e3e3ddae7d9c5ab63f1bbeb306f8" category="cell">sid_target</block>
+  <block id="ecb0cb0505beead739f4fabe35a2e606" category="cell">S-1-5-21-2444020195-1862089444-1769087368-1000</block>
+  <block id="c02cbf8ceed03b1004d2cc4c5cd6075b" category="paragraph">S-1-5-21-3481156262-2863848796-4292454742-512</block>
+  <block id="3d2b891e87f58587dcf56e520915afef" category="open-title">シナリオ2</block>
+  <block id="a4184dbffce276225dbcafdccdd7aa1c" category="paragraph">Active Directory のアクティブなユーザーまたはグループについては、CSV マッピングシートにユーザー名またはグループ名をすべて小文字で入力してください。次の例に示すように、ドメインプレフィックス（domain\username）を含めてください：</block>
+  <block id="dd327b583130801a32a1b129bff3e4d0" category="cell">rootdomain\user1</block>
+  <block id="6c04b4bbf59f5066acee4e6ed09c5dd6" category="paragraph">rootdomain\user2</block>
+  <block id="6ea0a168e5d3bbf94b8d8fe5cfb247b4" category="section-title">同一階層ディレクトリの一括移行に関する制限</block>
+  <block id="20c3b97b71c3684f352d558a861b21d2" category="paragraph">一括移行機能を使用する場合、ソースディレクトリと宛先ディレクトリの階層構造において同じレベルにあるディレクトリに対して、複数の移行ジョブをまとめて作成することはできません。例えば、ソースと宛先で同じ共有操作を行う際に、同じ共有フォルダ内にある兄弟フォルダなどです。このようなディレクトリを単一の一括移行設定に含めようとすると、ジョブの作成が失敗します。</block>
+  <block id="a2c333272f46004f3ef1cfc8252173dd" category="paragraph">同じ階層にあるディレクトリについては、まとめて追加するのではなく、1つずつ移行ジョブを作成してください。</block>
+  <block id="cc8e07243d878faa42f02f7109b06bb7" category="section-title">ディレクトリレベルの移行で継承された権限のスタンプ</block>
+  <block id="e4269a3a8e42488cdd191d6d6cf2d67d" category="paragraph">ディレクトリレベルの移行では、選択したルートディレクトリの継承されたアクセス許可は、移行先には反映されません。NetApp Data Migrator はルートディレクトリに対して継承されたアクセス許可を適用しないため、継承に依存する子ディレクトリやファイルも、継承されたアクセス許可を受け取りません。</block>
+  <block id="1729636cbc1eab5530748517eadd4934" category="paragraph">この問題は、ルートディレクトリから継承されたパーミッションの伝播にのみ影響します。NetApp Data Migrator は、移行中にファイルやディレクトリに直接設定された明示的なアクセス許可（継承されないアクセス許可）を正しく適用します。</block>
+  <block id="56da33b90db856267177acb3019846bc" category="paragraph">移行が完了したら、移行先のルートディレクトリで、継承されたアクセス許可を手動で再適用またはリセットしてください。これにより、継承された適切なアクセス許可がすべての子ディレクトリとファイルに伝播されます。</block>
+  <block id="daa5744d6f527fe7acd18cfd5528f943" category="section-title">NFSにおけるUIDとGIDマッピングの手動アップロードの検証</block>
+  <block id="a456a3e26016ded4ebb0591163ab2835" category="paragraph">NFS 移行中に、UID および GID マッピング CSV ファイルに、宛先システムに存在しない数値のユーザー ID またはグループ ID が含まれている場合、NetApp Data Migrator は、これらの値をそのまま適用（記録）します。NetApp Data Migrator は、指定された UID または GID が移行先に存在するかどうかを検証せず、UI にエラーや警告を報告しません。これにより、所有権が誤っている状態でファイル移行が行われる可能性があります。正しい UID と GID のマッピングを指定する必要があります。</block>
+  <block id="2c94902f5356a0ce8b41f5916d00c1b4" category="paragraph">移行を開始する前に、マッピングCSVで指定されているすべてのUIDおよびGIDの値が、移行先システム上の有効な既存のユーザーおよびグループに対応していることを確認してください。移行中にNetApp Data Migratorが誤った所有権を適用しないように、移行先でユーザーとグループの存在を手動で確認してください。</block>
+  <block id="bf0b2c984c4d54786aecad82bf097945" category="section-title">移行の事前チェックで、誤った容量不足の警告が表示される</block>
+  <block id="54d6aecd02acff9afca2814e66b08be2" category="paragraph">移行の事前チェック中に、移行先の空き容量が十分であっても、次のような警告が表示される場合があります：</block>
+  <block id="515dbddec69ff95926b82bbb6c1645d4" category="paragraph">これは、検出ステップをスキップし、NetApp Data Migrator が実際のデータセット サイズではなくブロック デバイス全体のサイズを読み取る汎用コマンドを使用する場合に発生する可能性があります。</block>
+  <block id="32b4201214ec3341bfbfb21a5c166bc3" category="paragraph">移行を実行する前に、検出を実行してください。これにより、ディスク使用状況情報が事前チェック操作で利用可能であることが保証されます。それでも警告が表示される場合：</block>
+  <block id="f26640a35d40fda1bb53a833683f920d" category="list-text">検出が完了したことを確認します。</block>
+  <block id="c31db1ba1e7d7f06493231db4bcb5a9e" category="list-text">宛先ボリュームに十分な空き容量があることを手動で確認してください。</block>
+  <block id="80e7b4e8a2f64aba0a835af7bea38382" category="list-text">十分な空き容量があれば、安心してデータ移行を進めることができます。</block>
+  <block id="c5562ce2e22a86c247849904ecef3dc8" category="section-title">レポート</block>
+  <block id="657d83655ccf03c78f0b1e1da7e5e1de" category="section-title">ExcelでCOCレポートファイルに誤った権限が表示される</block>
+  <block id="8a4bf032b3bc48536ab98ef05266b337" category="paragraph">Microsoft ExcelでChain of Custody（CoC）レポートのCSVファイルを開くと、ファイルまたはフォルダーのアクセス許可が実際の値ではなく、#NAME?（例：-rwxrwxrwx）と表示される場合があります。</block>
+  <block id="568b061903521b9a60de817b45d28672" category="paragraph">これは、Excelが特定の権限文字列（「-」または「=」で始まるもの）を誤って数式として扱い、表示エラーを引き起こすために発生します。CSVファイル自体は正しく、これは表示上の問題にすぎません。</block>
+  <block id="8662727eb6c935b631672de39ba6b9bd" category="paragraph">ファイルとフォルダの正しいアクセス許可を確認するには、以下のいずれかのアプリケーションを使用してCSVファイルを開いてください：</block>
+  <block id="151e01f3003c3e664c667b52d14e68ba" category="list-text">Google Sheets</block>
+  <block id="9bd4720204865dac67eacee4e442252a" category="list-text">Apple Numbers</block>
+  <block id="f050748415c203054a93560cccc808d1" category="list-text">オンライン CSV ビューア</block>
+  <block id="a13a188adc0eaf6d51830b29451165af" category="list-text">テキストエディタ（Notepad++など）</block>
+  <block id="54db985f913144c787158f7add91748b" category="section-title">ネットワークの問題により一括検出ジョブが失敗した場合、エラーメッセージは表示されません。</block>
+  <block id="6c9d39afa306ace9174ff84fe9b247ab" category="paragraph">一括検出ジョブ中にホストまたは宛先サーバーがダウンした場合、NetApp Data Migratorはエラーメッセージを表示しない場合があります。これは、ジョブがまだ正常に実行されているという印象を与える可能性があります。</block>
+  <block id="47d7d58d9ad56ca23c4efd68abab5840" category="paragraph">検出ジョブは30秒ごとに更新されます。ファイル数、ディレクトリ数、またはデータサイズが更新されない場合は、ネットワークの問題が発生している可能性があります。</block>
+  <block id="2eeab39f4c8bccb8799b59448abd4e67" category="list-text">ネットワーク接続を確認してください：</block>
+  <block id="763b55d6b57ada5f191dbe1d453fb4e9" category="list-text">ワーカーVMのターミナルを開きます。</block>
+  <block id="0b1ff5526b3ce57f6cdef5a2ca187021" category="list-text">宛先サーバーのIPアドレスにpingを実行します。</block>
+  <block id="b4498002ad3a5cc65873420897a3d927" category="paragraph">応答がない場合、宛先に到達できない可能性があります。</block>
+  <block id="96c062181b6272cc19b038c0dc348ebc" category="list-text">ネットワークインターフェイスを復元します：</block>
+  <block id="00c218cc4fa765576eb8711709c2be7f" category="list-text">SSH を使用して宛先サーバーに接続します：</block>
+  <block id="d1cf99a451d22528426c7b9174fe3ec6" category="list-text">インターフェース名を確認します。例：eth0：</block>
+  <block id="ea6d56b631ec1e7c86f702d930d13f3f" category="list-text">ネットワークインターフェイスをオンラインに戻します：</block>
+  <block id="1022113d018618f6df153a81c5431b02" category="list-text">必要に応じて、ソースサーバーに対しても手順1と手順2を繰り返してください。</block>
+  <block id="6903d6be924852b94479ff4d93e61720" category="section-title">Windows ワーカーでユーザーを切り替えることができません</block>
+  <block id="9bbf5ea7158d30ccde501993f371e149" category="paragraph">Windows ワーカー上で別のユーザーアカウントに切り替えると、既存のネットワーク接続が原因で失敗する可能性があります。これにより、ファイルサーバーへのアクセスが妨げられる可能性があります。</block>
+  <block id="679f1af118183388367e1893446337ef" category="list-text">Windowsワーカー上でコマンドプロンプトを開き、以下のコマンドを実行して、以前の接続を削除します：</block>
+  <block id="fad6c75e7990357649e31d8e64811a5c" category="list-text">新しいユーザーアカウントに切り替えて、ファイルサーバーにアクセスします。</block>
+  <block id="13148717f8faa9037f37d28971dfc219" category="section-title">検証</block>
+  <block id="c65ad157bcef575fc6e77be4bed0671a" category="section-title">ファイル数が一致していても、移行後にファイルサイズが異なる場合があります</block>
+  <block id="41cbb89da6f46df5956f3e4d6f577ea3" category="paragraph">データ移行が完了すると、ファイル総数は正しくなりますが、一部のファイルのサイズは元のソースファイルと異なる場合があります。これは、ネットワークが中断された場合や、ファイル転送中にサーバーに問題が発生した場合に起こり得ます。</block>
+  <block id="9ff17605d2620785a38e650c22cba077" category="list-text">移行COCレポートを確認し、エラーとしてマークされたファイルを特定してください。</block>
+  <block id="06fb3b35613c23293fedc2afbf8be0c2" category="list-text">エラーが解消されるまで、移行処理を再実行してください。</block>
+  <block id="e6b088db24ebe67ed0e9567d309387ec" category="section-title">ワークフロー</block>
+  <block id="a72f133a28599315abd569299ae23a0d" category="section-title">ジョブが20分以上一時停止または停止しました</block>
+  <block id="56956901d261a8f832a2ce939a5ca220" category="paragraph">ネットワーク接続の問題、送信元または送信先のボリュームの安定性の問題、あるいはその両方が見られる場合は、介入が必要になる可能性があります。ジョブは一時停止状態または実行状態になっている可能性があり、目に見える進捗状況は表示されません。これは、送信元または送信先のサービスが停止した場合、あるいはワーカーサービスがダウンした場合に発生する可能性があります。</block>
+  <block id="1bb92114e129b650c205357603175f79" category="list-text">送信元と送信先を確認してください。</block>
+  <block id="51646b02bfd7b304b553b56b9a9c2a00" category="paragraph">オフラインになっている場合は、再起動して接続を復元してください。</block>
+  <block id="e2ca3baa3b53e03140b8ab14e48ff5d3" category="list-text">ワーカーのステータスを確認してください。</block>
+  <block id="67da1988b6c6b0e16b8ba0cc9119efe1" category="paragraph">ワーカーがオフラインの場合は、SSHを使用してVMに接続し、次のコマンドを実行します：</block>
+  <block id="36030760aa6bb566f66def470d0a61ca" category="list-text">VMをリブートします：</block>
+  <block id="cfef28508469868243046a6959dac427" category="paragraph">問題が解決しない場合は、ワーカー VM を再起動してください。</block>
+  <block id="ef26eabbde6e5c4e3bc5c615c7bd61e0" category="section-title">エラーが発生すると、ジョブの実行ステータスが分かりにくくなる</block>
+  <block id="a429bf35127410ec5f4d949442157aa3" category="paragraph">一部の移行ジョブの実行中にエラーが発生し、「完了」または「エラー」のステータスが表示されます。これは、移行ジョブの実行ステータスを解釈する際に混乱を招く可能性があります。</block>
+  <block id="a3c457a84026992324446fd6583431b1" category="paragraph">ステータス定義：</block>
+  <block id="b687695b7aa46cba05850e1055f90ff5" category="list-text">完了：ジョブの実行は終了しましたが、エラーが含まれている可能性があります。</block>
+  <block id="77849c06b19d72db99630258ba5abf53" category="list-text">エラー：重大な問題によりジョブの実行が失敗しました。</block>
+  <block id="b0cbd53c2b4c14cf03d03f8a36437a89" category="paragraph">ジョブ実行結果を確認するには、ジョブ実行の詳細を確認してエラーがないか調べてください。特にステータスが「完了」の場合は注意が必要です。この問題を解決するまでは、ステータスラベルだけに頼らないでください。</block>
+  <block id="6f755f551df327972c1c0586d6dbf96a" category="summary">NetApp Data Migratorの既知の制限事項を理解することで、移行作業をより効率的に行うことができます。</block>
+  <block id="b4d33ef2255bd395c7da4f1389260343" category="doc">NetApp Data Migratorの既知の制限事項</block>
+  <block id="31bcefd7b2e407d65b441fdb99e6c50b" category="paragraph">NFSおよびSMBの移行に関する制限事項、およびこのバージョンでは動作しない、または正常に動作しない機能については、ここに記載されています。これらの制限事項をよくお読みください。</block>
+  <block id="d68b89dd902e3f97ffcbe45b9253727c" category="section-title">NFSおよびSMBの検出と移行に関する制限</block>
+  <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="cell">NFS</block>
+  <block id="b4fdd997b1f33e0d4c6964444c2bf399" category="cell">SMB</block>
+  <block id="86312caa3236e6ae5b9a65f669b1066e" category="cell">同時に実行できるエクスポート パスの数</block>
+  <block id="a87ff679a2f3e71d9181a67b7542122c" category="cell">4</block>
+  <block id="c81e728d9d4c2f636f067f89cc14862c" category="paragraph">2</block>
+  <block id="dcec8cdc08cb7e4cd8fb7a0e71bb395e" category="cell">ディレクトリ内のファイルの最大数</block>
+  <block id="2db45ec60dc8fbc6790cd1635c3631c8" category="cell">1 million</block>
+  <block id="3beef9799317c76997e3617607152343" category="cell">ワーカーのサイジング</block>
+  <block id="6c32c0a50fee2547d04985b9809ab710" category="cell">4コアCPU、16GBメモリ</block>
+  <block id="088a5810a16bb6c24e3341f2c5fa2d73" category="paragraph">16コアCPU、64GBメモリ</block>
+  <block id="6e04bfbe41dd9efa03508c62bfbb5289" category="cell">コントロールプレーンのサイジング</block>
+  <block id="859d60e155b084cc8fec2afaa990d650" category="cell">8コアCPU、64GBメモリ</block>
+  <block id="ea23cc0f55e0aed279872c97a88f0902" category="cell">エクスポートパス内のファイルの最大数</block>
+  <block id="ef1997b6268da0a36b2e83e6ab4d629f" category="cell">20 million</block>
+  <block id="2d8de156a2fe58f4bc72def40f6e3367" category="section-title">機能の制限</block>
+  <block id="b7a95c6586d57b909e3a9973bf21cccf" category="cell">制限</block>
+  <block id="a489743b49b773f34b68d114c2c75fa3" category="cell">アクティブな宛先のサポート</block>
+  <block id="bbb7d6c5745e324c58df02d8fe1afbac" category="paragraph">NetApp Data Migrator は、アクティブな宛先（カットオーバー前にターゲットストレージがアクティブに使用または書き込みされている場合）をサポートしていません。</block>
+  <block id="0a41e976047863adc102a40b90194b6c" category="cell">大文字と小文字を区別するファイル</block>
+  <block id="f32cd4bbb333a061bc4da346b5067769" category="paragraph">SMBの場合、NetApp Data Migratorは、フォルダ内でNFSを使用して作成された大文字小文字が異なるファイルのうち、1つだけを移行し、もう1つのファイルについてはエラーを発生させます。これは、SMBが両方のファイルを受け入れることができないために発生します。NFSを使用して検出を実行すると、これらの大文字小文字を区別するファイルを識別できます。</block>
+  <block id="25ca3b2ba76c0c307a5c119237d049ef" category="cell">ネットワークアクセシビリティ</block>
+  <block id="987372dac6ae2c5a90d8cda91225cbca" category="paragraph">NetAppでは、プライベート ネットワークでNetApp Data Migratorを使用することを推奨します。</block>
+  <block id="2e062cbaa8431af4f347e37d78f2a40a" category="cell">NFSv4 ACL</block>
+  <block id="19eb0024de75d5b1255d7cbefe5f45e5" category="paragraph">NetApp Data MigratorはNFSv4でアクセス制御リスト（ACL）をスタンプするのではなく、宛先に基本的なアクセス許可のみを適用します。この動作はNFSv3と同様です。</block>
+  <block id="32a1afbb4b32dfb91328e638a205fca3" category="cell">プロトコル移行 - タイプ</block>
+  <block id="50469d9b587f6abe43789ac222b4504c" category="paragraph">プロトコル間の移行はサポートされていません。たとえば、NFSからSMBへの移行などです。</block>
+  <block id="5eeb3d7ba5fcdaa21e7fc840025f3d02" category="cell">プロトコル移行 - Version</block>
+  <block id="d2348e46cc37a0c98d5854b788d516b9" category="paragraph">同一プロトコル内でのバージョン間の移行はサポートされていません。たとえば、NFSv3からNFSv4への移行などです。</block>
+  <block id="875b1186e66d74049a4f658d9a66050e" category="cell">SMB 権限</block>
+  <block id="54e433dcdb78732b33d7a50b9396a035" category="paragraph">NetApp Data Migratorは、SMBシステムアクセス制御リスト（SACL）（監査権限）の移行をサポートしていません。</block>
+  <block id="7ed1d6e1f5c8da01556946a0677197c8" category="cell">末尾にスペースを含む SMB ファイル</block>
+  <block id="a84e64c214f3fa59046f95c07160331d" category="paragraph">SMB経由で移行する場合、NetApp Data Migratorは、ファイル名の末尾にスペースが含まれているファイルに対してエラーを発生させます。これは、SMBがそのようなファイル名を許可していないためです。</block>
+  <block id="0eaa207812ba22f6f3daff9796f335e4" category="cell">SMB 特殊ファイル</block>
+  <block id="ac3066f76b85b1cffabc4e124eab7c5f" category="paragraph">NetApp Data Migratorはリダイレクト（シンボリックリンク、ハードリンク、ジャンクションポイント、代替データストリーム（ADS）、ボリュームマウントポイント）を検出し、検出後にそれらを報告します。ADS、スパースファイル、およびSMBリダイレクトの移行はサポートされていません。</block>
+  <block id="2fae32629d4ef4fc6341f1751b405e45" category="cell">セキュリティ</block>
+  <block id="9847e6d484ae3e6e36fdee16b8afe572" category="paragraph">NetApp Data Migratorは、自己署名証明書を使用してWebトラフィックをSSL/TLSで暗号化します。</block>
+  <block id="9538c5cf26eaaf40bf9eec9037fd444b" category="cell">スパース ファイル</block>
+  <block id="a4a70ca82952469ee02c51e291c4944c" category="paragraph">スパースファイルは移行時にフルサイズファイルになります。NetApp Data Migratorはスパース性を保持しません。これらのファイルには追加のストレージが必要です。</block>
+  <block id="04b527818cf9fecc4774f6c7fe7f2fa2" category="cell">システムファイル</block>
+  <block id="c097c0a9c28aba83d32633abec6f06f0" category="paragraph">NetApp Data Migratorは、ソースが所有するシステム生成ファイルを移行することはできません。</block>
+  <block id="214d236fbb08786d43f7158b9d8342db" category="cell">ユーザーインターフェース</block>
+  <block id="ba51a65395cacae515cfcae7a55ef605" category="paragraph">NetApp Data Migratorは、1920 x 1080の画面解像度を使用するGoogle ChromeおよびFirefoxブラウザ向けに最適化されています。モバイルディスプレイはサポートされていません。</block>
+  <block id="0b20f4864ab708844e7bf15ac671f208" category="cell">Windowsワーカーの導入</block>
+  <block id="cbb41e2de478d3e73506229830402c2d" category="paragraph">Windowsワーカーは、宛先と同じルートドメインに属している必要があります。</block>
+  <block id="d153354d6e549f2ce2428ee5e0df75cb" category="summary">NetApp Data Migratorは、エンタープライズグレードのマルチクラウド対応データ移行ソフトウェア アプリケーションで、オンプレミスまたはサードパーティのストレージシステムからNetAppを基盤とするパブリッククラウドストレージサービスへの非構造化ファイルデータの移行を簡素化します。</block>
+  <block id="973a0711d933afa94661190c0a60889c" category="doc">NetApp Data Migratorについて学ぶ</block>
+  <block id="927c9d97c996662556fdb6ba986a768c" category="paragraph">NetApp Data Migratorは、エンタープライズグレードのマルチクラウド対応データ移行ソフトウェア アプリケーションで、オンプレミスまたはサードパーティのストレージシステムからNetAppを基盤とするパブリッククラウドストレージサービスへの非構造化ファイルデータの移行を簡素化します。NetApp Data Migratorは、ユーザーが管理する仮想マシン上で動作する独立したアプリケーションであり、複雑なカスタムスクリプトやばらばらのツールを必要としません。</block>
+  <block id="e1e76fe67d707ea981efa366c519c298" category="paragraph">NetApp Data Migratorを使用すると、既存のストレージ環境を検出し、ファイルの迅速なインベントリを生成し、ソースストレージサーバーからNetAppクラウドストレージサービスへデータを移行するための計画を作成できます。データ移行が開始されると、UIを使用して移行ジョブを監視できます。また、チェックサムを使用してデータ移行操作の検証に役立つChain of Custody（CoC）レポートを生成することもできます。</block>
+  <block id="ecdeca0570624de17bfe89fecf2ba4a8" category="paragraph">NetApp Data MigratorはNFSおよびSMBファイル転送プロトコルをサポートしています。移行中の制御とセキュリティを維持するために、環境内にワーカーノードをデプロイします。ワーカーは並列データ転送を促進し、パフォーマンスと拡張性を向上させます。NetApp Data Migratorには、事前チェックや増分同期などの機能が搭載されており、最小限のダウンタイムでスムーズかつ効率的な移行を実現します。移行プロセスの大部分において、ソースシステムをアクティブな状態に保ち、準備が整った時点で最終的な切り替えを行うことができます。NetApp Data Migratorは、堅牢なログ記録機能とエラー処理機能も備えているため、移行プロセス全体をやり直すことなく、問題のトラブルシューティングと復旧を行うことができます。</block>
+  <block id="e3159b3092b0b21bb84c1cd901f70e91" category="paragraph">NetApp Data Migratorの使用を開始する前に、まず主要な用語を理解しておくと役立ちます。</block>
+  <block id="650717c72d7a99e6505592f83821e4ed" category="list-text">コントロールプレーン</block>
+  <block id="d81c63c3badd6a7dc722b94681ae1cb8" category="list-text">コントロールプレーンを使用すると、移行アクティビティにアクセスできます。コントロールプレーンからは、以下のタスクを実行できます：</block>
+  <block id="8a6b346a09a2b1628c7598534f17a06c" category="list-text">プロジェクト、ユーザー、ジョブ、ファイルサーバーを管理します。</block>
+  <block id="73a27e2a76a1b25cb1ef1dd410206549" category="list-text">ジョブの実行をスケジュールし、利用可能なワーカーにディスパッチします。</block>
+  <block id="090340525208390b7ea4c4a450671720" category="list-text">ジョブの実行を監視し、ログを収集して、ステータスを報告します。</block>
+  <block id="c0cd63f6ba3e8e80020e2a91e356948d" category="list-text">アクセス制御とユーザ権限を適用する。</block>
+  <block id="fd727b180cfda5092d3aa1c2498f35c5" category="list-text">リアルタイム通知用のSMTPメールサーバーを設定します。</block>
+  <block id="4ea2a6c39b10b3e3076f976f58a861d1" category="list-text">カットオーバー</block>
+  <block id="cd40ac72de344011a1bb18a710d44e12" category="list-text">カットオーバージョブは、移行の最終ステップです。ソースシステムとデスティネーションシステム間の最終同期に必要です。カットオーバージョブは、次のアクションを実行します：</block>
+  <block id="1a39c5fc749d14d70869781c34b7e750" category="list-text">選択したパスの進行中の移行ジョブを停止します</block>
+  <block id="51724b17cea9878dcaa14d91edc2c7e1" category="list-text">データの整合性を確保するために最終同期を実行します</block>
+  <block id="f37c08c2a1b66fad6e41b4684e0373ec" category="list-text">検証用の Chain of Custody（CoC）レポートを生成します。</block>
+  <block id="bb2579f63798da141270558a208e917c" category="list-text">移行を完了としてマークするには、お客様の承認が必要です</block>
+  <block id="abfc3a65538a6ec86502b2b498b6b4a6" category="list-text">検出</block>
+  <block id="ae77f53f24e0d7c58f9281e66ef6d07e" category="list-text">Discoverジョブは、ソースまたは宛先のファイルサーバー上のデータをスキャンしてインベントリを作成します。この機能は、ソースまたは宛先ファイルサーバー上の選択したエクスポートパスにあるファイルとディレクトリの詳細を記載したレポートを作成します。これにより、移行を開始する前にデータの範囲と複雑さを把握することができます。Discoverジョブは、以下のアクションを実行します：</block>
+  <block id="b0ae3e473a496b601593b3600db02c79" category="list-text">エクスポートパスの構造と内容を分析します</block>
+  <block id="eac223159fb36915ec9597c50a543152" category="list-text">ファイル名、サイズ、アクセス権限、タイムスタンプなどのメタデータを収集します。</block>
+  <block id="3abf35c596895c8861a7ab7bb148f4d9" category="list-text">計画策定および監査のための詳細なレポートとヒストグラムを生成します。</block>
+  <block id="26bb75685d9cc4fc3ba18a7d475a16ca" category="list-text">エクスポートパス</block>
+  <block id="63fcab2c31b90e7a4458dfdd840cd426" category="list-text">エクスポートパスは、Discover、Migrate、またはCutover操作に含めるデータの場所を表します。エクスポートパスは、あらゆる移行ワークフローにおいてコピーされるデータの基本単位であり、以下の特徴を備えています：</block>
+  <block id="d98e0647aa731019d0842a0808443ea6" category="list-text">プロトコル固有（NFS エクスポートまたは SMB 共有）</block>
+  <block id="72eaa9947ffba75acb9f7deed08a4b5d" category="list-text">アクセシビリティと権限について検証済み</block>
+  <block id="c12f33a027e7d15b52590848b58fc0b6" category="list-text">ジョブ作成（Discovery、Migrate、Cutover）の入力として使用されます。</block>
+  <block id="cf51066f49e517f274b8173cc265c60b" category="list-text">ジョブ</block>
+  <block id="96682415c21866b279c271dfc7afe212" category="list-text">ジョブは、データ移行タスクの論理的な構成要素です。何を実行するか、どこで実行するか、どのように実行するかを指定します。ジョブは再利用でき、スケジュール設定や手動でのトリガーが可能です。</block>
+  <block id="267cce210aba45f9e7f8d181ba9dac87" category="paragraph">ジョブには主に2つのコンポーネントが含まれます：</block>
+  <block id="1bc16d2d6f7b6097c5ec022e06a5b58a" category="list-text">*ジョブ定義*：スキャン、同期、レポートなど、事前に定義された一連の手順。</block>
+  <block id="7fc4183a775e9fc2623c555af09b964b" category="list-text">*ジョブ構成*：ソースパスや宛先パス、除外ルール、スケジューリングなど、ユーザー定義のパラメータ。</block>
+  <block id="40cb748aa11d95182311babc8f68a0ee" category="paragraph">NetApp Data Migratorは、主に3種類のジョブタイプをサポートしています：</block>
+  <block id="d39b3e43b99a57133feb9f0e3d7984ae" category="list-text">検出ジョブ：ソースデータと宛先データのインベントリと分析を行います。</block>
+  <block id="283fcea42629eed5e9a5deb585685d92" category="list-text">移行ジョブ：ソースから宛先へデータを転送します。</block>
+  <block id="87416148f4233e11ec53069e45f952b2" category="list-text">切り替え作業：移行を完了し、移行先のシステムに切り替えます。</block>
+  <block id="ccdbfd57aa071d33ef13df58fbbb05de" category="list-text">ジョブの実行</block>
+  <block id="0ee52cbd8e7ec80300a6b996b252afc1" category="list-text">ジョブ実行とは、ジョブの単一の実行インスタンスのことです。ジョブ実行機能を使用すると、移行タスクの実行状況をリアルタイムで監視、管理、トラブルシューティングできます。ジョブ実行には以下の詳細が含まれます：</block>
+  <block id="99b2bedd2558a3d27f6af1965a24c2d3" category="list-text">固有のタイムスタンプと実行IDを持つ</block>
+  <block id="72d9676ef084c6962713dbd9ff46ec71" category="list-text">Ready、Running、Paused、Stopped、Errored、Blocked、Completedのいずれかの状態になります</block>
+  <block id="b4406e0d94260c53bbb1c2168630f66e" category="list-text">ログ、メトリクス、タスクレベルの詳細を生成します</block>
+  <block id="10b5b21ed1ee90eca305b558caf7d03b" category="list-text">移行</block>
+  <block id="bf8528fc4573b909958a424bcb883904" category="list-text">Migrate ジョブは、データをソースから宛先ファイルサーバーへ、安全かつ効率的に、そして最小限の混乱で移行します。以下のような特徴があります：</block>
+  <block id="f3b478b10567aeb71136b3b052cde6ee" category="list-text">ベースライン移行（初期フルコピー）を実行します</block>
+  <block id="fba346b65875eb6fe2aed32d4427d33f" category="list-text">増分同期（変更に基づく更新）をサポート</block>
+  <block id="aaa16c227304602626cb8c6e9eaef4fd" category="list-text">除外パターン、権限の再マッピング、アクセス時間の保持などのオプションを設定できます。</block>
+  <block id="5f9e38761d5cf254c4837cbc33254c15" category="list-text">権限、容量、接続性の事前チェックが含まれます</block>
+  <block id="9e727fdd3aec8274f46685441900280d" category="list-text">プロジェクト</block>
+  <block id="c3bbcda9a9e6443cf992359a1c2395e1" category="list-text">プロジェクトとは、特定のデータ移行活動に関連するすべてのコンポーネントと活動を含む論理的なワークスペースのことです。これは、NetApp Data Migrator内の最上位の組織単位として機能します。プロジェクトには以下の特徴があります：</block>
+  <block id="ec0f6ad2acc83eafbeb1ecdb12f9dfa2" category="list-text">一意の名前と説明</block>
+  <block id="1f80d699b9a5f2a60107136993a938e7" category="list-text">役割が定義された関連ユーザー（Project Admin、Project Viewer）</block>
+  <block id="d4c048b4e416c3efa72f61aea1c57435" category="list-text">リンクされたファイルサーバ、ジョブ、ワーカー、および設定</block>
+  <block id="1a5942d1cfe9ca5d02626f17f82f7b73" category="paragraph">プロジェクトを活用することで、移行作業を個別に分離できるため、異なるチーム、部門、またはクライアントにまたがる複数の移行を同時に管理しやすくなります。</block>
+  <block id="e308fa902e5ec44079ec002261dba5a5" category="list-text">ストレージサーバー（ファイルサーバー）</block>
+  <block id="27dd42f0cc80271fa54aca0b1ce3fa0d" category="list-text">ストレージ（ファイル）サーバーは、移行ワークフローにおいて重要な構成要素です。移行対象のデータを保存する場所、または移行済みデータの保存先として機能します。</block>
+  <block id="c179c901e73aa8de6751bb79d800c648" category="list-text">NetApp Data Migrator は NFS および SMB ファイルサーバーをサポートしています。</block>
+  <block id="b52d03d507c855b3ee069b4f391c0c35" category="list-text">各ファイルサーバは、以下の詳細で設定されています。</block>
+  <block id="912d3773ff61119391317c91d5d75fd0" category="list-text">名前とサーバータイプ</block>
+  <block id="42539ddb3cc40a1f37029c8c071bb42b" category="list-text">認証クレデンシャル</block>
+  <block id="f6e9b90ee0f13a5ce6fb084244a940ba" category="list-text">移行タスクを実行する関連ワーカー</block>
+  <block id="f9aae5fda8d810a29f12d1e61b4ab25f" category="list-text">ユーザ</block>
+  <block id="712743ded405b3185eedac19629f791f" category="list-text">ユーザーはデータ移行アクティビティを管理します。App Admin ユーザー（管理者）は、他のユーザーにロールを割り当て、アクセスレベルと制御権限を決定します。</block>
+  <block id="877d7366f970216e8e3c2473b327292f" category="paragraph">NetApp Data Migrator は、3 つのユーザーロールをサポートしています：</block>
+  <block id="199cf513bb9c311565990ce4e9db84b6" category="list-text">*App Admin*：他のユーザー、プロジェクト、システム設定を管理できる完全な管理者権限を提供します</block>
+  <block id="3d15851b94e3a8ec2c4060b9bbb68752" category="list-text">*Project Admin*：特定のプロジェクトを管理し、ジョブの設定、作成、監視を行う権限を付与します。</block>
+  <block id="9a4be99bb5663d8e664ea156e39e58d5" category="list-text">*Project Viewer*：プロジェクトの詳細、ジョブステータス、レポートを読み取り専用で表示します。</block>
+  <block id="694dda55d497c6c7a7d25df1dffa732f" category="paragraph">メールアドレスとパスワードで認証を行い、ロールベースアクセス制御（RBAC）によってアクセス権限が管理されます。これにより、機密データおよび業務への安全かつ役割に応じたアクセスが確保されます。NetApp Data MigratorはRBACを使用してアクセス権限を管理し、リソースへのアクセスを保護します。</block>
+  <block id="62efb9ec331e364b96efe68c8b03ca20" category="list-text">ワーカー</block>
+  <block id="7b8ee8e83cbc30b725856b1b704a937e" category="list-text">ワーカーとは、ソースからデスティネーションへのデータのコピーなど、実際のデータ操作を実行する仮想マシンです。</block>
+  <block id="790c2d55485f02ae3e5797fa47b2c1cd" category="list-text">ワーカーは、ディレクトリのスキャン、ファイルのコピー、メタデータの同期などのタスクの実行を担当します。</block>
+  <block id="2408c06092cdd4422aa91e7aa12f428e" category="list-text">ワーカーは分散処理を可能にし、NetApp Data Migratorが大規模なデータセットや複数の環境にわたって効率的に拡張できるようにします。</block>
+  <block id="0c12f5552633e320ca5d9dc75702a615" category="list-text">ワーカーは、データ移行に関する概要統計情報をコントロールプレーンに中継します。</block>
+  <block id="e967df1b4afbc72731b044aad2ad462d" category="list-text">ワーカーをインストールして登録するには、NetApp Data Migratorを使用します。</block>
+  <block id="b301c2b39947d2e05e52525b699c1669" category="list-text">各ワーカーには次の特性があります。</block>
+  <block id="037e6d60574e122c7ed4c6bab4efe2e3" category="list-text">1つ以上のファイルサーバに関連付けられています</block>
+  <block id="937a136871c813f0759a6b0ba2c684fa" category="list-text">CPU、メモリ、ステータス（オンラインまたはオフライン）などのシステムメトリックをコントロールプレーンに報告します</block>
+  <block id="89f91ef6d84571698659ccd06150de6c" category="list-text">コントロール プレーンへのデータ移行に関する概要統計情報をレポートします</block>
+  <block id="415b97a9b0a182511672ae3883302822" category="inline-link-macro">データ移行処理にソフトウェアを使用するかどうかを決定する</block>
+  <block id="38638155b7eb32979bd49efbc4ecd3ea" category="paragraph">NetApp Data Migratorについて学習したら、<block ref="32beaf1b333cdebcd418e0f9b4a6d185" category="inline-link-macro-rx"></block>できます。</block>
+  <block id="362dc8eb929965a4aa87ffed37b3d617" category="doc">NetApp Data Migrator のインストールについて学ぶ</block>
+  <block id="155fa94b7bca3977ba7c200909e43cc8" category="paragraph">NetApp Data Migratorを使用してNFSおよびSMB移行ジョブを実行するには、コントロール プレーンとワーカーをインストールする必要があります。</block>
+  <block id="8c0d588cf4ae3c3963c70ead4a5ca7e3" category="list-text">*コントロール プレーン*：コントロール プレーンは、中央管理および制御レイヤとして機能します。まず、Linux仮想マシン（VM）上にコントロール プレーンをデプロイし、次にワーカーをデプロイします。</block>
+  <block id="c037928a4b33f55ae64d96e1796c0cb1" category="list-text">*ワーカー*：ワーカーとは、実際のデータ移行を実行する仮想マシンです。規模や要件に応じて、複数のワーカーをデプロイできます。ワーカーの種類はプロトコルによって異なります：</block>
+  <block id="dcb958e16173d580dffd4bdeb217206a" category="list-text">LinuxワーカーはNFS移行をサポートします。</block>
+  <block id="d2ac9b54e6beae65495d2457cf8c1f40" category="list-text">Windows ワーカーは SMB 移行をサポートします。</block>
+  <block id="76827502fd8d3d0d06e450c23346942e" category="paragraph">まず、AWS、Azure、またはGoogle Cloudサービスを使用するか、Open Virtual Appliance（OVA）テンプレートを使用して、コントロールプレーン仮想マシン（VM）とLinuxワーカーVMをデプロイします。NetApp Support サイトから、導入に必要なNetApp Data Migrator イメージをダウンロードします。</block>
+  <block id="a2b65d24cfdab17e100dd5d9903bafad" category="paragraph">デプロイ後、NetApp Data MigratorにアクセスするためのコントロールプレーンとワーカーVMを作成します。デプロイ済みのイメージを使用して、コントロールプレーンVMとLinuxワーカーVMを作成します。Windows Worker Installerを使用してWindowsワーカーVMを作成します。これは、NetAppサポートサイトからダウンロードします。</block>
+  <block id="0176a7764147384d95bf0b96717c78d3" category="inline-link-macro">アカウントを登録</block>
+  <block id="35884a7c97792b73e76d939f06c4c52c" category="paragraph">NetApp Data Migrator のインストールについて学習したら、<block ref="d2c5c3692974708954412d809af17919" category="inline-link-macro-rx"></block>できます。</block>
+  <block id="7e56090ee48c15842893dcf89da7a382" category="summary">NetApp Data Migratorの法的通知、著作権、商標、およびオープンソースライセンス情報。</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律上の表示</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法的通知から、著作権情報、商標、特許などを確認できます。</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">著作権</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">商標</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp、NetAppのロゴ、NetAppの商標一覧のページに掲載されているマークは、NetApp, Inc.の商標です。その他の会社名と製品名は、それを所有する各社の商標である場合があります。</block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">特許</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">現在NetAppが所有する特許の一覧は以下のページから閲覧できます。</block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">プライバシー ポリシー</block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">オープンソース</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知ファイルは、NetAppソフトウェアで使用されるサードパーティの著作権とライセンスに関する情報を提供します。</block>
+  <block id="e3eb04459e5968e61173ba53f95bb097" category="inline-link-macro">NetApp Data Migrator に関する通知</block>
+  <block id="85107cda01ac5e8d2ab6e2fb5b79cb6e" category="paragraph"><block ref="85107cda01ac5e8d2ab6e2fb5b79cb6e" category="inline-link-macro-rx"></block></block>
+  <block id="30448d39662748517771a9714d6d41c7" category="summary">NetApp Data Migratorを使用して、NFSまたはSMBプロトコルを使用するファイルサーバーを追加、設定、編集します。</block>
+  <block id="50e1eea5e6dfb404eaad83143adef1b2" category="doc">ファイル サーバの追加と管理</block>
+  <block id="9ab33165725a4ff45da757a30431ab45" category="paragraph">NetApp Data Migratorを使用して、NFSまたはSMBプロトコルを使用するファイルサーバーを追加、設定、編集できます。</block>
+  <block id="c866395ca8d6403ba4c16dcfe1cb5bf7" category="section-title">新しいファイルサーバーを追加する</block>
+  <block id="1440ea134aebbfbeddcad4b896434f11" category="paragraph">新しいNFSまたはSMBファイルサーバーを追加し、ワーカー仮想マシンを設定します。</block>
+  <block id="f6bb4278fd00bda59d9b22730ebc4ac0" category="paragraph">システム構成に応じて、「その他の NAS」または「Dell Isilon」のワークフロー オプションを使用してください。</block>
+  <block id="061f1cdddd0d16713b25b1f6c0e1ca40" category="open-title">NAS：その他</block>
+  <block id="a313328b40722f10ddcf9cd4c26fe3d7" category="list-text">左側のナビゲーションパネルで、* Storage Servers * を選択します。</block>
+  <block id="7dcb33ad4b606d60559d47ef6e33b0a8" category="list-text">*ファイルサーバー* &gt; *+追加* を選択します。</block>
+  <block id="16d5edd9c5ec17c1d90f4e89745270da" category="paragraph">*ファイル サーバー*ページが開き、続いて*サーバーの種類*ページが表示されます。</block>
+  <block id="b51aa62f83aa8410bb7be5af66b90a55" category="list-text">サーバー名を入力し、*サーバータイプ*で*その他のNAS*を選択します。</block>
+  <block id="2f85dfe27ff9af179bfe9dc6153f0207" category="paragraph">* Credentials * ページが開きます。</block>
+  <block id="3a9b543b047a34c149d5d4330d09707d" category="list-text">NFSまたはSMBサーバーの*ホスト名*（またはIPアドレス）を入力します。</block>
+  <block id="2b0cb233806b893646bf5b9b2da12d74" category="list-text">*NFS*ファイルサーバーを使用している場合：</block>
+  <block id="4e8237f0df807eafdaa31107b4e21b6d" category="list-text">NFSファイル共有にアクセスするための*ユーザー名*を入力してください。</block>
+  <block id="e18ef375dcc3ab1a6584eb99050fd3d9" category="list-text">必要に応じて、*パスワード*を入力してください。</block>
+  <block id="6e07454a6f4eb4754b4205930356fc42" category="list-text">NFS の *プロトコル バージョン* を選択します。</block>
+  <block id="2f93d9bc0543dc153ffb8604c6e54367" category="list-text">*Export Paths Retrieval Mechanism* パネルで、*Auto Discover* または *Manual Upload* を選択します：</block>
+  <block id="83e78e8d2dc52fc82da28cb7a6d2f179" category="paragraph">*Auto Discover*はエクスポートパスを自動的に検出します。</block>
+  <block id="fa46aaa4f59f0c110d38ecc0b53002ea" category="inline-xref">エクスポートパスを手動でアップロードする必要があります</block>
+  <block id="c0530e1ad8f41f48d9b18f2380f94003" category="paragraph">*手動アップロード*は、エクスポートパスを手動でアップロード、またはGoogle Cloud NetApp Volumes（GCNV）Flexサービスなど*自動検出*がサポートされていない環境でアップロードします。ファイルサーバーを追加した後、<block ref="1b65c60f8f427559cc3c71263f4d9263" category="inline-xref-macro-rx"></block>。</block>
+  <block id="fb633e9ae6ea78f60185ba5f7673543c" category="list-text">*SMB* ファイル サーバを使用している場合：</block>
+  <block id="a4a98f2a60286dde7e4c629215bdc630" category="list-text">SMB ファイル共有にアクセスするための *ユーザー名* を入力します。</block>
+  <block id="555000d937f00fc7af1616933a58be66" category="list-text">*パスワード* を入力します。</block>
+  <block id="7719f5ebdd80d795ffb088f6f9a96c3f" category="list-text">SMB の*プロトコル バージョン*を選択します。</block>
+  <block id="d3f151c47d8025982b418167de2e4076" category="list-text">*Workers* タブを選択します。</block>
+  <block id="cefc9fa3d55cd2e93cddd06177bff189" category="list-text">*関連付け済み*列で、サーバーに関連付けたい1つ以上のワーカーの横にあるトグルボタンを選択します。</block>
+  <block id="a38a6d1da3fe71902166a2267478d600" category="list-text">*続行*を選択すると、選択した 1 つ以上のワーカーがNetApp Data Migratorへの接続性を持っているかどうかをテストする事前チェック操作が開始されます。</block>
+  <block id="b6fa9602185f08ac7e72f5c937d068e5" category="list-text">事前チェックが完了したら、検出されたエラーをすべて解決してください。（エラーの解決方法の詳細については、ファイルサーバーのよくある質問（FAQ）を参照してください。）</block>
+  <block id="8356febdfd411149082fd9f5fc6c5fb1" category="paragraph">事前チェックがエラーなく完了したら、*Job Config* タブを選択し、*Finish* を選択します。File Server の名前が *File Servers* のリストに表示されます。</block>
+  <block id="eb0355f26f0fcb3a136cdd63c25a8c2b" category="paragraph">ファイル サーバのステータスは、*ファイル サーバ*テーブルの*ステータス*列に表示されます。ステータスのタイプには次のものがあります：</block>
+  <block id="7a04e6e21c09557e46bd39fdb8e2524f" category="list-text">*アクティブ*：エラーはなく、すべての詳細が検証済みです。</block>
+  <block id="4b95ab50254e22736bd44f5fcaaf8e85" category="list-text">*処理中：* サーバーの検証が進行中です。</block>
+  <block id="74b474dda207ef6b31fa094e154cbcbb" category="list-text">*Draft*: ファイルサーバーに関連付けられたワーカーはいません。</block>
+  <block id="6d1ad994439c6c71c5fa295653fd39b4" category="list-text">*エラーが発生しました*：権限に問題があるか、利用可能なパスがないか、エクスポートパスとして / しか利用できません。ファイルサーバー作成時にエクスポートパスとして *Auto Discovery* を選択した場合、これらの問題が発生する可能性があります。</block>
+  <block id="fff4714787fd02da5b8effd425481e60" category="open-title">Dell Isilon</block>
+  <block id="7ede989749b2b83a61ca18e3533f7779" category="list-text">Isilon ファイル サーバの*構成名*を入力します。</block>
+  <block id="5f33dfa03f667c2212c142f035f18f86" category="list-text">* Server Type *ドロップダウンから* Dell Isilon *を選択します。</block>
+  <block id="e26ac623ca109291209c8a8745c8a292" category="paragraph">*Management Console* セクションが開きます：</block>
+  <block id="e62b8ed2a0b779aaa6723a8cfd4a47f3" category="list-text">*管理ホスト*（Isilon管理コンソールのホスト名またはIPアドレス）を入力します。</block>
+  <block id="4a715ac88096cacf3efad7bdeb2ff046" category="list-text">Isilon管理APIにアクセスするための*ユーザー名*を入力してください。</block>
+  <block id="591b019dd8cad5ead810ed727a6f7884" category="list-text">*パスワード* を入力します。</block>
+  <block id="4252ae4fd88320349b3c2c1cd45ce6e2" category="list-text">*続行*を選択して、IsilonクラスタからTLS証明書を取得します。</block>
+  <block id="b3358fb4cc90b8562534214340f1483f" category="list-text">モーダルに表示されている*TLS証明書*の詳細を確認してください：</block>
+  <block id="924932478b247f31fd54eb71772dfa7a" category="list-text">証明書の発行者、有効期限、およびフィンガープリントを確認してください。</block>
+  <block id="42eb74b406abff7f73fe77af1e141e01" category="list-text">証明書を信頼して続行するには、* Accept * を選択します。</block>
+  <block id="199fcebf78b56320fe2257f80ad41c5d" category="list-text">証明書を信頼できない場合は、* Reject * を選択してキャンセルしてください。</block>
+  <block id="49ddb02773da2521aeb35f68bd283ab0" category="list-text">*Zone Credentials* ページが開きます：</block>
+  <block id="a293365e4bf0499540b02cc73618f7ea" category="list-text">検出された利用可能なゾーンの中から、1つ以上の*アクセスゾーン*を選択してください。</block>
+  <block id="b680716c14e7cbf0172e65e23ab2306d" category="list-text">選択したゾーンごとに、プロトコルクレデンシャルを設定します。</block>
+  <block id="3e92e6c57bdcda23ca11d2521e37ddfb" category="list-text">ドロップダウンから* NFS IP アドレス*を選択します。</block>
+  <block id="cc8c648ffadd97f0a67b9603ed15adb1" category="list-text">NFSエクスポートパスにアクセスするための*Username*を入力します。</block>
+  <block id="e975121c3fa61c0861efe13dc728bc76" category="list-text">*SMB IP Address* を入力します。</block>
+  <block id="4529f88bed086ab3546a25cbb64dff56" category="admonition">IsilonクラスタでSmartConnectサービスIP（SSIP）が設定されている場合、IPアドレスのドロップダウンリストからSmartConnectゾーンドメイン名を選択できます。SSIP対応ドメイン名を使用する場合、Isilon SmartConnectインフラストラクチャが接続のロード バランシングを管理し、ストレージ レイヤで解決します。NetApp Data Migratorは、この構成では追加のロード バランシングを実行しません。</block>
+  <block id="e3ca436a78e69a18e95717ec2f400984" category="list-text">*Workers* タブが開きます：</block>
+  <block id="a4914c52fba6dcb7874b1267afb8c90c" category="list-text">各ゾーンとプロトコルの組み合わせごとに、ワーカーを割り当てます：</block>
+  <block id="749a9275aee7219a017a5d75c5d7eb8b" category="paragraph">*関連付け済み*列で、関連付けたい1人以上の作業者の横にあるトグルボタンを選択します。</block>
+  <block id="b3c358ada53be4cdb65195dedf62915e" category="list-text">* Proceed * を選択すると、選択した 1 つ以上のワーカーが NetApp Data Migrator および Isilon ファイル サーバへの接続性を持っているかどうかをテストする事前チェック処理が開始されます。</block>
+  <block id="8f7df24644d794e564d2db58c772b2e5" category="list-text">事前チェックが完了したら、フラグが付けられたエラーをすべて解決してください。</block>
+  <block id="0fe54530ff7b453c5e0bba3e943a89f3" category="paragraph">事前チェックがエラーなく完了すると、ファイルサーバーの一覧にファイルサーバー名が表示されます。表示されるファイルサーバーのドロップダウンには、設定されているゾーンが表示されます。</block>
+  <block id="07cb0967e7293a347fac687a381955a5" category="section-title">エクスポート パスとディレクトリ パスを手動でアップロードします</block>
+  <block id="1132f2d9d6c8243388bd238a3921aabe" category="paragraph">NetApp Data Migratorを使用すると、NFSプロトコルを使用したデータ移行操作で使用するエクスポートパスとディレクトリパスを手動でアップロードできます。この機能は、NFSエクスポートパスの自動検出が利用できない環境において役立ちます。例えば、GCNV Flexサービスで使用する場合や、エクスポートパス全体ではなくディレクトリパスを移行する場合などに使用します。*エクスポートパス取得メカニズム*パネルで*手動アップロード*を選択した場合は、ファイルサーバーの作成が完了した後、NetApp Data Migratorが提供するテンプレートファイルをダウンロードして入力する必要があります。</block>
+  <block id="51be508b7111443f67b7d70122772066" category="admonition">ディレクトリ レベルで移行を設定する必要がある場合は、このオプションを使用してください。移行対象がエクスポート全体ではなく特定のディレクトリである場合は、ディレクトリ パスを Excel スプレッドシートに直接入力してください。これにより、移行ワークフローはエクスポート レベルの入力を必要とせずに、各ディレクトリを個別に処理することが保証されます。</block>
+  <block id="cc9db883e6208917ec02b1cc6f122a40" category="list-text">*ファイル サーバー* を選択します。</block>
+  <block id="f90dbedacb122ecf97b6830d76fc2df2" category="list-text">*[Click here to Upload Export Paths]*を選択します。</block>
+  <block id="f6611b52a69a0749e6dde410ebb9d202" category="list-text">*Download Template* を選択して、CSV ファイル テンプレートをダウンロードします。</block>
+  <block id="1909c6f6ba7aa237b4a6322e40d710d7" category="list-text">エクスポート パスとディレクトリ パスを CSV ファイルに保存します。</block>
+  <block id="e5c5212dc6860279e78a71f2aae11175" category="list-text">*Click here to Upload Export Paths*を選択し、エクスポート パスとディレクトリ パスを含むCSVファイルを選択します。</block>
+  <block id="a711807ae13ebab3475c8850bd469580" category="paragraph">エクスポート パスとディレクトリ パスは *Paths* の下に表示されます。</block>
+  <block id="7d98b3cc240f80ad12ef8d8b309048c5" category="list-text">エクスポート パスまたはディレクトリ パスを追加する必要がある場合は、ファイルに追加してから、*エクスポート パスの再アップロード* を選択します。</block>
+  <block id="1725899abdbe44463a53694fdc2de15d" category="paragraph">アップロードが完了すると、エクスポート パスとディレクトリ パスには次のいずれかのステータス タイプが表示されます：</block>
+  <block id="3ad17efd32ab7ef580731eb97a9e0fb0" category="list-text">*Valid*：パスは正常にアップロードされ、このパスをマウントおよびアンマウントできます。</block>
+  <block id="96b069a94d9dee2d028eb1e1d1fe5b25" category="list-text">*無効*：パスのアップロードに失敗しました。</block>
+  <block id="46c719ec3542636c4581d51316372ba5" category="list-text">*無効*：パスは存在しますが、アップロードしたファイルに含まれていません。</block>
+  <block id="19e9b23283c98b6a6539c6dca9cc4aa4" category="section-title">ファイル サーバの詳細を編集</block>
+  <block id="7c6a70263b6766a9e16e5586351b97b0" category="paragraph">必要に応じて、既に設定済みのファイルサーバーに変更を加えることができます。</block>
+  <block id="e487e639afe7aeec99ca210dcd776398" category="paragraph">「その他のNAS」または「Dell Isilon」ワークフローオプションを使用して、ファイルサーバーの詳細を編集します。</block>
+  <block id="429d167516808f8c7d5056c56a4ff30a" category="list-text">編集するファイルサーバーの横にあるアクションメニューを選択します。</block>
+  <block id="0952ccb1cc436bfc6c1f73fa071c8a46" category="list-text">*Edit File Server* を選択します。*Upload Export Path Retrieval* に *Manual Upload* オプションを選択した場合、有効なパスのみが表示されます。</block>
+  <block id="0411c429b267479d4162de2f0a7e5b97" category="list-text">*Server Type*タブを選択し、必要な編集を行ってから*Proceed*を選択します。</block>
+  <block id="014b4d783a46c7f790a52ba13bc075a7" category="list-text">*認証情報*タブを選択し、必要な編集を行った後、*続行*を選択します。</block>
+  <block id="f420b3ff7e0de967d2596c3f21d6b7d0" category="list-text">*Workers*タブを選択し、必要な編集を行った後、*Submit*を選択してください。</block>
+  <block id="634f2613312c50034cab7074eb0fc644" category="list-text">編集する親ファイルサーバーの横にあるアクションメニューを選択します。</block>
+  <block id="c2304f920f0ce42a4d3a45f95cb449fe" category="list-text">*Edit File Server* を選択します。</block>
+  <block id="c673e863a2bb835bd78defb2019a416f" category="list-text">*Server Type* タブを選択します。</block>
+  <block id="4fd7731ec8e10aaa8879c4f56e5a1647" category="list-text">必要に応じて *Configuration Name* を更新してください。</block>
+  <block id="624e797c77d3edeaa0c651e9cb4e7a96" category="list-text">必要に応じて *Username* または *Password* を更新してください。</block>
+  <block id="8cb15ce6c54092a253bd2c552317ad39" category="list-text">*続行*を選択します。</block>
+  <block id="0f7d7aa78a1549c2dc72ca57c5f84820" category="admonition">*サーバータイプ*（Dell Isilon）と*管理ホスト*は変更できません。</block>
+  <block id="b581066510802cba6f2634fb91bd1ea7" category="list-text">*Zone Credentials* タブを選択します：</block>
+  <block id="86ceee48e971b9baa262713ab3566f9f" category="list-text">利用可能なリストから追加のゾーンを選択して、新しいゾーンを追加します。</block>
+  <block id="b0d3121acd66e57f6bf71d9fd1ab9007" category="list-text">各ゾーンのプロトコルクレデンシャルを更新します：</block>
+  <block id="62a2d21a8924af81cee064e4a5d2acf3" category="paragraph">必要に応じて、*NFS IP Address*、*Username*、または*Password*を更新してください。</block>
+  <block id="0900f1414e7784bce9ad7e4f242436d2" category="paragraph">必要に応じて、*SMB IP Address*、*Username*、または*Password*を更新してください。</block>
+  <block id="f2e1ee0da6aa0320ed2aa2a6648f7aa2" category="list-text">*Workers* タブを選択します。</block>
+  <block id="b6b637036aed9b864f8f9a4467d28788" category="list-text">各ゾーンおよびプロトコルのワーカー割り当てを更新するには、*関連付け済み*列でワーカーのオン/オフを切り替えます。</block>
+  <block id="34ce963f139995c19018586d22ee168d" category="list-text">新しく割り当てられたワーカーに対して事前チェック検証を実行するには、*続行*を選択します。</block>
+  <block id="1164d10996d24fd3288b7937b9ec0530" category="list-text">*Job Config* タブを選択します。</block>
+  <block id="fd6cf1ea66a217ef1c4d0a41152a1277" category="list-text">必要に応じて *Working Directory* を更新してください。</block>
+  <block id="560e42e6da9452e07ba03414df4da014" category="list-text">*Finish* を選択します。</block>
+  <block id="2154189ceab3b15e68c45f609b0ec689" category="summary">NetApp Data Migrator のジョブ管理機能を使用して、検出、移行、カットオーバージョブおよびジョブ実行を開始および追跡します。</block>
+  <block id="96e2d76177d54eadc3a852e22adeaaec" category="doc">NetApp Data Migrator でのジョブとジョブ実行の管理</block>
+  <block id="d3a5c51f4c2d63b6a4ee92f4de5513c8" category="paragraph">NetApp Data Migratorのジョブ管理機能を使用して、*検出*、*移行*、*切り替え*ジョブおよびジョブ実行を開始および追跡します。</block>
+  <block id="47ce163a337b400a299b167005e1ff76" category="admonition">移行ジョブと切り替えジョブを同時に実行しないでください。一度にアクティブになるジョブは1つだけにしてください。</block>
+  <block id="f913cb8eaf501d9d95f4100d1850c243" category="section-title">ジョブ設定リストを表示</block>
+  <block id="a80fdfd04f65f93bdbbc91f6f9e100ed" category="paragraph">*ジョブ設定リスト*ページでは、移行に関連するすべてのジョブの包括的な概要が提供されます。このページを使用して、*検出*、*移行*、および*カットオーバー*ジョブのステータスと進捗状況を監視および管理します。</block>
+  <block id="205effb87fb92bf5acccba67f732a0f2" category="list-text">*Jobs* &gt; *Job Config List* を選択します。</block>
+  <block id="a51ba51aea6fd46bd6354129d8dc8da5" category="paragraph">*Jobs Listings*テーブルが表示され、以下の情報が含まれています：</block>
+  <block id="712f0bb5849fb5220b239bef32349467" category="list-text">*ソース*：ソースファイルサーバーの場所。</block>
+  <block id="8c3f852153315e0200b7dd5ccd60097b" category="list-text">*宛先*：移行ジョブの宛先ファイルサーバーとエクスポートパスの詳細。</block>
+  <block id="eb7c1024ed75720e4618e2f59a0c29a4" category="list-text">*プロトコル*：ジョブで使用されるプロトコル（NFS または SMB）。</block>
+  <block id="d211e5012fe610811b996152df247e6a" category="list-text">*次回のスケジュール*：次回の予定実行時刻（該当する場合）。</block>
+  <block id="f275311b9080a619b83ce5490ae50392" category="list-text">*実行回数*：ジョブが実行された回数。</block>
+  <block id="59a8dd452a829f2516fecf824e882da1" category="list-text">*Type*：ジョブの種類（Discovery、Migration、または Cutover）。</block>
+  <block id="57578fa471857bb13e307e088ca9d179" category="list-text">*ステータス*：ジョブの現在の状態は、アクティブまたは非アクティブのいずれかです。無効または無効化された状態の手動エクスポートパスを使用するジョブは、自動的に非アクティブになります。詳細については、<block ref="ae773d97768ced1963187e2ee61ebb05" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="de14b7f5bd8601d16bfb30193a03bf45" category="list-text">*更新日時*：ジョブの更新タイムスタンプ。</block>
+  <block id="5509a44201941ec9a71cfef8981f936d" category="paragraph">手動でエクスポートパスを指定するジョブ、またはエクスポートパスファイルを使用するジョブは、後で再アップロードされます。無効または無効化されたパスに関連付けられた、以前に実行されたジョブは、自動的に非アクティブになります。</block>
+  <block id="998e5d7021559bae26394870386865fd" category="list-text">*Filters* を選択して、Jobs Listings テーブルのジョブをソートします。次のオプションに基づいて、フィルターの組み合わせを選択できます：</block>
+  <block id="f31bbdd1b3e85bccd652680e16935819" category="list-text">ソース</block>
+  <block id="12007e1d59f4d09c87dbe2c438256244" category="list-text">デスティネーション</block>
+  <block id="888a77f5ac0748b6c8001822417df8b6" category="list-text">プロトコル</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="list-text">タイプ</block>
+  <block id="ec53a8c4f07baed5d8825072c89799be" category="list-text">ステータス</block>
+  <block id="98aa39a0a9a6d9d1c55c11b38ad87210" category="list-text">求人情報に既に適用されているフィルターを削除するには、*すべてクリア*を選択してください。</block>
+  <block id="2dd41f302a47a8149c5161c4aeefc4aa" category="section-title">ジョブを有効化または無効化する</block>
+  <block id="ce0a276551bf4e1a882ffd3ee9d9a7f9" category="paragraph">求人一覧表から、求人を有効化または無効化できます。</block>
+  <block id="8f07bd4c7af698058475bbfc2664d860" category="list-text">ジョブを有効化する：</block>
+  <block id="44ec342136c9004af13735656c4940dd" category="list-text">Job Listingsテーブルで、有効化するジョブの横にあるアクションメニューを選択します。</block>
+  <block id="485649400ce84e211b02fc75f1b1f188" category="list-text">*Activate* を選択します。ジョブのステータスが Active に変わります。</block>
+  <block id="12bc8776b55f177f1ad58658dab8fa43" category="list-text">ジョブを無効にする：</block>
+  <block id="6e7aff1bcdb70833ba4187e058f15b01" category="list-text">Job Listings表で、無効化したい求人の横にあるアクションメニューを選択します。</block>
+  <block id="b86808629c5c1324556ad4ecbd8b6af4" category="list-text">*Deactivate* を選択します。ジョブのステータスが Inactive に変わり、ジョブを再アクティブ化するまで実行が停止します。</block>
+  <block id="ae8dcf3ca2ef18f6fe33e4c4328fc599" category="section-title">ジョブ設定を編集する</block>
+  <block id="404c654f597e28ba11d197566003a457" category="inline-xref">求人詳細ページを開く</block>
+  <block id="5555a6f5f4aca1505ff1d1848b7ad938" category="list-text">編集したいジョブに対して<block ref="6a2946a61080b667da5372186ff3b47a" category="inline-xref-macro-rx"></block>。</block>
+  <block id="14ffa952adc249e88d00125b89c972ed" category="list-text">*View/Edit Configuration*を選択します。</block>
+  <block id="b45ff17e7dc18dd05d918205c7de7ec2" category="list-text">ジョブ設定を編集します：</block>
+  <block id="cba03cf49470128a249e5865702b7822" category="open-title">検出ジョブ</block>
+  <block id="ccf6288220eaa9d9a99974191e03c8c5" category="list-text">除外パスパターンを追加または削除する</block>
+  <block id="0f8f20d1794986cf0102ed43d162164a" category="list-text">ジョブ実行のスケジュールを設定</block>
+  <block id="025d7fa93526a3d9816f06ae4ae9ff0f" category="open-title">移行ジョブ</block>
+  <block id="0b5201fb7463eb0191e74b974d36281d" category="list-text">ジョブオプションを編集する</block>
+  <block id="05246f19c5a8851dd405f2006644a274" category="list-text">マッピングの追加または削除</block>
+  <block id="065e4149f2c960a6fd0d116ee9a54b08" category="list-text">*保存*を選択します。新しい設定は今後のジョブ実行に影響します。</block>
+  <block id="f65f1b468917996b88c7346038ee11d0" category="admonition">ベースライン移行が完了した後に、例えば保持権限を無効にするなどして設定を変更すると、その後の移行時に矛盾した状態が発生する可能性があります。設定を変更するのではなく、現在のジョブを削除して新しいジョブを開始してください。</block>
+  <block id="6534a65c691c4c1cbbfa3759a0dee99d" category="section-title">エラーが発生したファイルとディレクトリを再実行します</block>
+  <block id="5269abdae82f8db3eb64603f3ab515b4" category="paragraph">ネットワークタイムアウトや権限の問題など、一時的な問題が原因で移行ジョブの実行がエラーで完了した場合、再試行機能を使用して、移行全体を再実行することなく、失敗した項目のみを再処理できます。</block>
+  <block id="4138f3df411b91cf271a5cbc680395b7" category="list-text">*Job Listings* テーブルで、失敗した項目がある job の横にあるアクションメニューを選択します。</block>
+  <block id="c7dc5b2281e34424f9ab4a5db40addce" category="list-text">*詳細*＞*最近のエラーを再試行*＞*再試行を実行*を選択して、再試行操作を開始します。</block>
+  <block id="01858923ecef5a9cd865759e77a8da9c" category="section-title">ジョブを削除する</block>
+  <block id="b81e917b7641062733aef3dc42f84a12" category="list-text">*Job Listings* テーブルで、削除するジョブの横にあるアクションメニューを選択します。</block>
+  <block id="c6530dc69a45197349feade40127bf9e" category="list-text">*削除*&gt;*削除*を選択します。</block>
+  <block id="a03e225303aed19847ec882e7f96942b" category="admonition">アクティブな実行がない場合にのみ、ジョブを削除できます。</block>
+  <block id="ab7386fc80b478b3cd494da3d0899567" category="section-title">求人詳細を見る</block>
+  <block id="1c99e4180f5d9aa00aabccdaf025437b" category="paragraph">*Job Config List* ページから *Job Details* ページにアクセスして、次のような個々のジョブに関する追加の詳細情報を表示できます。</block>
+  <block id="df1a158216da9a5f7abcc98dc35f8a35" category="list-text">ジョブタイプ（Discovery、Migration、Cutover）</block>
+  <block id="51c996d15f57724f95ca8565526b24cf" category="list-text">検出されたファイルとディレクトリの数</block>
+  <block id="9dbddb48e79793d127f9858cc8b7f53a" category="list-text">経過時間</block>
+  <block id="22313435ded59e8144be54e10eec2e79" category="list-text">検出されたデータ</block>
+  <block id="217e2a88c8ac49f62ecfc885e1a0830c" category="list-text">ジョブ構成</block>
+  <block id="e1bcd2f1f15f4e88ad9058efc1f8af32" category="list-text">*Job Listings* テーブルで、ジョブの横にあるアクションメニューを選択し、 *Details* を選択します。</block>
+  <block id="541e5713ff6b340d5232e0399e4bd235" category="section-title">ジョブ実行履歴を表示する</block>
+  <block id="a0c259a239887e102dd3de5bffd3c9bb" category="paragraph">*Job Details* ページの *Run History* テーブルには、過去のジョブ実行に関する情報とジョブのステータスが表示されます。</block>
+  <block id="4d3681fbd312ed8436e3e7e66ccab275" category="paragraph">移行および検出ジョブのステータスタイプには、次のものがあります：</block>
+  <block id="e4474066ad8d7a943295b43bf3c44d09" category="list-text">*Ready*：ジョブの実行が予定されています。</block>
+  <block id="e2ad9fb4361cb316a5abd24e68ff7637" category="list-text">*実行中*：ジョブが実行状態です。</block>
+  <block id="666df6f166d243bc8f6b95f3b7f1dc98" category="list-text">*一時停止*：ジョブの実行が手動またはNetApp Data Migratorによって一時停止されました。たとえば、ジョブの実行中にワーカーがダウンした場合、ジョブのステータスが一時停止になることがあります。</block>
+  <block id="b6206c641feb14001bd6f35c2eabd7ac" category="list-text">*完了*：ジョブが完了しました。</block>
+  <block id="d57d07642a15a951f0a39f42f5ed0e81" category="list-text">*エラーが発生しました*：ジョブの実行中に致命的なエラーが発生しました。</block>
+  <block id="f3ba2db7739a5eed3c8c5f158e665f42" category="list-text">*Failed*：ジョブの実行中にワーカーがオフラインになった場合、ジョブは失敗状態になる可能性があります。</block>
+  <block id="4af757090978bb1837cccd8e6b855f5f" category="paragraph">切り替えジョブのステータスタイプには以下が含まれます：</block>
+  <block id="77216ccec67e98a1f2f20935225b1cf6" category="list-text">*ブロックされました*：ジョブはユーザーからの応答を待っています。</block>
+  <block id="ef9bf5af6e6aef5955bed44b0bc3d98d" category="list-text">*却下*：ジョブはユーザーによって審査され、却下されました。</block>
+  <block id="60bb34077de28c008aacceef19e2cd9f" category="list-text">*承認済み*：このジョブはユーザーによってレビューされ、承認されました。</block>
+  <block id="8b801c7723cbb89b1bedf5b1fff9eaa2" category="list-text">*停止*：ジョブの実行が停止しました。</block>
+  <block id="a334d1fa23df3c8e0c3e054c3bcd2151" category="section-title">ジョブ実行操作の管理</block>
+  <block id="9fd05e30d8e60695261f8bda97ec8679" category="paragraph">*Job Details*ページから、ジョブの*Start*、*Stop*、*Pause*、*Resume*操作を管理できます。*Pause*機能を使用すると、実行中のジョブをキャンセルせずに一時的に停止できます。そうすれば、中断した時点からジョブを再開できます。これは、進捗状況を失うことなく、システムリソースを解放したり、問題のトラブルシューティングを行ったりする必要がある場合に役立つ機能です。</block>
+  <block id="033c34f89029a741f4b7eedbd0b7f6b3" category="list-text">*Job Details* ページの *Run History* テーブルで、実行中のジョブの横にあるアクションメニューを選択します。</block>
+  <block id="6d2a4423a605589c4c52f375063111bf" category="list-text">ジョブの実行を一時停止または再開する：</block>
+  <block id="549087ff6c78cd133e60eae091dcb474" category="list-text">*一時停止*を選択します。</block>
+  <block id="8dfafb7fdcc2e7100bb2fff576bd4950" category="list-text">ジョブの実行を再開するには、*Resume*を選択します。</block>
+  <block id="b5c64d21f4fc1c55112eca1b81a21870" category="paragraph">ジョブのステータスが*Running*に変わり、一時停止したステップからジョブの実行が続行されます。</block>
+  <block id="45a97dad2a0cfbd9c4cb1c1038ab3dbf" category="list-text">ジョブの実行を停止または開始する：</block>
+  <block id="5cac5305a454aadc875c8ef5267815c3" category="paragraph">停止オプションを使用すると、実行中のジョブ実行を完全に終了できます。この操作は、ジョブ実行が不要になった場合に役立ちます。停止したジョブ実行を再開することはできませんが、最初から新しいジョブ実行を開始することは可能です。</block>
+  <block id="41ec3e9db7129b498fd1766a3be57b1d" category="list-text">* Stop * を選択します。</block>
+  <block id="267e953dc65e3be15dba6fcddc04753a" category="paragraph">ジョブの実行ステータスが*停止*に変更されます。</block>
+  <block id="69d47dade61c818baa831f37c527299e" category="list-text">新しいジョブ実行を開始するには、*アドホック実行*を選択します。</block>
+  <block id="925e35e75855bc45582e31fd64f6c648" category="paragraph">ジョブの実行ステータスが*実行中*に変更されます。</block>
+  <block id="e1b7dc9d96984cfec96bda0a314c4877" category="section-title">ジョブ実行の詳細にアクセス</block>
+  <block id="9140e7de3992891cae0f9151d7a59966" category="paragraph">* 実行履歴 * テーブルから * ジョブ実行詳細 * ページにアクセスすると、ジョブ実行に関する詳細情報を確認できます。</block>
+  <block id="65b75d688d5649ea6c984ecb72f23aaa" category="list-text">*Job Details*ページの*Run History*テーブルで、ジョブ実行の横にあるアクションメニューを選択します。</block>
+  <block id="1a4175bd61e76b171f3ce25c259e9a6e" category="list-text">*詳細*を選択すると、*ジョブ実行の詳細*ページが表示されます。このページには、以下の情報が含まれています：</block>
+  <block id="20a65bd60e1be339c198475a1f403898" category="list-text">*Discovery/Migration*：ジョブの実行タイプとステータス。</block>
+  <block id="3ab8c86d2d67e41891e4ba9e2d4a6c97" category="list-text">*ファイル数*：検出プロセス中に見つかったファイルの数。</block>
+  <block id="e45ddb684019ab3673b0abd2eec135b6" category="list-text">*ディレクトリ*：検出プロセス中に見つかったディレクトリの数。</block>
+  <block id="f6b320e5c8b8991e218ac80aa02952f8" category="list-text">*経過時間*：検出プロセスにかかった時間。</block>
+  <block id="78a8155415c0cc8fc6dba8bc25cdad69" category="list-text">*検出されたデータ*：検出されたファイルの合計サイズ。</block>
+  <block id="9cd0c86c045159394bdec4f11bf5ab92" category="list-text">*Workers*: ジョブに割り当てられたワーカーの数。</block>
+  <block id="4282beca24b6cd8dc9f26a914545d7c1" category="list-text">*タスク*：実行中のタスクの数。</block>
+  <block id="627ffb473a1ba153efdddf4a1d9c7725" category="list-text">*タスクステータスインジケーター*：</block>
+  <block id="33d518c5f1e12f7612cfe43eaff10266" category="list-text">*保留中*：実行待ちのタスクの数。</block>
+  <block id="eb922cc8784bb18bbe64d773f203e011" category="list-text">*実行中*：現在進行中のタスクの数。</block>
+  <block id="aafeb85852b1a0709a1c9cd2db22d721" category="list-text">*完了*：正常に完了したタスクの数。</block>
+  <block id="72112f6b81b43281052c630630964215" category="list-text">*エラー*：実行中に問題が発生したタスクの数。</block>
+  <block id="f1b6e0a3410272cf98a95c6f9b468e0b" category="list-text">*ジョブ名*：ジョブに割り当てられた名前。</block>
+  <block id="73c0d1f0d57b45d29afb9883aab3f404" category="list-text">*ソースパス*：データ検出に使用されるファイルのパス。</block>
+  <block id="5a38cf20be01022658577fb7e875ca62" category="list-text">*プロトコル*：検出に使用されるプロトコル（NFSまたはSMB）。</block>
+  <block id="45e1f81450b527f60d13ceac489731eb" category="paragraph">*Job Run Details*ページの右下のタイルには、移行中に発生したエラーの数（ある場合）が表示されます。*View All*を選択すると*Errors*ページにアクセスでき、これらのエラーに関する詳細情報を確認できます。</block>
+  <block id="a4fa7fb1718892ffb244695136c023eb" category="list-text">ファイル数、ステータス、エラー、実行時間など、ジョブ実行に関する指標を詳細に分析したレポートを生成します。これらのレポートは、レビューや監査の目的で使用できます。</block>
+  <block id="d9ce67afe8e6b7ab92c26f3c439e0036" category="list-text">ジョブレポートデータのヒストグラムを表示するには、*Discovery Report*＞*Preview*を選択します。</block>
+  <block id="d14ffbc2c337f58f1b30581b1bc352f0" category="list-text">* CSV としてダウンロード * を選択すると、レポートが CSV 形式でエクスポートされ、スプレッドシートアプリケーションを使用して分析できます。</block>
+  <block id="e5f2eae53ea7e10f32cc02e6573a770e" category="list-text">*Download as PDF* を選択します。このオプションは、ドキュメント共有に最適です。</block>
+  <block id="d32bb76799fd7706709b46488f8ec310" category="list-text">Grafanaを使用してログファイルを表示またはダウンロードするには、*View Logs*を選択します。</block>
+  <block id="029216502476b4f943aba394a6edc484" category="section-title">移行アクティビティを表示</block>
+  <block id="a939cd7a0172dd7e2b0ea10c28fd28fb" category="paragraph">移行アクティビティページには、現在移行中の最も古いファイル10個が表示されます。また、処理中のファイルの総数を表示し、これらのファイルの完全なリストを含むCSVファイルをダウンロードするオプションも提供します。</block>
+  <block id="87cf8c517abf58b119aa4a2538fb5787" category="list-text">*実行履歴*テーブルから、実行中のジョブの*ジョブ実行の詳細*を選択します。</block>
+  <block id="8a06b7008bed1925e88b6e0c34eebf81" category="list-text">*Migration Activity* を選択します。</block>
+  <block id="ac44d6d0b1105a6a9fe50a35ee88c5f1" category="section-title">ジョブエラーレポートを生成する</block>
+  <block id="38a53f3622c396951fc61e42cc05fea8" category="paragraph">*エラー*ステータスのジョブ、または以前に実行されたジョブについて、エラーレポートを生成できます。エラーレポートは、エラーが発生した理由を理解するのに役立ちます。</block>
+  <block id="49ace83a8cfc3a8d7a01785f4b3db9f9" category="list-text">*エラー発生*ステータスのジョブに対してエラーレポートを生成します：</block>
+  <block id="796d0ad977aafb8ed49902677507dd65" category="list-text">*ジョブの詳細*ページの「エラー」ペインで、*すべて表示*を選択します。</block>
+  <block id="a9ca1cb0bb50a37841b5560367196c20" category="list-text">*エラーレポートの生成*を選択すると、最新のジョブ実行におけるエラーの詳細をダウンロードできます。</block>
+  <block id="06c5b9f3a44a55aac89df0194019df52" category="list-text">前回のジョブ実行に関するエラーレポートを生成する：</block>
+  <block id="1fb2f609fbdc947e6fbb85c3477c71b9" category="list-text">*Job Details*ページの*Run History*テーブルで、エラーレポートを生成したいジョブ実行の横にあるアクションメニューを選択します。</block>
+  <block id="522aeaf73b031c733a2277fe9eadd494" category="list-text">*詳細*を選択します。</block>
+  <block id="5bf3f51ad0b247db20c059cc3f279839" category="list-text">*ジョブの詳細*ページの*エラー*パネルで、*すべて表示*を選択します。</block>
+  <block id="9d418074d0953bed63f88da1f4be14c1" category="list-text">選択したジョブ実行のエラーに関する詳細をダウンロードするには、*エラーレポートの生成*を選択します。</block>
+  <block id="80ce2938ca2937b11bc52b5527c178f1" category="summary">NetApp Data Migratorコントロールプレーンの[プロジェクト]タブを使用して、プロジェクトの作成、編集、または切り替えを行います。</block>
+  <block id="53b124f1313dc46b158fbc2056cf3fff" category="doc">NetApp Data Migratorでのプロジェクトの作成と管理</block>
+  <block id="0ae471ea6c5379bf2db089c8721b6289" category="paragraph">NetApp Data Migrator コントロールプレーンの「プロジェクト」タブを使用して、プロジェクトの作成、編集、または切り替えを行うことができます。</block>
+  <block id="b2a1727d96eeb50bd9543486e0a34973" category="paragraph">App Admin ユーザーは、NetApp Data Migrator で新しいプロジェクトを作成し、定義されたロールを持つユーザーをそのプロジェクトに割り当てることができます。</block>
+  <block id="6a6235e26cbae4e7bc5a888e95ad5626" category="list-text">*Settings* &gt; *Projects* を選択すると、既存のプロジェクトのリストが表示されます。</block>
+  <block id="cf8b76f0f51b9afc7c33b3917ceed6e2" category="list-text">*プロジェクトの追加*を選択すると、新しいウィンドウが表示されます。</block>
+  <block id="ecd282d0b7d7115b80f78b486d3c9a70" category="list-text">*プロジェクト名*と*プロジェクト概要（オプション）*を入力してください。</block>
+  <block id="0e62f4bf3970597bbe61bdbc23c4143d" category="list-text">プロジェクトにユーザーを追加する：</block>
+  <block id="a162c0719a4705494d45765a402543cb" category="list-text">ドロップダウンリストから *ユーザー* を選択してください。</block>
+  <block id="bdcf956d77ad9f0e32e4248bec6dd7f4" category="list-text">ユーザーに*ロール*（*App Admin*、*Project Admin*、または*Project Viewer*）を割り当てます。</block>
+  <block id="6525cb7efe51d7936793356117826c43" category="list-text">*+追加*を選択します。</block>
+  <block id="0b07e96722e5fc41e66e0c37ed512dcc" category="list-text">*保存して確認*を選択します。</block>
+  <block id="03e701daac8d82b67d29127111db0419" category="list-text">*Submit*を選択すると、プロジェクトが正常に作成されたことを示す確認メッセージが表示されます。</block>
+  <block id="83879b61fc6dcf133f90392c69f25d38" category="section-title">プロジェクトを編集する</block>
+  <block id="ad286effb217ad2bc61c8b02e3923f27" category="paragraph">プロジェクトの詳細情報を更新する必要がある場合は、簡単に編集できます。</block>
+  <block id="10cd70236841320dcfe4792268945964" category="list-text">上部のナビゲーションバーで * Settings * を選択します。</block>
+  <block id="2dbdae1b30b7ad025949ced667ce9906" category="list-text">*Projects*タブを選択すると、既存のプロジェクトのリストが表示されます。</block>
+  <block id="fa23ef17aae42b82ca311335fd9059a4" category="list-text">編集するプロジェクトの詳細の横にある *(⋮)* を選択し、ドロップダウンメニューから *Edit Project* を選択します。</block>
+  <block id="1a186f5c2b6dab4af1aca77b3e50ed9e" category="list-text">プロジェクト名、プロジェクト概要を更新するか、必要に応じて新しいユーザーを追加します。</block>
+  <block id="90356872f7dbf03852aac44afd841d89" category="list-text">変更を保存するには、* Submit *を選択します。</block>
+  <block id="94b85a1c5a643296b6d5ecd3976a9159" category="section-title">プロジェクトを切り替える</block>
+  <block id="a2fc5daa14d7c4022c060f00a90c9d5c" category="paragraph">複数のプロジェクトを同時に監視している場合、それらを素早く切り替えることができます。</block>
+  <block id="5d98ed6215494e4aa14fb285ce1169de" category="list-text">上部のナビゲーションバーから*プロジェクト*ドロップダウンメニューを選択します。</block>
+  <block id="082933186fc992406ed182d4c98643ba" category="list-text">現在のプロジェクト名を選択すると、*Project Selection*メニューが開き、利用可能なプロジェクトの一覧が表示されます。</block>
+  <block id="3eae8ae7857d0643bc1fe6183b0fa970" category="list-text">*Search Projects*バーを使用して、切り替えたいプロジェクトをすばやく見つけてください。</block>
+  <block id="265577e48e5be8f0a8166a0aed077dee" category="list-text">切り替え先のプロジェクト名の横にあるチェックボックスを選択します。</block>
+  <block id="592c2b6d50736a27b740318f57914f62" category="list-text">選択したプロジェクトをロードするには、*Switch*を選択します。</block>
+  <block id="f5a8277c0645fc0b5fd63ec70af2aed7" category="summary">NetApp Data Migrator ユーザーをロールベースのアクセス制御で追加および管理します。アカウントの作成、ロールの割り当て、アクセスの有効化または無効化などが含まれます。</block>
+  <block id="67a2d18f754e8a27ae430afd0b60f614" category="doc">NetApp Data Migrator でのユーザーの追加と管理</block>
+  <block id="721796b1cb3468f0daf819180184d460" category="inline-link-macro">ロールベース アクセス制御（RBAC）</block>
+  <block id="be3481b001dfc961f9b6dc2ea7bd48b0" category="paragraph">NetApp Data Migratorは<block ref="8e624225acfcd6a8ecfa1725f2c4fb0d" category="inline-link-macro-rx"></block>を使用して、データ移行アクティビティを安全かつ効率的に管理します。コントロール仮想マシンとワーカー仮想マシン（VM）のセットアップ後、App Admin ユーザーは新しいユーザーにロールを作成して割り当てることができます。これにより、新しいユーザーは権限に応じて、ログイン、プロジェクトの表示または管理、その他の移行アクティビティを実行できるようになります。</block>
+  <block id="2d702c4fb4e2ee857b27bfaf6afb6c6a" category="paragraph">新規ユーザーの追加、既存ユーザーの有効化または無効化、あるいはユーザーパスワードのリセットを行うには、App Admin としてログインする必要があります。</block>
+  <block id="08ec0f7654cccad69821337b3c47af67" category="section-title">新しいユーザを追加</block>
+  <block id="f99b3afc4544204da080503be14bac58" category="paragraph">新しいユーザーを作成し、一時パスワードを共有してください。</block>
+  <block id="a17989ec1a730c3e46947a170da354db" category="list-text">*設定*＞*ユーザー*を選択すると、登録済みユーザーのリストが表示されます。</block>
+  <block id="676095a409ad8766387c886d7d991fc4" category="list-text">*ユーザーを追加*を選択します。</block>
+  <block id="228d4916befec775c2876ce6bf2a864f" category="list-text">新規ユーザーの*名*、*姓*、および*メール*アドレスを入力してください。</block>
+  <block id="f2e2dda1ecf6756e927187c510824aae" category="list-text">新しいユーザーに管理者権限が必要な場合は、*App Admin* チェックボックスをオンにします。</block>
+  <block id="b623e6ded9a852f4e7cd9765578d0c08" category="list-text">*Submit*を選択します。</block>
+  <block id="f1edf93a4d5a29b75ec1774129ecd7fc" category="list-text">*Copy* リンク（パスワードフィールドの横）を選択して、マスク形式で表示される一時パスワードをコピーします。</block>
+  <block id="4a553bf9ebe9a32a6743c78be912cfbc" category="list-text">*閉じる*を選択します。</block>
+  <block id="d78b694533f39c65b66b65c35a10bf0b" category="list-text">コピーした一時パスワードを新しいユーザーと共有してください。新しいユーザーはそのパスワードを使ってログインできます。初回ログイン時には、パスワードの変更を求められます。</block>
+  <block id="dd213906dd3536a2f53f6d1d90ad7f00" category="section-title">既存のユーザーを無効にする</block>
+  <block id="a31ad814959eb6b2bf59b6d8053df005" category="paragraph">他のユーザーのNetApp Data Migratorへのアクセスを無効にします。これにより、ユーザーはログインできなくなりますが、ユーザーデータや、そのユーザーに関連付けられた過去の移行ジョブやログは削除されません。</block>
+  <block id="e90d90ae21434579022ce1f486fb9f8e" category="list-text">ナビゲーションバーの *Settings* アイコンを選択します。</block>
+  <block id="04af43c52e17eb6751c04be11b2d5693" category="list-text">*ユーザー*タブを選択すると、登録ユーザーのリストが表示されます。</block>
+  <block id="77de8217dc441c66b5718dd9171f1c5f" category="list-text">無効化するユーザーの詳細の横にある *(⋮)* アイコンを選択し、ドロップダウンメニューから *Disable Access* を選択します。</block>
+  <block id="a349e082f32200581489c69af967aba9" category="paragraph">ユーザーのステータスが*アクティブ*から*非アクティブ*に変更され、NetApp Data Migratorにログインできなくなります。</block>
+  <block id="dca65931ea86e9cd516608586fce163e" category="section-title">ユーザーを有効にする</block>
+  <block id="f379b00b4de3672400873c2c797ff493" category="paragraph">無効化されたユーザーのNetApp Data Migratorへのアクセスを復元し、割り当てられた権限に基づいてログインして操作を実行できるようにします。</block>
+  <block id="a6633641751edf7097f20ad998a976e5" category="list-text">ナビゲーションバーの*設定*アイコンを選択します。</block>
+  <block id="1dff5b5a4611449501cf6bfc4f5e3f0d" category="list-text">有効化するユーザーの詳細の横にある *(⋮)* アイコンを選択し、ドロップダウンメニューから *Enable Access* を選択します。</block>
+  <block id="89f1d8bb92b2ab28b6be940b81b7ce20" category="paragraph">ユーザーの状態が*非アクティブ*から*アクティブ*に変更されました。ユーザーはNetApp Data Migratorにログインできるようになりました。</block>
+  <block id="e65bf26548c66193bfe805a327f0fc24" category="section-title">ユーザパスワードをリセットする</block>
+  <block id="081c98b18eac7f88302b50e7c895e5f0" category="paragraph">既存ユーザーのパスワードをリセットします。</block>
+  <block id="bc5300321d2483155f30679b9490dc16" category="admonition">他のApp Adminが利用できない場合にApp Adminユーザーのパスワードをリセットするには、ng-ndm-downloads@netapp.com に連絡してパスワードリセットスクリプトを入手してください。</block>
+  <block id="c764172de6677224d540853d024c0982" category="list-text">パスワードをリセットする必要があるユーザーの詳細情報の横にある *(⋮)* アイコンを選択し、ドロップダウンメニューから *Reset Password* を選択します。</block>
+  <block id="d287b6a0007284d3b673633024331b58" category="paragraph">パスワードのリセットが成功したことを確認するメッセージが表示されます。</block>
+  <block id="8c80aa6f5c4a56ba63ac80facdf87e21" category="list-text">*Copy* リンク（パスワードフィールドの横）を選択して、マスクされた形式で表示される一時パスワードをコピーします。</block>
+  <block id="cf5ac14c923e217f8621f7578c85d0fe" category="list-text">コピーした一時パスワードをユーザーと共有します。</block>
+  <block id="63a9b59d9eeaa83e38c4e663bd9e7900" category="summary">NetApp Data Migrator のネットワーク要件（コントロールプレーンとワーカー間の通信に必要な TCP ポートおよび UDP ポートを含む）。</block>
+  <block id="b310edaf82f204e9718085669d590c51" category="doc">NetApp Data MigratorでNFSおよびSMBネットワークアクセスを確認する</block>
+  <block id="83dd90d354af338509d82491d3562ce5" category="paragraph">ストレージシステムのエクスポートポリシーにおいて、コントロールプレーンとワーカーの両方のIPアドレスとサブネットが許可されていることを確認する必要があります。これは、NetApp Data Migratorを使用したNFSおよびSMBの移行をサポートするために必要です。</block>
+  <block id="d42785ca0c7a8353fd3af0404f7f76ec" category="section-title">NFSアクセスを確認する</block>
+  <block id="a4a5f9d92ece1da457590abead01c800" category="paragraph">NFSの場合、コントロールプレーンとワーカーノードは、ルートクライアントとしてストレージシステムにアクセスするための権限が必要です。</block>
+  <block id="dc1b12a3f0273d08d2bef65121eb1dc9" category="list-text">ワーカーノードから手動でマウントを実行し、ボリュームへのアクセス可能性を確認します。</block>
+  <block id="e444418f6335877aa994afd33d95f14c" category="list-text">エクスポートポリシールールでスーパーユーザーアクセスが許可されていることを確認し、ルートアクセスが有効になっていることを確認してください。必要に応じて、エクスポートポリシールールを変更してルートアクセス（no root squash）を有効にします。</block>
+  <block id="7c743f89091b4b8112d5fee57902a619" category="section-title">SMBアクセスを確認する</block>
+  <block id="8b6f62968f51d6a991260460c4a46be8" category="paragraph">SMBアクセスを行うには、コントロールプレーンとワーカーノードがSMB認証情報を使用してストレージシステムにアクセスするための権限が必要です。SMBユーザーは、Backup operatorsグループおよびAdministratorsグループに属している必要があります。</block>
+  <block id="6d45427fa10981ce1f7403d67b49a7fc" category="summary">NetApp Data Migrator のポート要件（コントロールプレーンとワーカー間の通信に必要な TCP ポートと UDP ポートを含む）。</block>
+  <block id="73a306c3efc59e9f206073a424a7e4e9" category="doc">NetApp Data Migrator のポート要件</block>
+  <block id="02a023a8374ed334497bb8bc31550f9b" category="paragraph">NetApp Data Migratorで、コントロールプレーン仮想マシン（VM）とワーカーVM間の通信を可能にするために、特定のTCPポートが開いていることを確認する必要があります。</block>
+  <block id="a674202c1ad83cdb3fdcdb1b115c4b25" category="section-title">コントロールプレーンポート</block>
+  <block id="c2ba7e785c49050f48da9aacc45c2b85" category="cell">サービス</block>
+  <block id="a93bcb5a82072c389a3b8a73489512f7" category="cell">TCP ポート</block>
+  <block id="5da618e8e4b89c66fe86e32cdafde142" category="cell">から</block>
+  <block id="e12167aa0a7698e6ebc92b4ce3909b53" category="cell">宛先</block>
+  <block id="5da09289c454b8fb0d2ae81efe01e26a" category="cell">Temporal Server</block>
+  <block id="90f59abb89fa736f0be80a63a864f030" category="cell">7233または7234</block>
+  <block id="060428837aa1bdeae6e1204f55df044b" category="cell">ワーカーとクライアント</block>
+  <block id="7e1251b01a19502493e461f843d6e284" category="cell">Temporal UI</block>
+  <block id="d4a973e303ec37692cc8923e3148eef7" category="cell">8080</block>
+  <block id="34ee8ff3f2c16d8758d1a9c1424014ac" category="cell">デフォルトポート（有効になっている場合）</block>
+  <block id="1110484ce835edb1d96d44f5d094aa8a" category="cell">PostgreSQL（Temporal database）</block>
+  <block id="2e92962c0b6996add9517e4242ea9bdc" category="cell">5432</block>
+  <block id="dbacec538ed33a36fc4f901a63177337" category="cell">Temporalサービス（コントロールプレーンから）</block>
+  <block id="e111446745a1825b862f8727ae63bce4" category="cell">Redis</block>
+  <block id="92c3b916311a5517d9290576e3ea37ad" category="cell">6379</block>
+  <block id="6dffc2d6b8f8f54efdc637e4c8e124da" category="cell">ワーカーまたはコントロールプレーンサービス</block>
+  <block id="c06025dd19f6e0cb028d8bc3b98e26bc" category="cell">APIまたはUIイングレス（アプリケーション）</block>
+  <block id="8f30ebd9cc2f99b7d91400cf19955f28" category="cell">80または443</block>
+  <block id="6881c17f4cf6149a0519a4ae1f3d4d4d" category="cell">ブラウザまたは外部クライアント</block>
+  <block id="13d976ec915aee59afabcef6291764b8" category="cell">Grafana</block>
+  <block id="e93028bdc1aacdfb3687181f2031765d" category="cell">3000</block>
+  <block id="ef15fd2f45e6bb5ce57587895ba64f93" category="cell">ブラウザ</block>
+  <block id="6ce0c3ae03134ce5b0f181ee6fbb6d8a" category="section-title">ワーカーポート</block>
+  <block id="cf2f8733eabc17ed9298656b087af7f1" category="cell">コントロールプレーンへのアウトバウンド</block>
+  <block id="012a91467f210472fab4e11359bbfef6" category="cell">7233</block>
+  <block id="bb3f41988e376dcfc782af81bfb2e750" category="cell">コントロールプレーン内のサービス</block>
+  <block id="72f374619a9bb397e4c8584ebc6f9cb2" category="paragraph">Temporalフロントエンド</block>
+  <block id="a11ba87073e84d545fc147559305fa76" category="paragraph">APIまたはUI（呼び出す場合）</block>
+  <block id="4ca3ac99649e5fe5a93b2d985a709990" category="cell">ストレージへのアウトバウンド</block>
+  <block id="06b1338ba02add2b5d2da67663b19ebe" category="cell">2049</block>
+  <block id="8a568ad9efb130b5a037e35e698344d5" category="paragraph">NFSサーバ</block>
+  <block id="19960e9df5971a6ec983f726863d8693" category="paragraph">*注*：リモートプロシージャコール用のポートマッパーサービスが必要な場合は、TCPまたはUDPポート111を含めてください。</block>
+  <block id="67f7fb873eaf29526a11a9b7ac33bfac" category="cell">445</block>
+  <block id="b3157537e23e2a5955e1291ccb55cb09" category="paragraph">SMBサーバ</block>
+  <block id="d15d1086c5b0bbcbbce6297b5276b710" category="summary">NetApp Data Migratorを使い始めるには、AWS、Azure、Google Cloud、またはOpen Virtual Appliance（OVA）テンプレートのいずれかを使用して、コントロールプレーンVMとワーカーVMを設定する必要があります。</block>
+  <block id="dfd0a398806c78aac4a5783a3e801847" category="doc">NetApp Data Migrator のクイックスタート</block>
+  <block id="a7c368425f45c98265b1d2e8d029fddc" category="paragraph">NetApp Data Migrator の使用を開始するには、いくつかの手順があります。</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">1</block>
+  <block id="c5d849ac7dae713c474e6d10dc6cc2a2" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>NetApp Data Migratorについて学ぶ</block>
+  <block id="1aad8b9362e4b8c3885d8db9a88d18f0" category="paragraph">NetApp Data MigratorはNFSおよびSMBファイル転送プロトコルをサポートしています。NetApp Data Migratorがお客様のデータ移行ニーズをサポートしていることを確認し、お客様の環境に適した導入オプションを選択してください：</block>
+  <block id="21979bfea7dd1751a92060597b2ec017" category="list-text">Google Cloud サービス</block>
+  <block id="0862233707b48de2f150ca8e726c6abd" category="list-text">Open Virtual Appliance（OVA）テンプレート</block>
+  <block id="9251700e586dc1a410f2e755a8643751" category="inline-link-macro">ネットワーク要件</block>
+  <block id="2bf577e3ba4de34a09af5c8868044c19" category="paragraph"><block ref="132a4252d8dab891f29e77b7b5f68e5e" category="inline-link-macro-rx"></block>と<block ref="238a191c4340745369e9fea191c6bd8b" category="inline-link-macro-rx"></block>を確認します。</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">2</block>
+  <block id="5fde5220f592469d6ce84d6ec33efd29" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>インストールとセットアップ</block>
+  <block id="63394b5dac0402e2937e6cf6472579c9" category="paragraph">NetApp Data Migratorは、コントロールプレーンとワーカーノードを使用します。まず、移行のニーズに基づいて、コントロールプレーンVMとワーカーVMをデプロイします。NFSの場合はLinuxワーカーをデプロイし、SMBの場合はWindowsワーカーをデプロイします。NFSまたはSMB、あるいは両方のプロトコルを使用できます。デプロイ後、コントロールプレーンVMとワーカーVMを作成し、NetApp Data Migrator UIにアクセスします。</block>
+  <block id="fdf38dbedd6ef008d823cad4e13b85c0" category="paragraph"><block ref="fdf38dbedd6ef008d823cad4e13b85c0" category="inline-link-macro-rx"></block></block>
+  <block id="f2f0a9701c56855f618d101c11bc4ab7" category="paragraph">以下の方法を学びましょう：</block>
+  <block id="d118c036240df442039d6ae9fea3b2ae" category="inline-link-macro">コントロールプレーンVMとLinuxワーカーVMを導入する</block>
+  <block id="01a0e48108b30daf070e2b81d02113da" category="list-text"><block ref="01a0e48108b30daf070e2b81d02113da" category="inline-link-macro-rx"></block></block>
+  <block id="b20a042da068838dad65bb1c10123862" category="inline-link-macro">コントロールプレーンVMとワーカーVMを作成します</block>
+  <block id="ea13f3986a07d09af3093352c0b03a5b" category="list-text"><block ref="ea13f3986a07d09af3093352c0b03a5b" category="inline-link-macro-rx"></block></block>
+  <block id="299852c7a036ff00ace6cbde94137abf" category="list-text"><block ref="299852c7a036ff00ace6cbde94137abf" category="inline-link-macro-rx"></block></block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">3つ</block>
+  <block id="23cb61fc78e3feaec6eb9f95ae5a433e" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>設定と管理</block>
+  <block id="bbe5469d33ce93c2f28586f9a9debf56" category="paragraph">まず、デフォルトの認証情報を使用して管理者としてログインし、ユーザー名とパスワードを更新してください。次に、最初のプロジェクトを作成し、ファイルサーバーを追加して移行ワークフローを開始できます。</block>
+  <block id="83b9a73283224c028b35f767e10e1a03" category="list-text"><block ref="83b9a73283224c028b35f767e10e1a03" category="inline-link-macro-rx"></block></block>
+  <block id="2dc5f7f7f6c5786ed5b37141589adae2" category="list-text"><block ref="2dc5f7f7f6c5786ed5b37141589adae2" category="inline-link-macro-rx"></block></block>
+  <block id="5b46d94ae861e93c8d77f043ac734952" category="summary">新しいNetAppのお客様の場合は、NetAppアカウントを作成し、登録手続きを完了する必要があります。</block>
+  <block id="512ce7e8c3858266467efa17d62d0051" category="doc">NetApp Data Migrator アカウントに登録する</block>
+  <block id="4daa456be51251ffd988f63c8657d64c" category="paragraph">新しい NetApp のお客様の場合は、NetApp アカウントを作成し、登録プロセスを完了する必要があります。すでに NetApp アカウントをお持ちの場合は、<block ref="2e1fdd8a20f38dacfbef503dc81b8d7d" category="inline-link-macro-rx"></block>に進むことができます。</block>
+  <block id="5f4293a5c5c507db807ae703a9d9c3dc" category="admonition">新しいNetApp Support Siteアカウントが*Guest access*から*Full access*にアップグレードされるまで、最大1営業日かかる場合があります。</block>
+  <block id="d27c2a770a38edcade142626ac440af3" category="list-text">ビジネスメールアドレスを使用して<block ref="5a9b9821ca062d5154356de0071c8b9f" category="inline-link-macro-rx"></block>でアカウントを登録してください。</block>
+  <block id="8fd3c7eb5b3f94dd265f8f05e2041a61" category="list-text">登録開始を認証するには、メールで送信されたワンタイムパスワードを入力してください。</block>
+  <block id="3c1b2d3eff4d0d793fec12d931950535" category="list-text">登録完了ページで、必要な情報を入力してください：</block>
+  <block id="7791648a4ad04186aa19998453ada0e5" category="list-text">ユーザーアクセスレベルには、*NetApp Customer/End User* を選択してください。</block>
+  <block id="02c1d36603e1a99049c8f634aafa2740" category="list-text">シリアル番号フィールドに、<block ref="287425a09a304fc331acddbb00301457" prefix=" " category="inline-code"></block>を入力します。</block>
+  <block id="d19ae8a05482c09ceb57bd6646f47a20" category="list-text">*Submit* を選択します。ユーザー登録が正常に送信されたことを示す確認ウィンドウが表示されます。</block>
+  <block id="ad37dc3c075bf7b317966de5f62bcccd" category="inline-link-macro">サポートチケットを開く</block>
+  <block id="84a47c359421f223a73e00cd39c636e9" category="paragraph">登録中に問題が発生した場合、または登録状況を確認したい場合は、<block ref="46c9f6df8da0e8a4589d015c1fa7570a" category="inline-link-macro-rx"></block>。</block>
+  <block id="280ee01b354c1393d16006a43f7470fa" category="inline-link-macro">コントロールプレーンとLinuxワーカーVMを導入する</block>
+  <block id="af3d7c589d0f8ea600cddada47479d8c" category="paragraph">アカウント登録の方法を学んだら、<block ref="738ec4cd3729066a364fa774c0622676" category="inline-link-macro-rx"></block>。</block>
+  <block id="8ccd754a002a22ea169145da97be9cad" category="summary">NetApp Data Migrator製品を登録して、NetApp Supportにアクセスします。</block>
+  <block id="80cf6b37f816fb470815854897483562" category="doc">NetApp Data Migrator サポートへの登録</block>
+  <block id="db729189c53fa99bdc9f58f33fd77194" category="list-text">NetApp Data Migrator のホームページで、*ヘルプ（?）*を選択します&gt; *概要* &gt; *シリアル番号*</block>
+  <block id="4cb56db1a789c4f4e932d664ca1879ce" category="list-text">* NDM について*ダイアログボックスで、NetApp Data Migrator インスタンス ID を記録します。</block>
+  <block id="c0fc849d32dbbc779b1e95ec1196b32b" category="paragraph">これは975から始まる20桁の数字です。</block>
+  <block id="0bfc0e9653a7195acce2223fb3187822" category="inline-link-macro">NetApp Support Site登録ページ</block>
+  <block id="205ebb64be7cdbdfb8dad6344e5095aa" category="list-text"><block ref="583d19e36ff27be52d23b0b9a7306b4f" category="inline-link-macro-rx"></block>に移動します。</block>
+  <block id="0786589eb7392bc413e898e8782cef99" category="list-text">*登録された NetApp のお客様ではありません*を選択します。</block>
+  <block id="9421d4188db409ce16d73b19394af0f7" category="list-text">必要な製品登録の詳細を入力します。</block>
+  <block id="0baa9b69ccf61d4c2f40815008c37583" category="list-text">*NetApp Reference SN* フィールドは空白のままにしてください。</block>
+  <block id="df3bada97110c620f3c47190892439c5" category="list-text">Product Line ドロップダウンから、 *NDM* を選択します。</block>
+  <block id="213959876c5ef7b5193259742db93245" category="list-text">請求プロバイダーのドロップダウンから、*NetApp* を選択します。</block>
+  <block id="23cbb51cbd945ba966e1923c7241feb1" category="admonition">この製品には請求は発生しません。</block>
+  <block id="d46416825d782adfabd5a23836d6a4f8" category="list-text">*NDMシリアル番号*フィールドに20桁のNetApp Data MigratorインスタンスIDを入力します。</block>
+  <block id="b90e1b78fc3c96f7eb9205766af1bcc6" category="list-text">残りの必須項目を入力し、*Submit*を選択してください。</block>
+  <block id="5c2b6a41071a32807a21286bcfab52d2" category="list-text">送信後、登録確認メールが届きます。メールに記載されている手順に従って登録を確認してください。</block>
+  <block id="f36e76abe5ae0248baefe53af0f8beed" category="summary">NetApp Data Migratorの機能、ファイルサーバー、プロトコルのサポートについて説明します。</block>
+  <block id="a9d476a7219bdadc2d30cfe1e6a35b93" category="doc">NetApp Data Migrator の機能、ファイルサーバー、プロトコルのサポート</block>
+  <block id="f53b749f25c6f2b7750f2d05c7619660" category="paragraph">NetApp Data Migratorは、特定の機能、ファイルサーバー、およびプロトコルをサポートしています。</block>
+  <block id="7bbf5ab918d58918d0e368104edfbb6c" category="section-title">サポート対象の機能とサポート対象外の機能</block>
+  <block id="33db9dbce1d1546e2de49685c7fb0d9a" category="paragraph">NetApp Data Migratorは、NFSおよびSMB移行のためのさまざまな機能をサポートしています。一部の機能はサポートされていません。</block>
+  <block id="f6d7a1a39c7e76b0a2ad7044af130caf" category="section-title">サポートされる機能</block>
+  <block id="21298d143668090cafcc05c986edb03b" category="cell">サポートされている機能</block>
+  <block id="cd854b7cdf41fe438b47e8c88f23478c" category="cell">権限と監査処理</block>
+  <block id="9d4d27d23ccb602f59058f1d14e69577" category="list-text">保管連鎖レポート</block>
+  <block id="b88578ec13cd22bdb1db4f08a2ee40f1" category="list-text">任意アクセス制御リスト（DACL）</block>
+  <block id="696fd58d4cc5a9b51aac0396db67542b" category="list-text">アクセス制御リスト（ACL）を保持する</block>
+  <block id="249895594993c7cf4ec8ae3b41e6e745" category="list-text">ユーザー識別子（UID）とセキュリティ識別子（SID）の再マッピング</block>
+  <block id="b5335ac0bcef831d052c4177adf2c1af" category="cell">ファイルシステムオブジェクトとリンク</block>
+  <block id="ef01000bd712ee471329380c356ac9fb" category="list-text">ハードリンクの処理</block>
+  <block id="25ed30a72c238cd22082f5faeadac1b9" category="paragraph">NetApp Data Migratorは、オブジェクトとリンクを別々のファイルとして移行します。</block>
+  <block id="2d359cd78cebe7cbc5bc2bc9ba5387a5" category="list-text">シンボリック リンク</block>
+  <block id="768fd13457c0f45708ef9e3ee33e3d5b" category="paragraph">*注*：NFSマイグレーションでサポートされています</block>
+  <block id="6aee8d4153c452fa801a440427df5c0c" category="cell">ファイルメタデータの保持</block>
+  <block id="9f9682f86756c391472e1d7c3c454e18" category="list-text">アクセス時間を維持する</block>
+  <block id="e9523618bc75e9f8bb8897f8c554a179" category="list-text">作成時刻を保持する</block>
+  <block id="be6d2d88d8c4ef54c483dab9e4c8de45" category="list-text">変更時刻を保持する</block>
+  <block id="7464fe14fb40250ffa16fa93d37a7fa0" category="cell">移行動作とデータの整合性</block>
+  <block id="d040607ebc5067103928874a30ad758f" category="list-text">削除の伝播</block>
+  <block id="290a79bbb71aaece535e1c983c60ad44" category="list-text">段階的移行</block>
+  <block id="c389cf88403679eea843d652f8d0d63f" category="list-text">オープンファイルのサポート</block>
+  <block id="563f44302dc418a5c399a7644f611963" category="list-text">スイッチオーバーのサポート</block>
+  <block id="5f706fa208d539e8e3e10661b051999a" category="cell">移行の制御と実行</block>
+  <block id="6c242d21822c600c9ea6b4520ae159cc" category="list-text">ファイルパターンの除外</block>
+  <block id="40deb43407eb053b72103696ca87a6a7" category="list-text">移行のスケジュール設定</block>
+  <block id="c40f016d6141c65a8e7a7ea0b5573496" category="section-title">サポートされない機能</block>
+  <block id="e3e175437a8dc81e2ccdee969b153919" category="cell">サポートされていない機能</block>
+  <block id="65142ee7648d38689e0a89c4b020dda9" category="paragraph">システムアクセス制御リスト（SACL）</block>
+  <block id="563a21e2715a0261d01e7ebb65dac9bd" category="paragraph">*注*：SMB移行はサポートされていません</block>
+  <block id="53374836b447770c1c71cf5f2f9e9cab" category="list-text">NTFSジャンクションに従う</block>
+  <block id="9a543d3e60f7c017a776cb917f8ac114" category="list-text">代替データストリーム</block>
+  <block id="b080519fa506e5b7fdcc497d91c25eab" category="paragraph">NetApp Data Migratorは代替データストリームを検出できますが、移行することはできません。</block>
+  <block id="cbef3ea78406a33eba3fba99fa7b5f90" category="paragraph">選択的なファイル属性</block>
+  <block id="3a5b45c6454117314695c78fc44c416e" category="paragraph">スナップショットの移行</block>
+  <block id="d2c5bc381aeab330b1f9cbe415b2a659" category="section-title">サポートされているファイルサーバ</block>
+  <block id="6940dd2377e852433e526254bac2f100" category="paragraph">NetApp Data Migratorは、データ移行のソースおよび移行先として、特定のファイルサーバーをサポートしています。</block>
+  <block id="5a5b71fa1c966e808f9e26c4c6757658" category="cell">サポートされているファイルサーバー</block>
+  <block id="ab4edc0dddb3d87260b3734f2e87bddb" category="paragraph">任意のNASサーバー（Dell Isilon、ONTAP、Vanilla Linux、Windows、Cloud Volumes ONTAPなど）</block>
+  <block id="216385e83be486e7f450fcf05b70160b" category="paragraph">Azure NetApp Files（ANF）、Google Cloud NetApp Volumes（GCNV）、Amazon FSx for NetApp ONTAP（FSxN）、Cloud Volumes ONTAPのすべてのサービスレベル</block>
+  <block id="142d4a6df8e2204dd38fcc92e455f53f" category="section-title">サポートされているNFSおよびSMB移行プロトコル</block>
+  <block id="773bd0262710a528f1c192a207cdfffe" category="paragraph">NetApp Data Migratorは、データ移行のために特定のNFSおよびSMBプロトコルバージョンをサポートしています。</block>
+  <block id="2e5d14f7919ff3c6138e7845aec4f915" category="cell">サポート対象のバージョン</block>
+  <block id="f03a982fafc6cf0a4c953010016538a8" category="paragraph">4.1、3.0</block>
+  <block id="9ec5fc688b825fea64e64fc6e921cec4" category="paragraph">3.1、3.0、2.0</block>
+  <block id="9afb2e3de0846b56ea0de72d7a82cac0" category="summary">トラブルシューティングの手順と参照コマンドを使用して、NetApp Data Migrator の問題のトラブルシューティングを行ってください。</block>
+  <block id="ce11a54bbdfbf7b696417fedfed1fb5e" category="doc">NetApp Data Migrator のトラブルシューティング</block>
+  <block id="bf7fec096c0ab262e5995f83dc935f0b" category="paragraph">NetApp Data Migrator の使用中に問題が発生した場合は、以下のトラブルシューティング手順と参照コマンドが役立つかもしれません。</block>
+  <block id="eb3aa33f8815aaa1e260636b0d4dd179" category="section-title">ホスト名を使用した場合の SMB マウントの失敗</block>
+  <block id="d4be5cabf4a67f06067eeff5ddb3d1dc" category="paragraph">ディレクトリレベルの移行を設定する際、SMBファイルサーバーのホスト名がURLとして指定されている場合、SMBマウントが失敗する可能性があります。これは、制御プレーン仮想マシン（VM）に、SMBファイルサーバーのホスト名を解決するための正しいDNS構成がない場合に発生する可能性があります。マウントエラーは次のようなエラーメッセージで表示される可能性があります<block ref="7156bd8ef0fe01d50739ef7593758cc0" prefix=" " category="inline-code"></block>。</block>
+  <block id="af56d196beb1f0a7fa9144e09566b381" category="paragraph">この問題を回避するには、移行設定でホスト名の代わりにSMBファイルサーバのIPアドレスを使用します。</block>
+  <block id="58759ab3b2c6a56acf6c6ef84809a555" category="list-text">ホスト名をIPアドレスに解決する：</block>
+  <block id="a0c6ee9fb7b27d8c995a3ea1e4fa28f5" category="list-text">解決済みのIPアドレスを使用して、SMBファイルサーバーのホスト名フィールドを設定します。</block>
+  <block id="cc266ba70a475f43229a49eb374998d0" category="list-text">ディレクトリレベルの移行設定を再試行してください。</block>
+  <block id="fe5466fefec39dc0429c43aed73d0031" category="paragraph">IPアドレスに切り替えた後、マウント操作は成功するはずです。</block>
+  <block id="5c1bec19c06844c3ebc3cd30178ba64a" category="section-title">アプリケーションアクセスのトラブルシューティング</block>
+  <block id="89878006f1bf7425969bf3ac0d2e04d9" category="paragraph">すべての認証情報はOpenBaoで管理されます。</block>
+  <block id="e61ebe92a25b4e567291874fefddb3e9" category="paragraph">以下の手順で、<block ref="cb6cc98d922bd655bd126e22843182b7" prefix=" " category="inline-code"></block>を仮想マシン（VM）のIPアドレスに置き換えてください。</block>
+  <block id="3e4b761721c609fc299a36e4f8f917ec" category="list-text">OpenBaoルートトークンを取得します。Azure ポータルから Bastion 接続を使用して、SSH で制御プレーンサーバーに接続します：</block>
+  <block id="e91645aa74bee9c696ade11f7145c742" category="list-text">OpenBao UIにログインします。<block ref="8774d4e7cde57d2bd28971c1676ffe76" prefix=" " category="inline-code"></block>を使用し、ログイン用のルートトークンを入力します。</block>
+  <block id="59e92182b9c9d55715bdfcb4ffc6ddd4" category="list-text">シークレットに移動します。</block>
+  <block id="804cc9d77c1684dbb2d090c7b22c3cf9" category="list-text">Keycloak UI：<block ref="3eead5968c067668e4c00693b9dd2f0e" prefix=" " category="inline-code"></block></block>
+  <block id="84921077c0b44dd46b207a701d11f6e9" category="list-text">NetApp Data Migrator UI：<block ref="b7587bde8ae301555c122d1f37d5f4fe" prefix=" " category="inline-code"></block></block>
+  <block id="dce953468a78c8093727e6d2d5805316" category="paragraph">デフォルトのユーザー名とパスワードを使用して、NetApp Data Migrator UIにログインします。</block>
+  <block id="70f945aacc8ce8ec8e08324fcc188e25" category="list-text">Temporal UI：<block ref="628585291ec481d413f681d7f0db5e1c" prefix=" " category="inline-code"></block></block>
+  <block id="426062de96319e4b09d9181f6cfae680" category="list-text">Postgresへの接続：マルチパスIPアドレスを使用してPostgresデータベースに接続します。ユーザー名とパスワードはOpenBaoから取得してください。</block>
+  <block id="6edfc4416544409f7802ae44212df10c" category="paragraph">キー：POSTGRES_DMADMIN_USER および POSTGRES_DMADMIN_PASSWORD</block>
+  <block id="c85d5480a419bba83b3bdf33017c6d25" category="section-title">「kubectl」リファレンスコマンドを使用する</block>
+  <block id="37d4e253277646318c09c82c1d8f3294" category="list-text">datamigrator名前空間内のポッドを取得するには：</block>
+  <block id="77a88ce3c322c1e1a70a09edf8dd16e6" category="list-text">datamigrator名前空間内のポッドのログを取得するには：</block>
+  <block id="68c53c46b938439cce5e1a5d67624fed" category="list-text">datamigrator名前空間内のポッドを説明するには：</block>
+  <block id="b7ee5c05647a856bb20d6374a13be6c4" category="list-text">すべての名前空間を取得するには：</block>
+  <block id="7efdcf29117d08315ba30ea319ed6310" category="list-text">任意のネームスペースのポッドを取得するには：</block>
+  <block id="1d2f9c6c98d406c897ef9722de76a559" category="section-title">OpenBaoの封印を解除</block>
+  <block id="3cbe7534b7126d0502077e2bbea49bd4" category="paragraph">OpenBaoが封印されている問題が発生した場合は、以下の手順に従って封印を解除してください。</block>
+  <block id="4b3853e7a075277a771c61db1da66734" category="list-text">Bastion connectを使用して、SSH経由でコントロールプレーンサーバーに接続します。</block>
+  <block id="51cb11ec18cc254ea1b2852707109628" category="list-text">OPENBAO_UNSEAL_KEYをあなたのキーに置き換えてください：</block>
+  <block id="0ea2c4190760406be10d7a92dfd53891" category="section-title">Azure VMアクセスのトラブルシューティング</block>
+  <block id="2d01bf47f59d8ac13267b22cf4d406a0" category="paragraph">Azure VM を正常に作成し、接続できるはずです。ただし、問題が発生した場合は、仮想マシンを再起動するか、SSH 設定をリセットしてみてください。</block>
+  <block id="88f024551eacf610d1c1eb40672f4ee4" category="list-text">仮想マシンを再起動します</block>
+  <block id="abefa2dc49ec0b0d5efdd872ea60f194" category="list-text">Azure ポータルに移動します。</block>
+  <block id="750248f8a2ad02d68bb5b7d5cf8356c8" category="list-text">VMに移動して*再起動*を選択してください。</block>
+  <block id="519d1fcaee8d396737178a5b40fe3bb5" category="list-text">SSH設定のリセット</block>
+  <block id="a7f74982d7f21457d3daf83b9de2973b" category="inline-link-macro">Microsoft トラブルシューティングリファレンス</block>
+  <block id="9086e47c07c59091e3cca7792a2519c6" category="paragraph">まず、この<block ref="047967f12364f0e06b1490fed639050d" category="inline-link-macro-rx"></block>に記載されている手順を参照してください。ただし、SSH Bastionポータルを開く際に問題が発生する場合があります。その場合は、以下の方法で解決できる可能性があります。</block>
+  <block id="6d5a19e9950fa1679c6315481c5e6420" category="list-text">Azure VMのコントロールプレーンに移動します。</block>
+  <block id="b1479d009bd58d01f48a9d23d88a9040" category="list-text">*ヘルプ*を選択します。</block>
+  <block id="3930015dcc2810869591e35a2b5d714b" category="list-text">*パスワードのリセット*を選択します。</block>
+  <block id="b7e728f9349754993c1b677897dc087c" category="list-text">「モード」から*SSH公開鍵の追加*を選択します。</block>
+  <block id="547183eaf9ddd9ea03c16b370e296825" category="list-text">ユーザー名には「ubuntu」と入力してください。</block>
+  <block id="696c3cc8a575adf6caf5f61250686600" category="list-text">公開鍵のソースとして、*Azureに保存されている既存の鍵を使用する*を選択します。</block>
+  <block id="a78efe158d6c39e1c0378dc35ab36c58" category="list-text">Stored Keyについては、*Select your existing created key*を選択してください。</block>
+  <block id="35165f9b14f6cde03fa7f6f9b03732ba" category="list-text">*Update* を選択します。</block>
+  <block id="e7a7492c34643ab2b6a3b1498a928aa4" category="section-title">WindowsワーカーがSMBファイルサーバーでのユーザー切り替えに失敗する</block>
+  <block id="6353b96662dc78fdb911fb1862bffc65" category="paragraph">Windowsワーカーが、以前同じファイルサーバーで使用した認証情報とは異なる認証情報を使用してSMBファイルサーバーに接続しようとすると、次のエラーメッセージが表示される場合があります：</block>
+  <block id="78fdbb539d1614030d8251a0dd33a894" category="paragraph"><block ref="7a19aaf85ff30d38cadb89aa9fa575cc" prefix="" category="inline-code"></block></block>
+  <block id="f7d88e838adcdd3b28c8cd215932791e" category="paragraph">これは、Windowsが異なる認証情報を使用して同じネットワークリソースに同時に複数接続することを許可していないためです。以前の接続が非アクティブであっても、システムによってキャッシュまたは保持されている可能性があります。</block>
+  <block id="80baf28031b5267805fff0b32ea02823" category="paragraph">この問題を解決するには、以下の手順に従ってください：</block>
+  <block id="fedbf51251a26c9f789dd8ad59afe5d2" category="list-text">既存のSMB接続を一覧表示：</block>
+  <block id="36a7a47ab64bdea2de3fa77dfaf3b521" category="list-text">ターゲットサーバへの既存の接続をすべて削除します：</block>
+  <block id="7442ab758764daa3ef1c3c077c1be35e" category="list-text">再起動して、残っているキャッシュされた認証情報やセッションをすべてクリアしてください。</block>
+  <block id="e6f55308c76691b59cf3cc71a22c3393" category="list-text">目的の認証情報を使用して再接続してください。</block>
+  <block id="f3f87dab644cb196071699648b46cdf9" category="summary">NetApp Data Migrator でコントロールプレーン、Linux ワーカー、または Windows ワーカーをアップグレードします。</block>
+  <block id="49fd6656cc4103be93b9ce19d203aa22" category="doc">NetApp Data Migratorのコントロールプレーンとワーカーをアップグレード</block>
+  <block id="5bf1af3b7a01852a25170ff5fc4c2fc2" category="paragraph">NetApp Data Migrator では、コントロールプレーン、Linux ワーカー、または Windows ワーカーをアップグレードできます。</block>
+  <block id="dbb52fade9198a014f77e1044c6c5d08" category="list-text">すべてのジョブ実行を停止し、すべてのジョブを非アクティブ状態にします。</block>
+  <block id="141c047fc7b2738f238db2239959a6f2" category="list-text">NetApp Support Siteからアップグレードバンドル（tar.gzファイル）をダウンロードし、ローカルディレクトリに保存します。</block>
+  <block id="dd810f7c3d223a3304c4d08bceac8d41" category="list-text">使用中のワーカーがオンラインであることを確認してください。アップグレード中にオフラインになっているワーカーはアップグレードされません。</block>
+  <block id="8c07dca9bafbe8b17426c9f1b62653dc" category="section-title">ステップ1：アップグレードバンドルをアップロードする</block>
+  <block id="c67542965f357b9f02fb1bdc77a17fd7" category="paragraph">ローカルディレクトリからアップグレードバンドルをアップロードします。</block>
+  <block id="48355db077d6060bb3bb66d6fc7c622e" category="list-text">NetApp Data Migrator UIにログインし、ホームページに移動します。</block>
+  <block id="7cfd11173a1aae56cb9a7516ec43af20" category="list-text">右上隅にあるヘルプアイコンを選択します。</block>
+  <block id="72c04be85d293b7c73a491d3afb7d01d" category="list-text">*アップグレード*タブを選択します。</block>
+  <block id="28443e13d8671460f09de9b1d4d7ad52" category="list-text">*Select file*を選択し、アップグレードバンドルのtar.gzファイルを選択します。</block>
+  <block id="9d06999c07ddf6da8aa9b935c1a49040" category="list-text">ファイルを選択した後、* Upload *を選択します。</block>
+  <block id="ceb1569e1ec88726ff976a638f13abfd" category="paragraph">アップロードと検証が完了したことを示すメッセージが表示されるまでお待ちください。</block>
+  <block id="da8d447e6d96522a8119a0abc43045e6" category="list-text">必要に応じて、*Start Over* を選択して別のファイルをアップロードすることで、プロセスを再度開始できます。</block>
+  <block id="7e369fdc4341c17ed675a99a57fbf563" category="section-title">ステップ2：コントロールプレーンとワーカーをアップグレードする</block>
+  <block id="b909660301eb1c9a652b64eedc8c469b" category="paragraph">コントロールプレーンをアップグレードした後、LinuxワーカーまたはWindowsワーカーをアップグレードしてください。</block>
+  <block id="f37e21ff91a6c2d6d96634176a100c77" category="list-text">* Upgrade * を選択します。システムがコントロールプレーンのアップグレードを開始します。所要時間は約5～10分です。</block>
+  <block id="e7d0b6f442cb81685a2dac783531538d" category="paragraph">アップグレード中は、アプリケーションが新しいバージョンで再起動されるため、UIが一時的に利用できなくなる場合があります。UIが再び利用可能になったら、再度ログインしてください。</block>
+  <block id="ef76cf2ac7637f392f77c5730eaafb14" category="list-text">アップグレードが完了したら、*アップグレード*ページに戻ります。</block>
+  <block id="858d36f04caea869353055c5e61e18df" category="list-text">アップグレードのステータスが*Success*であることを確認してください。</block>
+  <block id="4dc72547f86664ecaab4d3ef8cf7ad78" category="list-text">コントロールプレーンのアップグレードが正常に完了すると、オンラインのすべてのワーカーに対してワーカーのアップグレードが自動的に開始されます。</block>
+  <block id="97efc0d0fa5955efec56be8c32acbe6f" category="admonition">オンラインワーカーは、新しいバージョンを自動的にインストールして再起動します。オフラインワーカーはアップグレードされません。</block>
+  <block id="1e43fad7b5c0b6dbcb40f50b94e0c7bf" category="list-text">ワーカーのアップグレードが自動的に開始されない場合は、SSHを使用してワーカーに接続し、アップグレードを開始してください：</block>
+  <block id="151009baa5be292e15005b9abf127581" category="open-title">Linuxワーカー</block>
+  <block id="7baba0eeaf44fee5eb63fd36b4955831" category="open-title">Windowsワーカー</block>
+  <block id="79ad013bb393036c81c8989a1fa3f296" category="section-title">ステップ3：ログを表示してトラブルシューティングを行う</block>
+  <block id="3e7427947c4804b1a62f9bcea238d4f4" category="paragraph">仮想マシンのログを表示して、アップグレード中に発生した問題のトラブルシューティングをサポートします。</block>
+  <block id="0f3e71f3ec5d62354e5da1ab0dcc94d6" category="list-text">SSHを使用してコントロールプレーンVMに接続し、次のコマンドを実行してログを表示します：</block>
+  <block id="1ecb42527b56fbfe0b680658687c4c61" category="list-text">SSHを使用してLinuxワーカーまたはWindowsワーカーVMに接続し、以下のパスを使用してログを表示します：</block>
+  <block id="77f9e995a0fc8365d6925b92fccb9e35" category="list-text">アップグレードが失敗した場合、システムは自動的に以前のバージョンにロールバックし、UIにはアップグレードのステータスが*Failed*と表示されます。</block>
+  <block id="2278e2cc17d70372f4c96b75c5e965fb" category="paragraph">Ansibleログを確認してから、NetAppサポートに連絡し、Ansibleログを通信に添付してください。</block>
+  <block id="51709d52335098615f6504e2daf27594" category="summary">必要に応じて、サービスの状態、ログ、およびポッドの健全性を確認することで、Google Cloud 上のコントロールプレーン VM のデプロイメントを検証します。</block>
+  <block id="7bc002d3a69fd18563cd5eaa25020fa1" category="doc">オプションで、NetApp Data MigratorのコントロールプレーンVMのデプロイメントを検証します</block>
+  <block id="a3ef8d550203154b5a288b2f0303fb14" category="paragraph">必要に応じて、NetApp Data Migrator のコントロールプレーン VM のデプロイメントを検証します。</block>
+  <block id="eb9cae3a6ab37870fcaa1116612194a9" category="list-text">SSHを使用してコントロールプレーンサーバーに接続します：</block>
+  <block id="11eb787b328a77491d92a2ce4497cf32" category="list-text">ブートサービスのステータスとログを確認します：</block>
+  <block id="1f831c5878a762ec0963fd7b96127bc9" category="paragraph">必要に応じて、ブートサービスのログを確認してください：</block>
+  <block id="8689268a435101ff0211b2d1734523b7" category="paragraph">設定が完了すると、ログに<block ref="7d9465f9a64b1f922a55bc11a51fcb14" prefix=" " category="inline-code"></block>が表示されます。</block>
+  <block id="432d212d797d16c62fa96e0ec1e3c736" category="list-text">すべてのポッドが起動して稼働していることを確認してください：</block>
+  <block id="1e9dd46f61a201cc2b86879d26a9c48c" category="inline-link-macro">NetApp Data Migrator UIにアクセスします</block>
+  <block id="5615f0657330552866b623eca261abdf" category="paragraph">コントロールプレーンVMの検証について学んだ後は、<block ref="be3bcec36ca8095627c0973264f63ac3" category="inline-link-macro-rx"></block>。</block>
+  <block id="daad4dadeda8cd86f01c8ad7f2a30465" category="summary">このドキュメントサイトの新機能について学習します。</block>
+  <block id="2755dc4f192cb17cab8eba8e536ab485" category="doc">NetApp Data Migratorの新機能</block>
+  <block id="3a9821361199b11d3443525a500ce59c" category="paragraph">NetApp Data Migratorの新機能について説明します。</block>
+  <block id="a959999504dd5e5c5e9317184218dd6d" category="section-title">2026年4月22日</block>
+  <block id="419999866af355dbf15c6d0b0d7487e9" category="paragraph">NetApp Data Migrator 2026.04.0は、データファイルの移行に関する新しいソリューションを提供します。NetApp Data Migratorを使用して、オンプレミスまたはサードパーティのストレージシステムからNetAppクラウドストレージサービスにデータを移行できます。NetApp Data Migratorは、NFSおよびSMBファイル転送プロトコルをサポートしています。</block>
+  <block id="01269e6b8e933b0912b14ef3b796a52c" category="inline-link-macro">NetApp Data Migratorの詳細</block>
+  <block id="9952b3c384f35ba7e05205c71ded5556" category="paragraph"><block ref="9952b3c384f35ba7e05205c71ded5556" category="inline-link-macro-rx"></block></block>
+  <block id="0c48a4cb50024b2bd18d3e1141bc7269" category="sidebar">NetApp Data Migrator のドキュメント</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">はじめに</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">リリース ノート</block>
+  <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">クイック スタート</block>
+  <block id="4bb0d52dd99e9abe73777d970f78ba6a" category="sidebar">NetApp Data Migratorのインストールと使用</block>
+  <block id="b177fa56a4007d4890780071cd15e376" category="sidebar">NetApp Data Migrator をインストール</block>
+  <block id="6549bde9a228face8486f23231bfa15b" category="sidebar">コントロールプレーンとワーカーをアップグレードする</block>
+  <block id="fed0c8b9858a6a8d6e52d9710ba68e43" category="sidebar">プロジェクトの作成と管理</block>
+  <block id="2897453bd8211b947d356171a22ba0ff" category="sidebar">NetApp Data Migrator を使用</block>
+  <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">その他のリソース</block>
+  <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="sidebar">ヘルプを表示</block>
+  <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">FAQ</block>
+  <block id="617944a2b75183d164245750577ed1de" category="sidebar">NetApp Data Migratorドキュメント</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
+  <block id="097269d68dda9a5a6965173c16acef55" category="sidebar">サポートマトリックス</block>
+  <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="sidebar">既知の問題</block>
+  <block id="482723983a4f2af954e36ff41e567451" category="sidebar">既知の制限事項</block>
+  <block id="6dd5c811b278e22ffab2e2908a5119ba" category="sidebar">ネットワークアクセスを確認する</block>
+  <block id="76841410d8f9a6881e0b96f150e9cedf" category="sidebar">ポート要件</block>
+  <block id="20d4d7b9936154505ade9240689b5770" category="sidebar">インストール、セットアップ、アップグレード</block>
+  <block id="d45294caa04dc2a59a6a9779ecb261e1" category="sidebar">アカウントを登録</block>
+  <block id="6123c876fc64f935493949f2d38cb132" category="sidebar">コントロールプレーンとLinuxワーカーを導入します</block>
+  <block id="bb9446a722eaef2a4bb375ba6944269a" category="sidebar">コントロールプレーンとワーカーVMを作成します</block>
+  <block id="bbb1fe796625a1fdac44293c0ddcd410" category="sidebar">コントロールプレーンとワーカーのデプロイを検証する</block>
+  <block id="a880f6626bb1bd248b4ec73a32a7e581" category="sidebar">NetApp Data Migrator UIへのアクセス</block>
+  <block id="1b4fcfaacbd0ae3e24bc82f8d7a82211" category="sidebar">ユーザの管理</block>
+  <block id="350a0b3f3d7d2ed49156ce7626fcfbcb" category="sidebar">ユーザーの追加と管理</block>
+  <block id="bfd01df950913d32f23067f9a2ddafa8" category="sidebar">アクセス制御を管理する</block>
+  <block id="48b558d1320127761431a66158b427c2" category="sidebar">リアルタイム通知を設定する</block>
+  <block id="b32f4338f541df01e94b1e873cd1578e" category="sidebar">移行オプションを管理する</block>
+  <block id="26bddf6d4b393b265322f78d679e9266" category="sidebar">データ移行を計画する</block>
+  <block id="c9bcd1a558d4f57c98e7d5dfd28b21d2" category="sidebar">一括移行の設定</block>
+  <block id="0d06f54a8c8e8ffe21d3f3d60ee20e32" category="sidebar">一括カットオーバーの設定</block>
+  <block id="8c7ec871b4b79058adc1095fa346bf62" category="sidebar">ジョブとジョブ実行を管理する</block>
+  <block id="d8d50c12bd11a2109a7a384f43b0930a" category="sidebar">Generate support bundle</block>
+  <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="sidebar">サポートに登録</block>
+  <block id="d60c463bb4096f3ed4bd1618626dfe10" category="sidebar">トラブルシューティング</block>
+</blocks>

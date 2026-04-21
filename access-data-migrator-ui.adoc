@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: access-data-migrator-ui.html 
+keywords: netapp, data, migrator, ui, control, plane, access, worker, linux, windows 
+summary: 展開後にNetApp Data Migrator UIにアクセスし、コントロールプレーンにサインインして、展開済みのLinuxおよびWindowsワーカーに接続します。 
+---
+= NetApp Data Migrator UI にアクセスします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+コントロールプレーン VM をデプロイし、サービスとポッドが正常に実行されていることを確認したら、NetApp Data Migrator UI にアクセスして、コントロールプレーン、Linux ワーカー、および Windows ワーカーに接続します。
+
+.開始する前に
+コントロールプレーン VM のプライベート IP アドレスを確認してください。これは、link:deploy-control-plane-and-linux-workers.html["コントロールプレーンVMを導入しました"]時に取得したものです。コントロールプレーン VM のプライベート IP アドレスを使用して UI にアクセスします。
+
+.手順
+. Web ブラウザを使用してコントロールプレーンに移動します：
++
+`\https://<control-plane-private-ip-address>/`
+
+. デフォルトのユーザー名とパスワードを使用してログインします。
+. 移行の種類に応じて、以下のタブからいずれかを選択してください：
++
+*NFS*：このオプションはNFS移行（Linuxワーカー）用です。
+
++
+*SMB*：このオプションは、SMB移行（Windowsワーカー）用です。
+
+. 画面の指示に従って、コントロールプレーンを使用してデプロイ済みのワーカー VM に接続してください。
++
+ホームページで、*View Instruction to Setup Worker* を選択します。
+
+. *Workers* セクションでステータスを確認し、ワーカーが正常に接続されていることを確認してください。
++
+ワーカーが正常に接続されたら、NetApp Data Migrator 環境を構築し、移行ジョブを実行します。
+
+
+
+.次の手順
+NetApp Data Migrator UIへのアクセス方法について学習したら、link:configure-data-migrator.html["NetApp Data Migrator を設定"]できます。

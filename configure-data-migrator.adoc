@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: configure-data-migrator.html 
+keywords: configure, log, in, project, create, app admin 
+summary: デフォルトの認証情報を使用してApp Admin（管理者）としてログインし、ユーザー名とパスワードを更新してください。 
+---
+= NetApp Data Migratorを設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migratorをインストールした後、デフォルトのユーザー名とパスワードを使用して、アプリ管理者（管理者）としてログインする必要があります。
+
+
+
+== NetApp Data Migratorにログインします
+
+NetApp Data Migratorにログインし、ログイン認証情報を変更して最初のプロジェクトを作成します。
+
+.手順
+. ウェブブラウザを開いて、次の場所にアクセスしてください。NetApp Data Migrator：
++
+`\https://<private_IP_address>/`
+
+. *Welcome* ページで、 *Username/Email* にデフォルトのユーザー名を入力します。
+. *Password* にデフォルトのパスワードを入力します。
+. *ログイン*を選択します。
++
+*Reset Password* ページが開きます。
+
+. 以下のセキュリティ要件を満たす新しいパスワードを入力してください：
++
+** 8文字以上を含む
+** 少なくとも1つの大文字が含まれています
+** 少なくとも1つの小文字が含まれています
+** 少なくとも1つの数字が含まれています
+** 少なくとも1つの特殊文字が含まれています
+
+
+. *Reset Password*を選択します。*Your Details*ページが開きます。
+. *名*、*姓*、*メールアドレス*を入力してください。
+. *続行*を選択します。*Create a New Project*ページが開きます。
+. *Create Project*を選択し、次の詳細を入力します：
++
+** *Project Name*：プロジェクトを説明する名前を入力してください。
+** *Project Description（任意）*：プロジェクトに関する詳細情報を追加で提供できます。
+
+
+. *Create*を選択します。
++
+新しいプロジェクトは、NetApp Data Migrator コントロールプレーンの上部の通知バーに表示されます。
+
+
+
+
+
+== NetApp Data Migrator からログアウトします
+
+NetApp Data Migratorからログアウトした後、次回ログイン時には新しく作成した認証情報（メールアドレスとパスワード）を使用する必要があります。
+
+.手順
+. *User*アイコン（*Settings*の横）を選択します。
+. *ログアウト*を選択します。*ようこそ*ページが開きます。
+. *Email*と*Password*には、<<log-in,ログイン済み>>時に登録したメールアドレスとパスワードを入力します。
+. *ログイン*を選択します。
+
+
+.次の手順
+NetApp Data Migrator の設定について学習したら、link:manage-projects.html["NetApp Data Migratorを使用"]できます。

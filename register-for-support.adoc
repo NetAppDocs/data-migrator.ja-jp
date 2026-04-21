@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: register-for-support.html 
+keywords: netapp, data, migrator, support, register, account 
+summary: NetApp Data Migrator製品を登録して、NetApp Supportにアクセスします。 
+---
+= NetApp Data Migrator サポートへの登録
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migrator製品を登録して、NetApp Supportにアクセスします。
+
+.手順
+. NetApp Data Migrator のホームページで、*ヘルプ（?）*を選択します> *概要* > *シリアル番号*
+. * NDM について*ダイアログボックスで、NetApp Data Migrator インスタンス ID を記録します。
++
+これは975から始まる20桁の数字です。
+
+. link:https://register.netapp.com["NetApp Support Site登録ページ"^]に移動します。
+. *登録された NetApp のお客様ではありません*を選択します。
+. 必要な製品登録の詳細を入力します。
++
+.. *NetApp Reference SN* フィールドは空白のままにしてください。
+.. Product Line ドロップダウンから、 *NDM* を選択します。
+.. 請求プロバイダーのドロップダウンから、*NetApp* を選択します。
++
+
+NOTE: この製品には請求は発生しません。
+
+.. *NDMシリアル番号*フィールドに20桁のNetApp Data MigratorインスタンスIDを入力します。
+.. 残りの必須項目を入力し、*Submit*を選択してください。
+
+
+. 送信後、登録確認メールが届きます。メールに記載されている手順に従って登録を確認してください。
+

@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: decide-to-use-data-migrator.html 
+keywords: netapp data migrator, snapmirror, data migration, ontap 
+summary: この決定マトリックスを使用して、データ移行シナリオにNetApp Data MigratorまたはSnapMirrorのどちらを使用するかを判断します。 
+---
+= NetApp Data Migrator を使用するかどうかを決定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+意思決定マトリックスを使用して、ONTAP オンプレミスストレージシステムからの NFS および SMB データ移行操作にNetApp Data Migrator またはSnapMirrorのどちらを使用するかを判断します。たとえば、ONTAP 9.12.1 を実行している ONTAP オンプレミスソースから Google Cloud NetApp Volumes Flex サービスの宛先に NFS および SMB ファイルを移行する場合は、NetApp Data Migrator を使用する必要があります。
+
+[cols="2,1,1,1,1,1,1a"]
+|===
+| オンプレミスまたはサードパーティのストレージシステムソース | Amazon FSx for NetApp ONTAP | Azure NetApp Files ハードウェア | Cloud Volumes ONTAP | Google Cloud NetApp Volumes ハードウェア | Google Cloud NetApp Volumes Flex | Google Cloud NetApp Volumes Flex（VSAベース） 
+
+
+| ONTAP オンプレミス ONTAP 9.10.1 以降 | SnapMirror | SnapMirror | SnapMirror | SnapMirror | NetApp Data Migrator  a| 
+SnapMirror
+
+
+
+| ONTAP 9.9.1 以前のオンプレミス ONTAP の場合 | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator  a| 
+NetApp Data Migrator
+
+
+
+| 非NetAppストレージシステムとアレイ | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator  a| 
+NetApp Data Migrator
+
+
+
+| Cloud Volumes ONTAP ONTAP 9.10.1以降 | SnapMirror | SnapMirror | SnapMirror | SnapMirror | NetApp Data Migrator  a| 
+SnapMirror
+
+
+
+| Cloud Volumes ONTAP ONTAP 9.9.1以前の場合 | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator  a| 
+NetApp Data Migrator
+
+
+
+| Google Cloud NetApp Volumes Flex | 該当なし | 該当なし | NetApp Data Migrator | NetApp Data Migrator | 該当なし  a| 
+NetApp Data Migrator
+
+
+
+| 権限なしでデータを移行する | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator | NetApp Data Migrator  a| 
+NetApp Data Migrator
+
+|===
+.関連情報
+link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-disaster-recovery-concept.html["SnapMirrorボリューム レプリケーション"^]について学ぶ

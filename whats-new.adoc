@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: netapp, data, migrator, whats new, release, notes 
+summary: このドキュメントサイトの新機能について学習します。 
+---
+= NetApp Data Migratorの新機能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migratorの新機能について説明します。
+
+
+
+== 2026年4月22日
+
+NetApp Data Migrator 2026.04.0は、データファイルの移行に関する新しいソリューションを提供します。NetApp Data Migratorを使用して、オンプレミスまたはサードパーティのストレージシステムからNetAppクラウドストレージサービスにデータを移行できます。NetApp Data Migratorは、NFSおよびSMBファイル転送プロトコルをサポートしています。
+
+link:learn-about-data-migrator.html["NetApp Data Migratorの詳細"]

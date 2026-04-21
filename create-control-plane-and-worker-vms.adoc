@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: create-control-plane-and-worker-vms.html 
+keywords: aws, azure, google cloud, ova, control plane, worker vm, images, linux, windows 
+summary: コントロールプレーン仮想マシン（VM）と、NetApp Data MigratorにアクセスするためのLinuxおよびWindowsワーカーVMを作成します。 
+---
+= コントロールプレーンとワーカーVMを作成してNetApp Data Migratorにアクセスします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+コントロールプレーン仮想マシン（VM）と、NetApp Data MigratorにアクセスするためのLinuxおよびWindowsワーカーVMを作成します。
+
+.開始する前に
+SMB移行のみの場合、Windows Worker Installerをlink:https://mysupport.netapp.com/site/downloads["NetAppサポート サイト"^]からダウンロードしてください。
+
+.タスク概要
+AWS、Azure、またはGoogle Cloudサービス、あるいはOVAテンプレートを使用してデプロイしたイメージを使用して、コントロールプレーンVMとLinuxワーカーVMを作成します。WindowsワーカーVMは、Windows Worker Installerを使用して作成します。LinuxワーカーVMはNFS移行をサポートし、WindowsワーカーVMはSMB移行をサポートします。必要に応じて、複数のワーカーVMを作成できます。
+
+.手順
+. デプロイ済みのコントロールプレーンイメージを使用して、以下の推奨構成でコントロールプレーンVMを作成します：
++
+[cols="1,2a"]
+|===
+| 概要 | 推奨設定 
+
+
+| VM 構成  a| 
+** 画像：コントロールプレーン用のカスタムインポート画像
+** ネットワークインターフェースカードの種類：gVNIC
+** サイズ：8 vCPU、64 GB RAM
+** ストレージ：200 GiB
++
+--
+ストレージ計画においては、100万ファイルあたり約1.1GBのディスク容量を割り当てるべきです。必要なディスク容量の合計は、予想されるファイル数（百万単位）に1.1を掛けることで概算できます。例えば、約500万個のファイルがあると想定した場合、ファイルメタデータに必要なディスク容量は5 × 1.1 GB = 5.5 GBと推定されます。
+
+さらに、以下のストレージを割り当てる必要があります：
+
+*** Docker イメージ、オペレーティングシステムのストレージ、その他のシステムレベルのコンポーネント用にさらに 50 GB
+*** 将来の成長と運用上のオーバーヘッドに対応するための追加のバッファスペースをプロビジョニングする
+
+
+--
+
+
+
+
+| ハイパースケーラー  a| 
+** AWS：r7i.2xlargeインスタンス
+** Azure VM サイズ：Standard_E8ds_v5
+** Google Cloud マシンタイプ：c3-highmem-8
+
+
+|===
+. デプロイ済みのLinuxワーカーイメージを使用して、NFS移行をサポートするLinuxワーカーVMを作成し、以下の推奨構成を適用します：
++
+[cols="1,2a"]
+|===
+| 概要 | 推奨設定 
+
+
+| VM 構成  a| 
+** 画像：Linuxワーカー用にカスタムインポートされた画像
+** ネットワークインターフェースカードの種類：gVNIC
+** サイズ：4 vCPU、16 GB RAM
+** ストレージ：100 GB
+
+
+
+
+| ハイパースケーラー  a| 
+** AWS：r7i.2xlarge
+** Azure VM サイズ：Standard_E8ds_v5
+** Google Cloud マシンタイプ：c3-highmem-8
+
+
+|===
+. Windows Worker Installerを使用して、SMB移行をサポートするWindowsワーカーVMを作成します：
++
+.. 以下の推奨構成設定でWindows VMを作成します。
++
+*** イメージ: Windows Server 2022 Base
+*** アーキテクチャ：64ビット
+*** サイズ：16 vCPU、64 GB RAM
+*** ネットワークインターフェースカードの種類：gVNIC
+*** リモートデスクトッププロトコル（RDP）（3389）が開いていることを確認してください
+
+
+.. RDPを使用してリモート作業セッションを作成します。
++
+link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-rdp.html["RDP 接続"^]について学びます。
+
+.. コントロールプレーンVM上でWindows Worker Installerをコピーして実行します。
+
+
+
+
+.次の手順
+コントロールプレーンとワーカーVMの作成方法を学んだ後、以下のいずれかのオプションを選択できます：
+
+* 必要に応じて、link:validate-control-plane-vm.html["コントロールプレーンVMを検証する"]
+* link:access-data-migrator-ui.html["NetApp Data Migrator UI へのアクセスとコントロールプレーンおよびワーカーへの接続"]
+

@@ -1,0 +1,184 @@
+---
+sidebar: sidebar 
+permalink: troubleshoot.html 
+keywords: troubleshooting, kubectl, openbao, application access, diagnostic commands 
+summary: トラブルシューティングの手順と参照コマンドを使用して、NetApp Data Migrator の問題のトラブルシューティングを行ってください。 
+---
+= NetApp Data Migrator のトラブルシューティング
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migrator の使用中に問題が発生した場合は、以下のトラブルシューティング手順と参照コマンドが役立つかもしれません。
+
+
+
+== ホスト名を使用した場合の SMB マウントの失敗
+
+ディレクトリレベルの移行を設定する際、SMBファイルサーバーのホスト名がURLとして指定されている場合、SMBマウントが失敗する可能性があります。これは、制御プレーン仮想マシン（VM）に、SMBファイルサーバーのホスト名を解決するための正しいDNS構成がない場合に発生する可能性があります。マウントエラーは次のようなエラーメッセージで表示される可能性があります `mount failed: Resource temporarily unavailable`。
+
+この問題を回避するには、移行設定でホスト名の代わりにSMBファイルサーバのIPアドレスを使用します。
+
+.手順
+. ホスト名をIPアドレスに解決する：
++
+[source, cli]
+----
+nslookup
+----
+. 解決済みのIPアドレスを使用して、SMBファイルサーバーのホスト名フィールドを設定します。
+. ディレクトリレベルの移行設定を再試行してください。
++
+IPアドレスに切り替えた後、マウント操作は成功するはずです。
+
+
+
+
+
+== アプリケーションアクセスのトラブルシューティング
+
+すべての認証情報はOpenBaoで管理されます。
+
+以下の手順で、 `<IP_ADDRESS>`を仮想マシン（VM）のIPアドレスに置き換えてください。
+
+.手順
+. OpenBaoルートトークンを取得します。Azure ポータルから Bastion 接続を使用して、SSH で制御プレーンサーバーに接続します：
++
+[source, cli]
+----
+sudo su - datamigrator
+cat /opt/datamigrator/openbao/cluster-keys.json
+----
+. OpenBao UIにログインします。 `https://IP_ADDRESS/ui/`を使用し、ログイン用のルートトークンを入力します。
+. シークレットに移動します。
+. Keycloak UI： `https://IP_ADDRESS/keycloak/`
+. NetApp Data Migrator UI： `https://IP_ADDRESS/`
++
+デフォルトのユーザー名とパスワードを使用して、NetApp Data Migrator UIにログインします。
+
+. Temporal UI： `https://IP_ADDRESS/temporal/ui/`
+. Postgresへの接続：マルチパスIPアドレスを使用してPostgresデータベースに接続します。ユーザー名とパスワードはOpenBaoから取得してください。
++
+キー：POSTGRES_DMADMIN_USER および POSTGRES_DMADMIN_PASSWORD
+
+
+
+
+
+== 「kubectl」リファレンスコマンドを使用する
+
+* datamigrator名前空間内のポッドを取得するには：
++
+[source, cli]
+----
+kubectl get pods -n datamigrator
+----
+* datamigrator名前空間内のポッドのログを取得するには：
++
+[source, cli]
+----
+kubectl logs <podname> -n datamigrator
+----
+* datamigrator名前空間内のポッドを説明するには：
++
+[source, cli]
+----
+kubectl describe <podname> -n datamigrator
+----
+* すべての名前空間を取得するには：
++
+[source, cli]
+----
+kubectl get ns
+----
+* 任意のネームスペースのポッドを取得するには：
++
+[source, cli]
+----
+kubectl get pods -n <NAMESPACE>
+----
+
+
+
+
+== OpenBaoの封印を解除
+
+OpenBaoが封印されている問題が発生した場合は、以下の手順に従って封印を解除してください。
+
+.手順
+. Bastion connectを使用して、SSH経由でコントロールプレーンサーバーに接続します。
+. OPENBAO_UNSEAL_KEYをあなたのキーに置き換えてください：
++
+[source, cli]
+----
+sudo su - datamigrator
+export OPENBAO_UNSEAL_KEY=`jq -r ".unseal_keys_b64[]" /opt/datamigrator/openbao/cluster-keys.json`
+kubectl exec openbao-0 -n openbao -- bao operator unseal $OPENBAO_UNSEAL_KEY
+kubectl exec openbao-1 -n openbao -- bao operator unseal $OPENBAO_UNSEAL_KEY
+kubectl exec openbao-2 -n openbao -- bao operator unseal $OPENBAO_UNSEAL_KEY
+----
+
+
+
+
+== Azure VMアクセスのトラブルシューティング
+
+Azure VM を正常に作成し、接続できるはずです。ただし、問題が発生した場合は、仮想マシンを再起動するか、SSH 設定をリセットしてみてください。
+
+仮想マシンを再起動します::
++
+--
+.手順
+. Azure ポータルに移動します。
+. VMに移動して*再起動*を選択してください。
+
+
+--
+SSH設定のリセット::
++
+--
+まず、このlink:https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/linux/troubleshoot-ssh-connection["Microsoft トラブルシューティングリファレンス"^]に記載されている手順を参照してください。ただし、SSH Bastionポータルを開く際に問題が発生する場合があります。その場合は、以下の方法で解決できる可能性があります。
+
+.手順
+. Azure VMのコントロールプレーンに移動します。
+. *ヘルプ*を選択します。
+. *パスワードのリセット*を選択します。
+. 「モード」から*SSH公開鍵の追加*を選択します。
+. ユーザー名には「ubuntu」と入力してください。
+. 公開鍵のソースとして、*Azureに保存されている既存の鍵を使用する*を選択します。
+. Stored Keyについては、*Select your existing created key*を選択してください。
+. *Update* を選択します。
+
+
+--
+
+
+
+
+== WindowsワーカーがSMBファイルサーバーでのユーザー切り替えに失敗する
+
+Windowsワーカーが、以前同じファイルサーバーで使用した認証情報とは異なる認証情報を使用してSMBファイルサーバーに接続しようとすると、次のエラーメッセージが表示される場合があります：
+
+`System error 1219: Multiple connections to a server or shared resource by the same user, using more than one user name, are not allowed.`
+
+これは、Windowsが異なる認証情報を使用して同じネットワークリソースに同時に複数接続することを許可していないためです。以前の接続が非アクティブであっても、システムによってキャッシュまたは保持されている可能性があります。
+
+この問題を解決するには、以下の手順に従ってください：
+
+. 既存のSMB接続を一覧表示：
++
+[source, cli]
+----
+net use
+----
+. ターゲットサーバへの既存の接続をすべて削除します：
++
+[source, cli]
+----
+net use <share> /delete
+----
+. 再起動して、残っているキャッシュされた認証情報やセッションをすべてクリアしてください。
+. 目的の認証情報を使用して再接続してください。
+

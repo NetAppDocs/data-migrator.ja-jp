@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: networking-requirements.html 
+keywords: networking requirements, TCP, UDP, control plane, worker, communication 
+summary: NetApp Data Migrator のネットワーク要件（コントロールプレーンとワーカー間の通信に必要な TCP ポートおよび UDP ポートを含む）。 
+---
+= NetApp Data MigratorでNFSおよびSMBネットワークアクセスを確認する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+ストレージシステムのエクスポートポリシーにおいて、コントロールプレーンとワーカーの両方のIPアドレスとサブネットが許可されていることを確認する必要があります。これは、NetApp Data Migratorを使用したNFSおよびSMBの移行をサポートするために必要です。
+
+
+
+== NFSアクセスを確認する
+
+NFSの場合、コントロールプレーンとワーカーノードは、ルートクライアントとしてストレージシステムにアクセスするための権限が必要です。
+
+.手順
+. ワーカーノードから手動でマウントを実行し、ボリュームへのアクセス可能性を確認します。
++
+[source, cli]
+----
+sudo mount -t nfs <storage-ip>:/<volume-path> /mnt/test
+ls -la /mnt/test
+----
+. エクスポートポリシールールでスーパーユーザーアクセスが許可されていることを確認し、ルートアクセスが有効になっていることを確認してください。必要に応じて、エクスポートポリシールールを変更してルートアクセス（no root squash）を有効にします。
+
+
+
+
+== SMBアクセスを確認する
+
+SMBアクセスを行うには、コントロールプレーンとワーカーノードがSMB認証情報を使用してストレージシステムにアクセスするための権限が必要です。SMBユーザーは、Backup operatorsグループおよびAdministratorsグループに属している必要があります。
+
+.手順
+. ワーカーノードから手動でマウントを実行し、ボリュームへのアクセス可能性を確認します。
++
+[source, cli]
+----
+net use Z: \\<storage-ip>\<share> /user:<domain>\<username> <password>
+----
+

@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: validate-control-plane-vm.html 
+keywords: google cloud, installation, control plane, worker vm, iam roles 
+summary: 必要に応じて、サービスの状態、ログ、およびポッドの健全性を確認することで、Google Cloud 上のコントロールプレーン VM のデプロイメントを検証します。 
+---
+= オプションで、NetApp Data MigratorのコントロールプレーンVMのデプロイメントを検証します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+必要に応じて、NetApp Data Migrator のコントロールプレーン VM のデプロイメントを検証します。
+
+.手順
+. SSHを使用してコントロールプレーンサーバーに接続します：
++
+[source, cli]
+----
+sudo su - datamigrator
+----
+. ブートサービスのステータスとログを確認します：
++
+[source, cli]
+----
+sudo systemctl status boot-microk8s.service
+----
++
+必要に応じて、ブートサービスのログを確認してください：
+
++
+[source, cli]
+----
+tail -10f /opt/datamigrator/logs/ndm-first-boot.log
+----
++
+設定が完了すると、ログに `Datamigrator Application Setup Complete`が表示されます。
+
+. すべてのポッドが起動して稼働していることを確認してください：
++
+[source, cli]
+----
+kubectl get pods -n datamigrator
+----
+
+
+.次の手順
+コントロールプレーンVMの検証について学んだ後は、link:access-data-migrator-ui.html["NetApp Data Migrator UIにアクセスします"]。

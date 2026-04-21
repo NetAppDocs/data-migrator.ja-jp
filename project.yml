@@ -1,0 +1,91 @@
+---
+settings:
+  name: NetApp Data Migrator
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ja-jp,us-en,de-de,es-es,fr-fr,it-it,pt-br,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: NetApp Data Migratorドキュメント
+    url: "/index.html"
+  - title: リリース ノート
+    entries:
+    - title: 新機能
+      url: "/whats-new.html"
+    - title: サポートマトリックス
+      url: "/support-matrix.html"
+    - title: 既知の問題
+      url: "/known-issues.html"
+    - title: 既知の制限事項
+      url: "/known-limitations.html"
+  - title: はじめに
+    entries:
+    - title: NetApp Data Migratorについて学ぶ
+      url: "/learn-about-data-migrator.html"
+    - title: NetApp Data Migrator を使用するかどうかを決定する
+      url: "/decide-to-use-data-migrator.html"
+    - title: クイック スタート
+      url: "/quick-start.html"
+    - title: ネットワーク要件
+      entries:
+      - title: ネットワークアクセスを確認する
+        url: "/networking-requirements.html"
+      - title: ポート要件
+        url: "/port-requirements.html"
+  - title: インストール、セットアップ、アップグレード
+    entries:
+    - title: NetApp Data Migrator のインストールについて学ぶ
+      url: "/learn-about-install.html"
+    - title: アカウントを登録
+      url: "/register-for-account.html"
+    - title: コントロールプレーンとLinuxワーカーを導入します
+      url: "/deploy-control-plane-and-linux-workers.html"
+    - title: コントロールプレーンとワーカーVMを作成します
+      url: "/create-control-plane-and-worker-vms.html"
+    - title: コントロールプレーンとワーカーのデプロイを検証する
+      url: "/validate-control-plane-vm.html"
+    - title: NetApp Data Migrator UIへのアクセス
+      url: "/access-data-migrator-ui.html"
+    - title: NetApp Data Migratorを設定
+      url: "/configure-data-migrator.html"
+    - title: コントロールプレーンとワーカーをアップグレードする
+      url: "/upgrade.html"
+  - title: NetApp Data Migrator を使用
+    entries:
+    - title: プロジェクトの作成と管理
+      url: "/manage-projects.html"
+    - title: ユーザの管理
+      entries:
+      - title: ユーザーの追加と管理
+        url: "/manage-users.html"
+      - title: アクセス制御を管理する
+        url: "/access-control.html"
+    - title: ファイル サーバの追加と管理
+      url: "/manage-file-servers.html"
+    - title: リアルタイム通知を設定する
+      url: "/configure-notifications.html"
+    - title: 移行オプションを管理する
+      entries:
+      - title: データ移行を計画する
+        url: "/configure-bulk-discover.html"
+      - title: 一括移行の設定
+        url: "/configure-bulk-migrate.html"
+      - title: 一括カットオーバーの設定
+        url: "/configure-bulk-cutover.html"
+    - title: ジョブとジョブ実行を管理する
+      url: "/manage-jobs.html"
+    - title: Generate support bundle
+      url: "/generate-support-bundle.html"
+  - title: FAQ
+    url: "/faq.html"
+  - title: ヘルプを表示
+    entries:
+    - title: サポートに登録
+      url: "/register-for-support.html"
+    - title: トラブルシューティング
+      url: "/troubleshoot.html"
+  - title: 法律上の表示
+    url: "/legal-notices.html"

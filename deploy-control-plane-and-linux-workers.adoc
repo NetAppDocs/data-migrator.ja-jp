@@ -1,0 +1,157 @@
+---
+sidebar: sidebar 
+permalink: deploy-control-plane-and-linux-workers.html 
+keywords: aws installation, prerequisites, control plane, worker vm, ec2 
+summary: NetApp Data MigratorのコントロールプレーンとワーカーVMのインストールについて説明します。 
+---
+= NetApp Data MigratorのコントロールプレーンとLinuxワーカーVMをデプロイします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+AWS、Azure、Google Cloud サービス、または Open Virtual Appliance（OVA）テンプレートを使用して、NetApp Data Migrator のコントロールプレーン仮想マシン（VM）と Linux ワーカー VM をデプロイします。Linux ワーカーは NFS データ移行をサポートしています。
+
+.開始する前に
+link:https://mysupport.netapp.com/site/downloads["NetAppサポートサイト"^]からNetApp Data Migratorイメージをダウンロードします：
+
+. *NetApp Data Migrator* を選択します。
+. NetApp Data Migrator のダウンロードページの指示に従って、NetApp Data Migrator イメージにアクセスします。
+
+
+.タスク概要
+デプロイオプションに応じて、AWS、Azure、Google Cloud、またはOVAタブを選択します。
+
+[role="tabbed-block"]
+====
+.AWS
+--
+コントロールプレーンと Linux ワーカーの Amazon Machine Images（AMIs）について、以下の手順を繰り返します。
+
+.手順
+. 提供されたAMI IDを使用して、AWSアカウントの*EC2* > *AMIs* > *Private images*にあるAMIを探してください。
+. AMI をアカウントにコピーします。
++
+.. AMI を選択し、次に *Actions* > *Copy AMI* を選択します。
+.. ターゲットリージョンを選択します（必要な場合）。
+.. 暗号化を有効にし、独自のKMSキーを選択してください。
+.. AMI ステータスが *Available* と表示されるまで待ちます。
+
+
+
+
+--
+.Azure
+--
+コントロールプレーンと Linux ワーカーの VHD について、以下の手順を繰り返します。
+
+.手順
+. VHD ファイルを Azure Blob Storage にコピーします：
++
+[source, cli]
+----
+az storage blob copy start \
+  --source-uri "<PROVIDED_SAS_URL>" \
+  --destination-blob "<VHD_FILE_NAME>.vhd" \
+Group 1065216673, Grouped object  --destination-container <YOUR_CONTAINER_NAME> \
+  --account-name <YOUR_STORAGE_ACCOUNT> \
+  --account-key <YOUR_STORAGE_ACCOUNT_KEY>
+----
+. コピーした VHD ファイルから新しい Azure イメージを作成します：
++
+[source, cli]
+----
+az image create \
+  --resource-group <YOUR_RESOURCE_GROUP> \
+  --name <YOUR_IMAGE_NAME> \
+  --source https://<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net/<YOUR_CONTAINER_NAME>/<VHD_FILE_NAME>.vhd \
+  --os-type linux \
+  --location <YOUR_AZURE_REGION>
+----
+
+
+--
+.Google Cloud
+--
+.手順
+. イメージのインポート、コントロールプレーンおよびワーカーVMのデプロイに必要なGoogle Cloud APIが有効になっていることを確認してください。詳細については、link:https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/get-started/enable-services#enabling_required_services_on_the_host_project["Google Cloud ドキュメント"^]を参照してください。
+. Google Cloud Storage のバケットが存在しない場合は、作成してください。このバケットは、インポート操作中にイメージアーカイブ（.tar.gz）を保存するために使用されます。
++
+link:https://cloud.google.com/storage/docs/creating-buckets#console["Google Cloud Storage バケットを作成する"^]方法をご確認ください。
+
+. IAMの役割と権限を設定します。これにより、VM移行APIが必要なアクセス権限を持ち、VM移行サービスがGoogle Cloud Storageバケットにアクセスしてイメージを作成できることが保証されます。
++
+.. サービスアカウントobjectViewerに、宛先のCloud Storageバケットへのアクセス権を割り当てます：
++
+[source, cli]
+----
+gcloud storage buckets add-iam-policy-binding gs://<GCS_BUCKET> \
+  --member=serviceAccount:service-<PROJECT_NUMBER>@gcp-sa-vmmigration.iam.gserviceaccount.com \
+  --role=roles/storage.objectViewer
+----
++
+サービスアカウントには、移行プロセス中に Cloud Storage バケットから VM イメージファイルを読み取るための roles/storage.objectViewer 権限が必要です。
+
++
+VM Migration APIが有効になっている場合、Google Cloudは次の形式でサービスアカウントを自動的にプロビジョニングします：
+
++
+`service-<PROJECT_NUMBER>@gcp-sa-vmmigration.iam.gserviceaccount.com`
+
++
+*** `++ gcp-sa`は Google Cloud サービスアカウントです
+*** `vmmigration` は VM 移行サービス識別子です
+*** `iam.gserviceaccount.com` は Google Cloud サービスアカウントの標準ドメインです
+
+
+..  `vmmigration`サービスで管理者ユーザーになります：
++
+[source, cli]
+----
+gcloud projects add-iam-policy-binding <PROJECT_ID> \
+  --member=user:<YOUR_EMAIL> \
+  --role=roles/vmmigration.admin
+----
++
+これにより、プロジェクトレベルでVM移行に関する管理権限が付与されます。
+
+
+
+. 画像ファイルを取得してアップロードします。
++
+.. コントロールプレーン `.tar.gz`イメージファイルとLinuxワーカー `.tar.gz`イメージファイルをlink:https://mysupport.netapp.com/site/["NetApp サポート サイト"^]からダウンロードします。
+..  `.tar.gz`ファイルをGoogle Cloud Storageバケットにアップロードします。
+
+
+. イメージアーカイブを Google Cloud Storage にアップロードした後、VM Migration Service を使用して、各イメージ（コントロールプレーンと Linux ワーカー）に対して次のコマンドを実行して VM イメージを作成します。
++
+[source, cli]
+----
+--source-file=gs://<GCS_BUCKET>/<IMAGE_NAME>.tar.gz \
+  --image-name=<IMAGE_NAME> \
+  --location=<REGION> \
+  --target-project=projects/<PROJECT_ID>/locations/global/targetProjects/<PROJECT_ID> \
+  --project=<PROJECT_ID>
+----
++
+このコマンドは、指定されたリージョンに、指定されたアーカイブから新しい Google Cloud Platform VM イメージを作成します。
+
+. 画像インポート操作の一覧を表示し、完了を確認します：
++
+[source, cli]
+----
+gcloud migration vms image-imports list --location=<REGION> --project=<PROJECT_ID>
+----
+
+
+--
+.OVA
+--
+.手順
+コントロールプレーン `.ova`イメージファイルとLinuxワーカー `.ova`イメージファイルをlink:https://mysupport.netapp.com/site/["NetApp サポート サイト"^]からダウンロードします。
+
+--
+====
+.次の手順
+コントロールプレーンVMとLinuxワーカーVMのデプロイについて学んだ後は、link:create-control-plane-and-worker-vms.html["コントロールプレーンとワーカーVMを作成する"]。

@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: learn-about-install.html 
+keywords: aws installation, prerequisites, control plane, worker vm, ec2 
+summary: NetApp Data MigratorのコントロールプレーンとワーカーVMのインストールについて説明します。 
+---
+= NetApp Data Migrator のインストールについて学ぶ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migratorを使用してNFSおよびSMB移行ジョブを実行するには、コントロール プレーンとワーカーをインストールする必要があります。
+
+* *コントロール プレーン*：コントロール プレーンは、中央管理および制御レイヤとして機能します。まず、Linux仮想マシン（VM）上にコントロール プレーンをデプロイし、次にワーカーをデプロイします。
+* *ワーカー*：ワーカーとは、実際のデータ移行を実行する仮想マシンです。規模や要件に応じて、複数のワーカーをデプロイできます。ワーカーの種類はプロトコルによって異なります：
++
+** LinuxワーカーはNFS移行をサポートします。
+** Windows ワーカーは SMB 移行をサポートします。
+
+
+
+
+まず、AWS、Azure、またはGoogle Cloudサービスを使用するか、Open Virtual Appliance（OVA）テンプレートを使用して、コントロールプレーン仮想マシン（VM）とLinuxワーカーVMをデプロイします。NetApp Support サイトから、導入に必要なNetApp Data Migrator イメージをダウンロードします。
+
+デプロイ後、NetApp Data MigratorにアクセスするためのコントロールプレーンとワーカーVMを作成します。デプロイ済みのイメージを使用して、コントロールプレーンVMとLinuxワーカーVMを作成します。Windows Worker Installerを使用してWindowsワーカーVMを作成します。これは、NetAppサポートサイトからダウンロードします。
+
+.次の手順
+NetApp Data Migrator のインストールについて学習したら、link:register-for-account.html["アカウントを登録"]できます。
