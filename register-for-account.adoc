@@ -2,19 +2,19 @@
 sidebar: sidebar 
 permalink: register-for-account.html 
 keywords: netapp, data, migrator, new, support, register, account 
-summary: 新しいNetAppのお客様の場合は、NetAppアカウントを作成し、登録手続きを完了する必要があります。 
+summary: NetAppを初めてご利用になるお客様は、NetAppアカウントを作成し、登録プロセスを完了してからNetApp Data Migratorにアクセスする必要があります。 
 ---
-= NetApp Data Migrator アカウントに登録する
+= NetApp Data Migratorにアクセスするためのアカウントを登録
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-新しい NetApp のお客様の場合は、NetApp アカウントを作成し、登録プロセスを完了する必要があります。すでに NetApp アカウントをお持ちの場合は、link:deploy-control-plane-and-linux-workers.html["NetApp Data MigratorのコントロールプレーンとLinuxワーカーVMをデプロイします"]に進むことができます。
+新規のNetAppのお客様の場合、NetApp Data Migratorをダウンロードする前に、NetApp Support Siteでアカウントを登録する必要があります。すでにアカウントをお持ちの場合は、link:deploy-control-plane-and-linux-workers.html["NetApp Data MigratorのコントロールプレーンとLinuxワーカーVMをデプロイします"]に進むことができます。
 
 
-NOTE: 新しいNetApp Support Siteアカウントが*Guest access*から*Full access*にアップグレードされるまで、最大1営業日かかる場合があります。
+NOTE: 新しいアカウントが*ゲストアクセス*から*フルアクセス*にアップグレードされるまでに、最大1営業日かかることがあります。
 
 .手順
 . ビジネスメールアドレスを使用してlink:https://mysupport.netapp.com/site/user/registration["NetAppサポート サイト"^]でアカウントを登録してください。

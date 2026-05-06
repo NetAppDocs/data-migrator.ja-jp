@@ -80,8 +80,6 @@
   <block id="531330f2326fb3283c827799b9c4dec0" category="paragraph">*Cutover Confirmation* ポップアップボックスが表示されます。</block>
   <block id="ffc9534ab431605bc11f516d99c43ba5" category="list-text">*Download CoC Report* リンクを選択します。</block>
   <block id="cc5fcd3fba3014c23240ac1c1497d8b7" category="paragraph">レポートを確認し、切り替えが成功したかどうか、またすべてのデータがソースから宛先へ正常に移行されたかどうかを確認してください。</block>
-  <block id="67116d320a2bb4f66b0bb10629a28264" category="list-text">*I have reviewed and verified the COC document and all other essential information* の横にあるチェックボックスを選択します。</block>
-  <block id="228159fcd8ad29c01efe569a236253d2" category="list-text">COCレポートの情報に問題がなければ、*確認*を選択して*一括切り替え*を承認してください。</block>
   <block id="e15884a19074f86e7c09ab35a649f46a" category="paragraph">ステータスが*完了*に変更されます。</block>
   <block id="c7c7190135e9f9b9ece90813a338db20" category="summary">NetApp Data Migratorで一括検出を設定して、データの移行を開始する前に既存のストレージ容量全体の概要を生成します。</block>
   <block id="237c9334ef000476a7394e5432d15caa" category="doc">Bulk Discoverを使用したNetApp Data Migratorでのデータ移行の計画</block>
@@ -248,11 +246,6 @@
   <block id="3de40160643c4264dfdb435901f88134" category="inline-link-macro">RDP 接続</block>
   <block id="04e35b02091c127ce30a041090d5ae10" category="paragraph"><block ref="413636dc63fc70d1de2995e50bbc28db" category="inline-link-macro-rx"></block>について学びます。</block>
   <block id="c8ec5de526848edba89b4cd247a7c82f" category="list-text">コントロールプレーンVM上でWindows Worker Installerをコピーして実行します。</block>
-  <block id="a9058b2b8149aa6459c22839b8f48e7d" category="paragraph">コントロールプレーンとワーカーVMの作成方法を学んだ後、以下のいずれかのオプションを選択できます：</block>
-  <block id="a729f07fe3c69abdf2c50ebfa113d507" category="inline-link-macro">コントロールプレーンVMを検証する</block>
-  <block id="15f42688d57360bf1f9db0b9f31ac5cb" category="list-text">必要に応じて、<block ref="38876e4285448dda0ef37899ea72b3f7" category="inline-link-macro-rx"></block></block>
-  <block id="359f010480b6cb0e4541e04bb0fcc16b" category="inline-link-macro">NetApp Data Migrator UI へのアクセスとコントロールプレーンおよびワーカーへの接続</block>
-  <block id="ca6ab599cc2e4b0485c935f29da44c3b" category="list-text"><block ref="ca6ab599cc2e4b0485c935f29da44c3b" category="inline-link-macro-rx"></block></block>
   <block id="a70f927e90b92e5863f95f3d77a75c40" category="summary">この決定マトリックスを使用して、データ移行シナリオにNetApp Data MigratorまたはSnapMirrorのどちらを使用するかを判断します。</block>
   <block id="8e92e15e5d350cd28fb679db44bc77d8" category="doc">NetApp Data Migrator を使用するかどうかを決定する</block>
   <block id="37b72dc4b7827b60200f9714aa7bfaf9" category="paragraph">意思決定マトリックスを使用して、ONTAP オンプレミスストレージシステムからの NFS および SMB データ移行操作にNetApp Data Migrator またはSnapMirrorのどちらを使用するかを判断します。たとえば、ONTAP 9.12.1 を実行している ONTAP オンプレミスソースから Google Cloud NetApp Volumes Flex サービスの宛先に NFS および SMB ファイルを移行する場合は、NetApp Data Migrator を使用する必要があります。</block>
@@ -278,8 +271,6 @@
   <block id="bb22576f9b122fdf9d78825d5814f73f" category="summary">NetApp Data MigratorのコントロールプレーンとワーカーVMのインストールについて説明します。</block>
   <block id="021d971a688b59f55f1e01248ea81da6" category="doc">NetApp Data MigratorのコントロールプレーンとLinuxワーカーVMをデプロイします</block>
   <block id="9866e84bbeb7aaf31c785c41e852e87f" category="paragraph">AWS、Azure、Google Cloud サービス、または Open Virtual Appliance（OVA）テンプレートを使用して、NetApp Data Migrator のコントロールプレーン仮想マシン（VM）と Linux ワーカー VM をデプロイします。Linux ワーカーは NFS データ移行をサポートしています。</block>
-  <block id="9c093f14319e8253b8c9b37290597239" category="inline-link-macro">NetAppサポートサイト</block>
-  <block id="5ff33b6501cd191d29481875867dc11b" category="paragraph"><block ref="a806f88fd14897065f93f1191bd5b7da" category="inline-link-macro-rx"></block>からNetApp Data Migratorイメージをダウンロードします：</block>
   <block id="9b1b30bfc99bb38f9a91517b1b946684" category="list-text">*NetApp Data Migrator* を選択します。</block>
   <block id="310e86f89904e335507c6ff6e454da6c" category="list-text">NetApp Data Migrator のダウンロードページの指示に従って、NetApp Data Migrator イメージにアクセスします。</block>
   <block id="6820fbb635251b795c3ca1ae5b5a14ba" category="paragraph">デプロイオプションに応じて、AWS、Azure、Google Cloud、またはOVAタブを選択します。</block>
@@ -305,22 +296,18 @@
   <block id="e068d5e55435058d8d80b438cbfedc6e" category="list-text">サービスアカウントobjectViewerに、宛先のCloud Storageバケットへのアクセス権を割り当てます：</block>
   <block id="c813aaa1c28525e28180006c1c7b9550" category="paragraph">サービスアカウントには、移行プロセス中に Cloud Storage バケットから VM イメージファイルを読み取るための roles/storage.objectViewer 権限が必要です。</block>
   <block id="dc36632e376a444fbc3f974928f6c693" category="paragraph">VM Migration APIが有効になっている場合、Google Cloudは次の形式でサービスアカウントを自動的にプロビジョニングします：</block>
-  <block id="1e043504778da0aa7bcf3436ddeef0e1" category="paragraph"><block ref="5df0b69b601a351abdf7499d42281325" prefix="" category="inline-code"></block></block>
   <block id="68dbee6ed219fb61e0a1f2d7c0052a2b" category="list-text"><block ref="0a9fe612dd3aeeb522b085a5dc743836" prefix="" category="inline-code"></block>は Google Cloud サービスアカウントです</block>
   <block id="c286a0934a11b3f2ec2cf08dd231cf8e" category="list-text"><block ref="3e3a9b04a7e76246f14a93ea417e1a4b" prefix="" category="inline-code"></block> は VM 移行サービス識別子です</block>
   <block id="03a45e0dc9af4eead77f83ecbd640307" category="list-text"><block ref="79c170c716ea5fca869039d6a032f2a5" prefix="" category="inline-code"></block> は Google Cloud サービスアカウントの標準ドメインです</block>
   <block id="f67b849d8be2722918b033f359ddf17d" category="list-text"><block ref="3e3a9b04a7e76246f14a93ea417e1a4b" prefix=" " category="inline-code"></block>サービスで管理者ユーザーになります：</block>
   <block id="e2e1100dd49a5c31e3fd0e5fd00eba78" category="paragraph">これにより、プロジェクトレベルでVM移行に関する管理権限が付与されます。</block>
   <block id="89ef81b9ebe20a41b8624f6ea1d76320" category="list-text">画像ファイルを取得してアップロードします。</block>
-  <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link-macro">NetApp サポート サイト</block>
-  <block id="e1389ed07e342a8ff8ddcbc4f7ffe46e" category="list-text">コントロールプレーン<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>イメージファイルとLinuxワーカー<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>イメージファイルを<block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>からダウンロードします。</block>
   <block id="8ba0f284cbf3541ca311f101e602751d" category="list-text"><block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>ファイルをGoogle Cloud Storageバケットにアップロードします。</block>
   <block id="b582743a436eee96f743d05a2fa25f16" category="list-text">イメージアーカイブを Google Cloud Storage にアップロードした後、VM Migration Service を使用して、各イメージ（コントロールプレーンと Linux ワーカー）に対して次のコマンドを実行して VM イメージを作成します。</block>
   <block id="d2b78890db7dd247ce5f92bfd2ec15ae" category="paragraph">このコマンドは、指定されたリージョンに、指定されたアーカイブから新しい Google Cloud Platform VM イメージを作成します。</block>
   <block id="b3ab2f208f13f715b7d869c9a6ac16c7" category="list-text">画像インポート操作の一覧を表示し、完了を確認します：</block>
   <block id="586ba478b7ebec665f3df120799b6c2e" category="open-title">OVA</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="paragraph-title">手順</block>
-  <block id="58402979642aceba3c4d2702ee126f81" category="paragraph">コントロールプレーン<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block>イメージファイルとLinuxワーカー<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block>イメージファイルを<block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>からダウンロードします。</block>
   <block id="7c1d6f695f65dc9c5c8094228402786f" category="inline-link-macro">コントロールプレーンとワーカーVMを作成する</block>
   <block id="9145b83b060f34d93aca59652a91a807" category="paragraph">コントロールプレーンVMとLinuxワーカーVMのデプロイについて学んだ後は、<block ref="47786182e0e58028f57398173f17bd15" category="inline-link-macro-rx"></block>。</block>
   <block id="bcb2ecbda52b8430d09e5b500c31ebaf" category="summary">NetApp Data Migratorに関する接続エラー、認証失敗、プロトコル問題、権限エラーについてのよくある質問への回答を見つけることができます。</block>
@@ -556,15 +543,11 @@
   <block id="415b97a9b0a182511672ae3883302822" category="inline-link-macro">データ移行処理にソフトウェアを使用するかどうかを決定する</block>
   <block id="38638155b7eb32979bd49efbc4ecd3ea" category="paragraph">NetApp Data Migratorについて学習したら、<block ref="32beaf1b333cdebcd418e0f9b4a6d185" category="inline-link-macro-rx"></block>できます。</block>
   <block id="362dc8eb929965a4aa87ffed37b3d617" category="doc">NetApp Data Migrator のインストールについて学ぶ</block>
-  <block id="155fa94b7bca3977ba7c200909e43cc8" category="paragraph">NetApp Data Migratorを使用してNFSおよびSMB移行ジョブを実行するには、コントロール プレーンとワーカーをインストールする必要があります。</block>
   <block id="8c0d588cf4ae3c3963c70ead4a5ca7e3" category="list-text">*コントロール プレーン*：コントロール プレーンは、中央管理および制御レイヤとして機能します。まず、Linux仮想マシン（VM）上にコントロール プレーンをデプロイし、次にワーカーをデプロイします。</block>
   <block id="c037928a4b33f55ae64d96e1796c0cb1" category="list-text">*ワーカー*：ワーカーとは、実際のデータ移行を実行する仮想マシンです。規模や要件に応じて、複数のワーカーをデプロイできます。ワーカーの種類はプロトコルによって異なります：</block>
   <block id="dcb958e16173d580dffd4bdeb217206a" category="list-text">LinuxワーカーはNFS移行をサポートします。</block>
   <block id="d2ac9b54e6beae65495d2457cf8c1f40" category="list-text">Windows ワーカーは SMB 移行をサポートします。</block>
-  <block id="76827502fd8d3d0d06e450c23346942e" category="paragraph">まず、AWS、Azure、またはGoogle Cloudサービスを使用するか、Open Virtual Appliance（OVA）テンプレートを使用して、コントロールプレーン仮想マシン（VM）とLinuxワーカーVMをデプロイします。NetApp Support サイトから、導入に必要なNetApp Data Migrator イメージをダウンロードします。</block>
-  <block id="a2b65d24cfdab17e100dd5d9903bafad" category="paragraph">デプロイ後、NetApp Data MigratorにアクセスするためのコントロールプレーンとワーカーVMを作成します。デプロイ済みのイメージを使用して、コントロールプレーンVMとLinuxワーカーVMを作成します。Windows Worker Installerを使用してWindowsワーカーVMを作成します。これは、NetAppサポートサイトからダウンロードします。</block>
   <block id="0176a7764147384d95bf0b96717c78d3" category="inline-link-macro">アカウントを登録</block>
-  <block id="35884a7c97792b73e76d939f06c4c52c" category="paragraph">NetApp Data Migrator のインストールについて学習したら、<block ref="d2c5c3692974708954412d809af17919" category="inline-link-macro-rx"></block>できます。</block>
   <block id="7e56090ee48c15842893dcf89da7a382" category="summary">NetApp Data Migratorの法的通知、著作権、商標、およびオープンソースライセンス情報。</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律上の表示</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法的通知から、著作権情報、商標、特許などを確認できます。</block>
@@ -945,10 +928,6 @@
   <block id="bbe5469d33ce93c2f28586f9a9debf56" category="paragraph">まず、デフォルトの認証情報を使用して管理者としてログインし、ユーザー名とパスワードを更新してください。次に、最初のプロジェクトを作成し、ファイルサーバーを追加して移行ワークフローを開始できます。</block>
   <block id="83b9a73283224c028b35f767e10e1a03" category="list-text"><block ref="83b9a73283224c028b35f767e10e1a03" category="inline-link-macro-rx"></block></block>
   <block id="2dc5f7f7f6c5786ed5b37141589adae2" category="list-text"><block ref="2dc5f7f7f6c5786ed5b37141589adae2" category="inline-link-macro-rx"></block></block>
-  <block id="5b46d94ae861e93c8d77f043ac734952" category="summary">新しいNetAppのお客様の場合は、NetAppアカウントを作成し、登録手続きを完了する必要があります。</block>
-  <block id="512ce7e8c3858266467efa17d62d0051" category="doc">NetApp Data Migrator アカウントに登録する</block>
-  <block id="4daa456be51251ffd988f63c8657d64c" category="paragraph">新しい NetApp のお客様の場合は、NetApp アカウントを作成し、登録プロセスを完了する必要があります。すでに NetApp アカウントをお持ちの場合は、<block ref="2e1fdd8a20f38dacfbef503dc81b8d7d" category="inline-link-macro-rx"></block>に進むことができます。</block>
-  <block id="5f4293a5c5c507db807ae703a9d9c3dc" category="admonition">新しいNetApp Support Siteアカウントが*Guest access*から*Full access*にアップグレードされるまで、最大1営業日かかる場合があります。</block>
   <block id="d27c2a770a38edcade142626ac440af3" category="list-text">ビジネスメールアドレスを使用して<block ref="5a9b9821ca062d5154356de0071c8b9f" category="inline-link-macro-rx"></block>でアカウントを登録してください。</block>
   <block id="8fd3c7eb5b3f94dd265f8f05e2041a61" category="list-text">登録開始を認証するには、メールで送信されたワンタイムパスワードを入力してください。</block>
   <block id="3c1b2d3eff4d0d793fec12d931950535" category="list-text">登録完了ページで、必要な情報を入力してください：</block>
@@ -964,8 +943,6 @@
   <block id="db729189c53fa99bdc9f58f33fd77194" category="list-text">NetApp Data Migrator のホームページで、*ヘルプ（?）*を選択します&gt; *概要* &gt; *シリアル番号*</block>
   <block id="4cb56db1a789c4f4e932d664ca1879ce" category="list-text">* NDM について*ダイアログボックスで、NetApp Data Migrator インスタンス ID を記録します。</block>
   <block id="c0fc849d32dbbc779b1e95ec1196b32b" category="paragraph">これは975から始まる20桁の数字です。</block>
-  <block id="0bfc0e9653a7195acce2223fb3187822" category="inline-link-macro">NetApp Support Site登録ページ</block>
-  <block id="205ebb64be7cdbdfb8dad6344e5095aa" category="list-text"><block ref="583d19e36ff27be52d23b0b9a7306b4f" category="inline-link-macro-rx"></block>に移動します。</block>
   <block id="0786589eb7392bc413e898e8782cef99" category="list-text">*登録された NetApp のお客様ではありません*を選択します。</block>
   <block id="9421d4188db409ce16d73b19394af0f7" category="list-text">必要な製品登録の詳細を入力します。</block>
   <block id="0baa9b69ccf61d4c2f40815008c37583" category="list-text">*NetApp Reference SN* フィールドは空白のままにしてください。</block>
@@ -1166,4 +1143,35 @@
   <block id="d8d50c12bd11a2109a7a384f43b0930a" category="sidebar">Generate support bundle</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="sidebar">サポートに登録</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="sidebar">トラブルシューティング</block>
+  <block id="a557e68a0918586226f7db744ff53cf4" category="list-text">*保管管理記録（CoC）文書およびその他のすべての重要な情報を確認し、検証しました*の横にあるチェックボックスを選択します。</block>
+  <block id="e8640163df245e7e098847cd29d94a52" category="list-text">保管管理記録（CoC）レポートの情報に問題がなければ、*確認*を選択して*一括切り替え*を承認してください。</block>
+  <block id="0165aaffb5b86064565d400bb51c02e6" category="section-title">メタデータ更新の競合を解決する</block>
+  <block id="e2ca9d6562f61ef76278696bf21b9166" category="paragraph">SMB移行における切り替え確認プロセス中に、メタデータ更新の競合が発生する可能性があります。メタデータ更新の競合を解決するには、影響を受けるファイルに対してメタデータ同期スクリプトを実行してください。</block>
+  <block id="39bb66223d591f4512a45497c8bc3184" category="list-text">切り替えプロセスの一環として生成されたCoCレポートのZIPフォルダをダウンロードします。</block>
+  <block id="a15d55d0f23df66bb7893733f386297a" category="list-text">パスペアの切り替えに関与したWindowsワーカーマシン上で、ZIPフォルダを解凍してください。</block>
+  <block id="8b65e02d40ee826b175b02e4bc45bef5" category="admonition">ドライブ文字<block ref="5dbc98dcc983a70728bd082d1a47546e" prefix=" " category="inline-code"></block>および<block ref="b9ece18c950afbfa6b0fdbfa4ff731d3" prefix=" " category="inline-code"></block>は、Windowsワーカー上でソースボリュームとターゲットボリュームをマッピングするために使用されます。このスクリプトを実行する際は、これらのドライブ文字を他のマウントに使用しないでください。</block>
+  <block id="d8e4a0239dd5fc0a5c6e9d217763eaaf" category="list-text">必要な<block ref="019ac6e58d9c4a7e1d127b0e02d8be9e" prefix=" " category="inline-code"></block>ファイルをコピーします。</block>
+  <block id="3d9cebc93ee1e287479e1c608d677b8f" category="list-text">Windows ワーカーマシンで管理者として PowerShell を開きます。</block>
+  <block id="03faee47bc7a3f4f5bd70644ba940075" category="list-text">スクリプトディレクトリに移動：</block>
+  <block id="bb1867b35f788cdb601c39a8ac4b42fa" category="list-text">すべてのパラメータにプレースホルダーを使用して、メタデータスタンプスクリプトを実行します：</block>
+  <block id="561861cf3c5b804405bbe956b25dfa07" category="paragraph">SIDマッピングとドメイン関連パラメータ（SidMapFileおよびDomain）はオプションであり、必要に応じて含めることができます。</block>
+  <block id="971e1a6fb808ebf9b49a8e5292af7a67" category="paragraph">コントロールプレーンとワーカーVMの作成方法を学んだら、次の操作を実行できます：</block>
+  <block id="1251f1d578f1d6119b3c18fedfdb3ff9" category="inline-link-macro">コントロールプレーンVMを検証する</block>
+  <block id="1bc0cd7367326350e27456afb38f6c4a" category="list-text">必要に応じて<block ref="4d97b867bb9f75267c66c77f4694e105" category="inline-link-macro-rx"></block></block>
+  <block id="84c99c15058d4e5c618312936435ab0f" category="inline-link-macro">NetApp Data Migrator UIにアクセスし、コントロールプレーンとワーカーに接続します</block>
+  <block id="b3cd170ee2bfc309cc7cb338f10a3904" category="list-text"><block ref="b3cd170ee2bfc309cc7cb338f10a3904" category="inline-link-macro-rx"></block></block>
+  <block id="efe7275bf81b553b7f1c1571b6fded79" category="paragraph"><block ref="79a5efacdd8155d1c0d2f7284cc3f087" category="inline-link-macro-rx"></block>からNetApp Data Migratorイメージをダウンロードします：</block>
+  <block id="953b1faf3afe7942fa40444c40dcdd9d" category="paragraph"><block ref="3713b6efd29a2574d01586436235bfc4" prefix="" category="inline-code"></block></block>
+  <block id="c54aeafac3fb6ac981207fb56c38dab6" category="list-text">コントロールプレーン<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>イメージファイルとLinuxワーカー<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block>イメージファイルを<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>からダウンロードします。</block>
+  <block id="ca710100283059cfe72da6c355e9d26d" category="paragraph">コントロールプレーン<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block>イメージファイルとLinuxワーカー<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block>イメージファイルを<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>からダウンロードします。</block>
+  <block id="dff020d49284a25f4cadf7a01e536f15" category="paragraph">NetApp Data Migratorは、制御プレーンと1つ以上のワーカーで構成され、これらが連携してNFSおよびSMBトランスポートプロトコルを使用してデータ移行ジョブを実行します。</block>
+  <block id="7192084ed2fd41f0dbb21341fcfd063c" category="paragraph">まず、AWS、Azure、またはGoogle Cloudサービスを使用するか、Open Virtual Appliance（OVA）テンプレートを使用して、コントロールプレーン仮想マシン（VM）とLinuxワーカーVMをデプロイします。NetApp Support Siteから、導入に必要なNetApp Data Migratorイメージをダウンロードします。</block>
+  <block id="f4336a028056eb40e55adc55f67993f9" category="paragraph">導入後、コントロールプレーンVMとワーカーVMを作成して、NetApp Data Migratorにアクセスします。導入されたイメージを使用して、コントロールプレーンVMとLinuxワーカーVMを作成します。NetApp Support SiteからダウンロードしたWindows Worker Installerを使用して、WindowsワーカーVMを作成します。その後、オプションでコントロールプレーンVMを検証するか、NetApp Data Migrator UIにアクセスしてコントロールプレーンとワーカーに接続することができます。</block>
+  <block id="04117208e09395666e5e0c060ae2aaa3" category="paragraph">NetApp Data Migratorのインストールについて学習した後は、新規のお客様の場合はNetApp Support Siteで<block ref="d2c5c3692974708954412d809af17919" category="inline-link-macro-rx"></block>するか、すでにアカウントをお持ちの場合は<block ref="738ec4cd3729066a364fa774c0622676" category="inline-link-macro-rx"></block>に進むことができます。</block>
+  <block id="e0998a4bed9547e9c34bdc4f48ce4d2a" category="summary">NetAppを初めてご利用になるお客様は、NetAppアカウントを作成し、登録プロセスを完了してからNetApp Data Migratorにアクセスする必要があります。</block>
+  <block id="eca545c10a175a8aed24f0eaf7cda74f" category="doc">NetApp Data Migratorにアクセスするためのアカウントを登録</block>
+  <block id="5b0d7601c743963c464a12b037ae045c" category="paragraph">新規のNetAppのお客様の場合、NetApp Data Migratorをダウンロードする前に、NetApp Support Siteでアカウントを登録する必要があります。すでにアカウントをお持ちの場合は、<block ref="2e1fdd8a20f38dacfbef503dc81b8d7d" category="inline-link-macro-rx"></block>に進むことができます。</block>
+  <block id="034b07d5c19791bdc29e619054083834" category="admonition">新しいアカウントが*ゲストアクセス*から*フルアクセス*にアップグレードされるまでに、最大1営業日かかることがあります。</block>
+  <block id="173529d8b3d8c0ff4ea8f40dbf7aabe9" category="inline-link-macro">NetApp Support Site登録ページ</block>
+  <block id="be7a31416eb06ebc304a614c3460a1a0" category="list-text"><block ref="5a5dddcca17792452be16c79d0405d2d" category="inline-link-macro-rx"></block>に移動します。</block>
 </blocks>
