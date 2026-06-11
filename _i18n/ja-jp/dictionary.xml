@@ -106,7 +106,6 @@
   <block id="4dbe34dcfaf21a426bc5f1d0a9947fc0" category="section-title">ステップ2：ソースと宛先のマッピングを追加する</block>
   <block id="87834d34f8d8989b4c54caedbea8b7d4" category="paragraph">移行のソースエクスポートパスと宛先エクスポートパスを指定するには、ソースマッピングと宛先マッピングを追加します。</block>
   <block id="a270c874dd3f23eef6fb2f8c7a227252" category="list-text">移行するソース内のエクスポートパスを選択します。</block>
-  <block id="1ada8f7056024f536b0017b8a818a648" category="list-text">必要に応じて、ディレクトリレベルの移行を実行する場合は、*Add Source Directory*を選択してください。</block>
   <block id="5657e4af05fc77ede4d05249c45b45e9" category="paragraph">*Add Source Directory*を選択すると、ディレクトリエクスプローラービューが表示されます。このビューには、ルートレベルのディレクトリのリストが表示されます。必要なディレクトリに移動するか、必要なディレクトリのパスをエクスプローラーウィンドウの検索バーに直接コピー＆ペーストして、そのフォルダに移動できます。</block>
   <block id="96a001e4dedac46d583f146f571969b2" category="list-text">ソースディレクトリを選択したら、宛先ファイルサーバと宛先エクスポートパスを選択します。</block>
   <block id="72f51b9743f5e36c1ea9f0ecd58e0f52" category="list-text">必要に応じて、エクスポート先のパスでディレクトリを選択します。</block>
@@ -1174,4 +1173,7 @@
   <block id="034b07d5c19791bdc29e619054083834" category="admonition">新しいアカウントが*ゲストアクセス*から*フルアクセス*にアップグレードされるまでに、最大1営業日かかることがあります。</block>
   <block id="173529d8b3d8c0ff4ea8f40dbf7aabe9" category="inline-link-macro">NetApp Support Site登録ページ</block>
   <block id="be7a31416eb06ebc304a614c3460a1a0" category="list-text"><block ref="5a5dddcca17792452be16c79d0405d2d" category="inline-link-macro-rx"></block>に移動します。</block>
+  <block id="70081c17ffe468cb19f06de7d6b65a51" category="list-text">必要に応じて、ディレクトリレベルで移行を実行する場合は、* Add Source Directory * を選択してください。</block>
+  <block id="d76c25422f3dafa6f43c2fc5410dfaef" category="cell">継承された権限を明示的な権限に変換する</block>
+  <block id="c9fbfd8a6f3192f2f1e72e34686607dc" category="paragraph">このオプションを有効にすると、ソースから継承されたすべてのアクセス許可が、ディレクトリレベルでのSMB移行中に、宛先に明示的なアクセス許可として書き込まれます。</block>
 </blocks>
