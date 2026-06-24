@@ -323,7 +323,6 @@
   <block id="2d3cf36868e8ecba40d8329def6db3b3" category="paragraph-title">「無効な作業ディレクトリ」エラーの原因は何ですか？</block>
   <block id="cbb858a114f3445ffa109f7630f3128c" category="paragraph">選択したエクスポートパスに正しい作業ディレクトリを入力したことを確認してください。</block>
   <block id="d3795f5dcf68afb12396dfb622c6c2f9" category="paragraph-title">作業ディレクトリで「書き込み権限」エラーが発生するのはなぜですか？</block>
-  <block id="d80ce1c87712e8ebb10558acf165c002" category="paragraph">このエラーは、正しいエクスポートパスと作業ディレクトリが指定されているにもかかわらず、必要な書き込み権限が付与されていない場合に発生します。適切な書き込み権限がない場合、ファイルサーバーの事前チェックが失敗し、ユーザーはジョブを実行できなくなります。エラーが発生しているユーザーに、必要な書き込み権限があることを確認してください。</block>
   <block id="e5f0109a3dde59ac6cf199ab61c19ca6" category="summary">NetApp Data Migrator サポートバンドルを生成してダウンロードします。このバンドルには、トラブルシューティング用の診断ログ、エラーレポート、および構成データが含まれています。</block>
   <block id="8f1ffc521357732dac238b9425def2a4" category="doc">NetApp Data Migrator サポートバンドルを生成する</block>
   <block id="0a42ec79a244c6ee75a271fa0c580a0e" category="paragraph">NetApp Data Migratorを使用すると、発生した問題のトラブルシューティングに役立つサポートバンドルを生成できます。このバンドルには、ログファイル、エラーレポート、構成データなどの診断情報が含まれています。</block>
@@ -1176,4 +1175,6 @@
   <block id="70081c17ffe468cb19f06de7d6b65a51" category="list-text">必要に応じて、ディレクトリレベルで移行を実行する場合は、* Add Source Directory * を選択してください。</block>
   <block id="d76c25422f3dafa6f43c2fc5410dfaef" category="cell">継承された権限を明示的な権限に変換する</block>
   <block id="c9fbfd8a6f3192f2f1e72e34686607dc" category="paragraph">このオプションを有効にすると、ソースから継承されたすべてのアクセス許可が、ディレクトリレベルでのSMB移行中に、宛先に明示的なアクセス許可として書き込まれます。</block>
+  <block id="2df75f082db896eeb89f434ebd16a479" category="admonition">NetApp Data Migrator は、ONTAP オンプレミスストレージシステムの宛先へのデータ移行をサポートしていません。</block>
+  <block id="e1aa567e142d04af6a707f8d980bb5b2" category="paragraph">このエラーは、正しいエクスポートパスと作業ディレクトリが指定されているにもかかわらず、必要な書き込み権限が付与されていない場合に発生します。適切な書き込みアクセス権限がない場合、ファイルサーバーの事前チェックが失敗し、ジョブを実行できません。エラーが発生しているユーザーに、必要な書き込み権限があることを確認してください。</block>
 </blocks>
